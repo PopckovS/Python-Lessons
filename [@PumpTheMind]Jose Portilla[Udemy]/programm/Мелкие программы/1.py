@@ -114,12 +114,44 @@ def func5():
         сумму, которая будет на счету пользователя.
         """
 
-        def __init__(self):
-            pass
+        def __init__(self, summ, years):
+            self.checkArguments(summ, years)
+            self.percent = 1.10
+            self.summ = summ
+            self.years = years
+            self.result = self.summ
+            self.GetResultForYears()
 
+        def ShowResult(self):
+            print("Сумма {summ} под '{percent}' на {years} лет = {result}".format(
+                summ=self.summ,
+                percent=self.percent,
+                years=self.years,
+                result=self.result
+            ))
 
-    bank = Bank()
+        def GetResultForYears(self):
+            for i in range(self.years):
+                self.result = self.GetResultForYear(self.result, self.percent)
+                print(self.result)
+                print(i)
 
+        def GetResultForYear(self, summ, percent):
+            return summ * percent
+
+        def checkArguments(self, summ, years):
+            try:
+                summ = float(summ)
+                years = int(years)
+            except:
+                print("Сумма и год должны быть числами")
+                raise
+
+    bank = Bank(1000, 3)
+    bank.ShowResult()
+
+def func6():
+    pass
 
 # Запуск функций в работу
 # func1()
@@ -134,4 +166,6 @@ def func5():
 
 # func4()
 
-func5()
+# func5()
+
+func6()
