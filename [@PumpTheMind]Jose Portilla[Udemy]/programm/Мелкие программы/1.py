@@ -150,8 +150,6 @@ def func5():
     bank = Bank(1000, 3)
     bank.ShowResult()
 
-def func6():
-    pass
 
 # Запуск функций в работу
 # func1()
@@ -167,5 +165,3 @@ def func6():
 # func4()
 
 # func5()
-
-func6()
