@@ -305,6 +305,35 @@
         }
 
 ---
+
+
+Проверка обьекта на True/False
+---
 ---
 
+В питоне обьект считается False только если он пустой, тоетсь
+если мы делаем проверку в которой нас интересует есть ли в обьекте
+хоть что-то, то можно сделать просто проверку как на условие `bool`
 
+```python
+    my_object = 'Test' # True example
+    # my_object = '' # False example
+    
+    if len(my_object) > 0:
+        print('my_object не пуст')
+    
+    if len(my_object):  # 0 преобразовывается к False
+        print('my_object не пуст')
+    
+    if my_object != '':
+        print('my_object не пуст')
+    
+    if my_object: # пустая строка преобразовывается к False
+        print('my_object не пуст')
+
+    # Вывод     
+    # my_object не пуст
+    # my_object не пуст
+    # my_object не пуст
+    # my_object не пуст
+```
