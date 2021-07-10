@@ -40,9 +40,9 @@ Python-programm
 3. **Часть №3. Операторы :**
     - [Арифметические операторы](Theory/Part_3/Arithmetic.md) (`+`, `-`, `*`, `/`, `//`, `%`, `**`)
     - [Побитовые Операторы](Theory/Part_3/Bitwise.md) (`&`, `|`, `^`, `>>`, `<<`, `~`)
-    - [Операторы присваивания](Theory/Part_3/Assigment.md) (`=`, `+=`, `-=`, `/=`, `//=` etc.)
+    - [Операторы присваивания](Theory/Part_3/Assigment.md) (`=`, `+=`, `-=`, `/=`, `//=`)
     - [Оператор сравнения](Theory/Part_3/Comparison.md) (`==`, `!=`, `>`, `<`, `>=`, `<=`)
-    - [Логические операторы ](Theory/Part_3/Logical.md) (`and`, `or`, `not`)
+    - [Логические операторы](Theory/Part_3/Logical.md) (`and`, `or`, `not`)
     - [Операторы идентичности](Theory/Part_3/Identity.md) (`is`, `is not`)
     - [Операторы членства](Theory/Part_3/Membership.md) (`in`, `not in`)
 
