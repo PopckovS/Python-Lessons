@@ -1,6 +1,12 @@
 Ссылки на полезный материал
 ---
 
+61 репозиторий для программистов на Github
+
+https://tproger.ru/digest/7-repozitoriev-na-github-kotorye-pomogajut-razrabotchikam-prokachivat-navyki/
+
+https://proglib.io/p/hacking-repositories
+
 ### Красивые математические операции на питоне, визуализация
 
     https://proglib.io/p/kak-s-pomoshchyu-python-delat-krasivye-matematicheskie-animacii-2021-04-14?utm_referrer=https%3A%2F%2Fzen.yandex.com
