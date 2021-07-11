@@ -1,6 +1,5 @@
 #! /usr/bin/python3
 
-
 def func_1():
     print('5 + 3 = ', 5 + 3)
 
@@ -134,18 +133,17 @@ def func_9():
 
 
 def func_10():
+    var = 500
+    result = True if var >= 100 else False
+    print(f'var = {var} result = {result}')
 
-    # if 10 > 0:
-    #     print('+')
-    # else:
-    #     print('-')
-    # finally:
-    #     print(print('===='))
+    x, y = 25, 50
+    big = x if x > y else y
+    print(big)
 
-    for i in range(1, 11):
-        print('i = ', i)
-    finally:
-        print('***')
+
+def func_10():
+
 
 # func_1()
 # func_2()
