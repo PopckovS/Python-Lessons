@@ -43,13 +43,13 @@ Python-programm
     - [Операторы присваивания](Theory/Part_3/Assigment.md) (`=`, `+=`, `-=`, `/=`, `//=`)
     - [Оператор сравнения](Theory/Part_3/Comparison.md) (`==`, `!=`, `>`, `<`, `>=`, `<=`)
     - [Логические операторы](Theory/Part_3/Logical.md) (`and`, `or`, `not`)
-    - [Операторы идентичности](Theory/Part_3/Identity.md) (`is`, `is not`)
-    - [Операторы членства](Theory/Part_3/Membership.md) (`in`, `not in`)
+    - [Операторы тождественности](Theory/Part_3/Identity.md) (`is`, `is not`)
+    - [Операторы принадлежности](Theory/Part_3/Membership.md) (`in`, `not in`)
 
 
 4. **Часть №4. Потоки управления :**
-    - [Условие `if`](Theory/Part_4/If_else.md)
-    - [Блок `finally`](Theory/Part_4/Finally.md)
+   
+    - [Условие](Theory/Part_4/If_else.md) (`if`, `elif`, `else`)
     - [Тернарный оператор](Theory/Part_4/Ternary_operator.md )
     - [Цикл `for`](Theory/Part_4/For.md) ( и функция `range()` )
     - [Цикл `while`](Theory/Part_4/While.md)
@@ -58,7 +58,7 @@ Python-programm
     - [Прерывание `continue`](Theory/Part_4/Continue.md)
 
    
-5. **Часть №5. Функции:**
+5. **Часть №5. Функции :**
 
     - [Функции](Theory/Part_5/Functions.md)
     - [Замыкания функций](Theory/Part_5/Function_closures.md)

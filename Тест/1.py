@@ -132,6 +132,21 @@ def func_9():
     else:
         print("Вы не сдали экзамен")
 
+
+def func_10():
+
+    # if 10 > 0:
+    #     print('+')
+    # else:
+    #     print('-')
+    # finally:
+    #     print(print('===='))
+
+    for i in range(1, 11):
+        print('i = ', i)
+    finally:
+        print('***')
+
 # func_1()
 # func_2()
 # func_3()
@@ -140,6 +155,6 @@ def func_9():
 # func_6()
 # func_7()
 # func_8()
-func_9()
-
+# func_9()
+func_10()
 
