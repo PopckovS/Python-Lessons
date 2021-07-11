@@ -72,13 +72,74 @@ def func_5():
 
 def func_6():
 
+    if 7 > 1 and 5 > 3:
+        print('ДА')
+    else:
+        print('НЕТ')
 
+    a = 7 > 5 and 2 > 1
+    print(a)
+
+    a = 7 > 7 or 2 > -1
+    print(a)
+
+    if not(not(1)):
+        print('да')
+    else:
+        print('нет')
+
+
+def func_7():
+
+    if 5 == 5:
+        print('5 == 5 = ', True)
+
+    if 5 is 5:
+        print('5 is 5 = ', True)
+
+    if 5.0 == 5:
+        print('5.0 == 5 = ', True)
+
+    if 1 == True:
+        print('1 == True = ', True)
+
+    if 1 is not True:
+        print('1 is True = ', True)
+    else:
+        print('1 is True = ', False)
+
+
+def func_8():
+    list_str = ['ferret', 'cat', 'dog']
+    print('list_str = ', list_str)
+    print('"fox" in list_str = ', 'fox' in list_str)
+    print('"dog" in list_str = ', 'dog' in list_str)
+
+    print('me' in 'disappointment')
+
+
+def func_9():
+    score = int(input("Введите вашу оценку: "))
+
+    if score >= 90:
+        print("Отлично! Ваша оценка А")
+    elif score >= 80:
+        print("Здорово! Ваша оценка - B")
+    elif score >= 70:
+        print("Хорошо! Ваша оценка - C")
+    elif score >= 60:
+        print("Ваша оценка - D. Стоит повторить материал.")
+    else:
+        print("Вы не сдали экзамен")
 
 # func_1()
 # func_2()
 # func_3()
 # func_4()
 # func_5()
-func_6()
+# func_6()
+# func_7()
+# func_8()
+func_9()
 
 
