@@ -123,6 +123,10 @@ Python-programm
     - [Вопросы 1](Theory/Part_10/Questions_1.md)
     - [Вопросы 2](Theory/Part_10/Questions_2.md)
    
+11. **Часть №11. Модули :**
+   
+    - [Модуль numpy](Theory/Part_11/Module_numpy.md)  
+    - [Модуль matplotlib](Theory/Part_11/Module_matplotlib.md)
 
 ---
 
