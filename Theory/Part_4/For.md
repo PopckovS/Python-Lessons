@@ -36,11 +36,14 @@
 ---
 Цикл `for` применим к словарям, использование словаря эквивалентно
 вызову метода `.keys()` который возвращает список из ключей 
-словаря.
+словаря, по скольку словари не отсортированная структура, 
+полученные ключи тоже не отсортированы, так что вывод в цикле, 
+тоже будет не отсортирован, мы просто получаем ключи и так их 
+и выводим.
 
 Следующие 2 метода `for` эквивалентны:
 ```python
-    a_dict = {"one": 1, "two": 2, "three": 3}
+    a_dict = {"two": 2, "three": 3, "one": 1 }
     print('a_dict.keys() = ', a_dict.keys())
     print('type = ', type(a_dict.keys()))
 
@@ -51,25 +54,119 @@
         print(key)
 
     # Вывод
-    # ('a_dict.keys() = ', ['three', 'two', 'one'])
-    # ('type = ', <type 'list'>)
-    # three
+    # a_dict.keys() =  dict_keys(['two', 'three', 'one'])
+    # type =  <class 'dict_keys'>
+    
     # two
+    # three
     # one
-    # three
+    
     # two
+    # three
     # one
 ```
+Для того чтобы отсортировать ключи, используется спец функция
+`sorted()` она отсортирует полученные ключи, которые уже и можно
+будет выводить.
 
+```python
+    a_dict = {"C": 3, "B": 2, "A": 1}
+    keys = a_dict.keys()
+
+    keys = sorted(keys)
+
+    print('a_dict.keys() = ', a_dict.keys())
+    print('sorted(a_dict.keys()) = ', keys)
+
+    for key in keys:
+        print(key)
+
+    # Вывод
+    # a_dict.keys() =  dict_keys(['C', 'B', 'A'])
+    # sorted(a_dict.keys()) =  ['A', 'B', 'C']
+    # A   
+    # B
+    # C
+```
+Таким образом можно вывести ключи, и если требуется по ним можно 
+получать и значения по этим ключам:
+
+```python
+    a_dict = {"C": 3, "B": 2, "A": 1}
+    keys = sorted(a_dict.keys())
+
+    for key in keys:
+        print(key, ' = ', a_dict[key])
+
+    # Вывод
+    # A  =  1
+    # B  =  2
+    # C  =  3
+```
 ---
 Блок `else` в цикле `for`
 ---
 У циклов есть блок `else` который исполняется всегда если не было
 использовано оператора `break`. Такая же логика используется и в
-`while`
----
+`while`.
 
+Блок `else` срабатывает по завершению работы цикла, но при 
+условии, что цикл завершен естественным образом, если же
+цикл завершен оператором `brake` то блок `else` не сработает.
 
+```python
+    for i in range(1, 11):
+        print('i = ', i)
+    else:
+        print('Блок else')
+
+    for i in range(1, 11):
+        if i == 5:
+            print('i равен 5 ')
+            break
+        print('i = ', i)
+    else:
+        print('Блок else')
+
+    for i in range(1, 11):
+        if i == 5:
+            print('i равен 5 ')
+            continue
+        print('i = ', i)
+    else:
+        print('Блок else')
+    
+    # Вывод
+    # i =  1
+    # i =  2
+    # i =  3
+    # i =  4
+    # i =  5
+    # i =  6
+    # i =  7
+    # i =  8
+    # i =  9
+    # i =  10
+    # Блок else
+    
+    # i =  1
+    # i =  2
+    # i =  3
+    # i =  4
+    # i равен 5 
+    
+    # i =  1
+    # i =  2
+    # i =  3
+    # i =  4
+    # i равен 5 
+    # i =  6
+    # i =  7
+    # i =  8
+    # i =  9
+    # i =  10
+    # Блок else
+```
 ---
 
 Функция `range()` и `arange()`
