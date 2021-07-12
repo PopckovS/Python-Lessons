@@ -112,6 +112,32 @@ def func_8():
         print('Блок else')
 
 
+def func_9():
+    try:
+        k = 1 / 10
+    except ZeroDivisionError:
+        print('Сработало исключение ZeroDivisionError')
+    else:
+        print('Сработал блок else')
+    finally:
+        print('Сработал блок finally')
+
+
+def func_10():
+    for i in range(1, 11):
+        if i == 5:
+            print('i == 5 тут прерывание break')
+            break
+        print('i = ', i)
+
+
+def func_11():
+    for i in range(1, 11):
+        if i == 5:
+            print('i == 5 тут прерывание continue')
+            continue
+        print('i = ', i)
+
 
 # func_1()
 # func_2()
@@ -120,4 +146,7 @@ def func_8():
 # func_5()
 # func_6()
 # func_7()
-func_8()
+# func_8()
+# func_9()
+# func_10()
+func_11()

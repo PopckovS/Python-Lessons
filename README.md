@@ -53,7 +53,7 @@ Python-programm
     - [Тернарный оператор](Theory/Part_4/Ternary_operator.md )
     - [Цикл `for`](Theory/Part_4/For.md) ( и функция `range()` )
     - [Цикл `while`](Theory/Part_4/While.md)
-    - [Блок `try`](Theory/Part_4/Try.md)
+    - [Блок `try` и `except`, `else`, `finally`](Theory/Part_4/Try.md)
     - [Прерывание `break`](Theory/Part_4/Break.md)
     - [Прерывание `continue`](Theory/Part_4/Continue.md)
 
