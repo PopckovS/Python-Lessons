@@ -125,8 +125,8 @@ Python-programm
    
 11. **Часть №11. Модули :**
    
-    - [Модуль numpy](Theory/Part_11/Module_numpy.md)  
-    - [Модуль matplotlib](Theory/Part_11/Module_matplotlib.md)
+    - [Модуль numpy](Theory/Part_11/numpy/Module_numpy.md)  
+    - [Модуль matplotlib](Theory/Part_11/matplotlib/Module_matplotlib.md)
 
 ---
 
