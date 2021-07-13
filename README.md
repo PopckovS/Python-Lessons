@@ -128,7 +128,8 @@ Python-programm
     - [Модуль numpy](Theory/Part_11/numpy/Module_numpy.md)  
     - [Модуль matplotlib : ](Theory/Part_11/matplotlib)
          
-         - [ Установка, запуск, управление стилями ](Theory/Part_11/matplotlib/Lesson_1.md)
+         - [ Установка, запуск, здание графиков и закраска. ](Theory/Part_11/matplotlib/Lesson_1.md)
+         - [  ](Theory/Part_11/matplotlib/Lesson_2.md)
       
 
 ---
