@@ -123,6 +123,8 @@ os.path()
 ---
 `os.fork()` - ???
 
+---
+`os.system("shutdown -s")` - Выключение компьютера. 
 
 ---
 Модуль shutil

@@ -119,6 +119,7 @@ Python-programm
     - [Модуль pyperclip](Theory/Part_9/Module_pyperclip.md) (управление буфером обмена)
     - [Модуль pyshorteners](Theory/Part_9/Module_pyshorteners.md) (создание коротких ссылок)
     - [Модуль prettytable](Theory/Part_9/Module_prettytable.md) (красивые таблицы в консоле)
+    - [Модуль webbrowser](Theory/Part_9/Module_webbrowser.md) (работа с браузером)
 
 
 10. **Часть №10. Интересные вопросы по Python :**
