@@ -118,7 +118,7 @@ Python-programm
     - [Модуль crontab](Theory/Part_9/Module_crontab.md)
     - [Модуль pyperclip](Theory/Part_9/Module_pyperclip.md) (управление буфером обмена)
     - [Модуль pyshorteners](Theory/Part_9/Module_pyshorteners.md) (создание коротких ссылок)
-    - [Модуль pyshorteners](Theory/Part_9/Module_pyshorteners.md) (создание коротких ссылок)
+    - [Модуль prettytable](Theory/Part_9/Module_prettytable.md) (красивые таблицы в консоле)
 
 
 10. **Часть №10. Интересные вопросы по Python :**
