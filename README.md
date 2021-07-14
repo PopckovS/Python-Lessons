@@ -109,13 +109,14 @@ Python-programm
    
     - [Модуль os и shutil ](Theory/Part_9/Module_os.md)
     - [Модуль sys](Theory/Part_9/Module_sys.md)
-    - [Модуль functools](Theory/Part_9/Module_functools.md)
-    - [Модуль weakref](Theory/Part_9/Module_weakref.md)
-    - [Модуль re - регулярные выражения](Theory/Part_9/Module_re.md)
+    - [Модуль functools](Theory/Part_9/Module_functools.md) (полезные функции)
+    - [Модуль weakref](Theory/Part_9/Module_weakref.md) (слабые ссылки)
+    - [Модуль re](Theory/Part_9/Module_re.md) (регулярные выражения)
     - [Модуль random](Theory/Part_9/Module_random.md)
     - [Модуль time](Theory/Part_9/Module_time.md)
     - [Модуль Async](Theory/Part_9/Module_Async.md)
     - [Модуль crontab](Theory/Part_9/Module_crontab.md)
+    - [Модуль pyperclip](Theory/Part_9/Module_pyperclip.md) (управление буфером обмена)
 
 
 10. **Часть №10. Интересные вопросы по Python :**
