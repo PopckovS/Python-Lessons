@@ -120,6 +120,9 @@ os.path()
     # /root
 ```
 
+---
+`os.fork()` - ???
+
 
 ---
 Модуль shutil
