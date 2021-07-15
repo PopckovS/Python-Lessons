@@ -103,6 +103,8 @@ Python-programm
     - [Функция enumerate](Theory/Part_8/Function_enumerate.md)
     - [Функции globals() locals() vars()](Theory/Part_8/Scopes_functions.md)
     - [Хэширование hash()](Theory/Part_8/Hash.md)
+    - [Создание модулей](Theory/Part_8/Module.md)
+    - [Виртуальное окружение venv](Theory/Part_8/Virtual.md)
    
 
 9. **Часть №9. Модули :**
@@ -143,7 +145,7 @@ Python-programm
 
 1) **[Часть №1 :](Example/)**
 
-    1 [](Example/Practice_1/)
+    1 [](Example/Practice_1/1.py)
     2 [](Example/Practice_1/)
     3 [](Example/Practice_1/)
    
