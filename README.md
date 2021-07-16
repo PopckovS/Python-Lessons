@@ -122,6 +122,7 @@ Python-programm
     - [Модуль pyshorteners](Theory/Part_9/Module_pyshorteners.md) (создание коротких ссылок)
     - [Модуль prettytable](Theory/Part_9/Module_prettytable.md) (красивые таблицы в консоле)
     - [Модуль webbrowser](Theory/Part_9/Module_webbrowser.md) (работа с браузером)
+    - [Модуль requests](Theory/Part_9/Module_requests.md) (GET, POST запросы к ресурсам)
 
 
 10. **Часть №10. Интересные вопросы по Python :**
@@ -129,12 +130,13 @@ Python-programm
     - [Вопросы 1](Theory/Part_10/Questions_1.md)
     - [Вопросы 2](Theory/Part_10/Questions_2.md)
    
+
 11. **Часть №11. Модули :**
    
     - [Модуль numpy](Theory/Part_11/numpy/Module_numpy.md)  
     - [Модуль matplotlib : ](Theory/Part_11/matplotlib)
          
-         - [ Установка, запуск, здание графиков и закраска. ](Theory/Part_11/matplotlib/Lesson_1.md)
+         - [Установка, запуск, здание графиков и закраска. ](Theory/Part_11/matplotlib/Lesson_1.md)
          - [  ](Theory/Part_11/matplotlib/Lesson_2.md)
       
 
