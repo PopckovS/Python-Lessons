@@ -123,6 +123,7 @@ Python-programm
     - [Модуль prettytable](Theory/Part_9/Module_prettytable.md) (красивые таблицы в консоле)
     - [Модуль webbrowser](Theory/Part_9/Module_webbrowser.md) (работа с браузером)
     - [Модуль requests](Theory/Part_9/Module_requests.md) (GET, POST запросы к ресурсам)
+    - [Модуль socket](Theory/Part_9/Module_socket.md) (Работа с сокетами)
 
 
 10. **Часть №10. Интересные вопросы по Python :**
