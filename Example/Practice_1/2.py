@@ -161,6 +161,27 @@ def func3():
     clobal_enable_trase_wraps = False
     foo(555)
 
+
+def func4():
+    """
+    В самом python уже есть функция мемоизатор.
+    Декоратор мемоизатор @functools.lru_cache()
+    """
+    import functools
+
+    @functools.lru_cache(maxsize=128)
+    def function(a, b):
+        return a * b
+
+    print(function(2, 5))
+    print(function.cache_info())
+
+    print(function(20, 50))
+    print(function.cache_info())
+
+
+
+
 # Раскоментите нужную функцию
 # func1()
 # func2()
