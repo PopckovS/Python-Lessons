@@ -134,7 +134,10 @@ Python-programm
 
 11. **Часть №11. Модули :**
    
-    - [Модуль numpy](Theory/Part_11/numpy/Module_numpy.md)  
+    - [Модуль numpy](Theory/Part_11/numpy)
+      
+         - [ Урок №1 ](Theory/Part_11/numpy/Lesson_1.md)
+       
     - [Модуль matplotlib : ](Theory/Part_11/matplotlib)
          
          - [Установка, запуск, здание графиков и закраска. ](Theory/Part_11/matplotlib/Lesson_1.md)
