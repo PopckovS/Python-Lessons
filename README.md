@@ -124,6 +124,7 @@ Python-programm
     - [Модуль webbrowser](Theory/Part_9/Module_webbrowser.md) (работа с браузером)
     - [Модуль requests](Theory/Part_9/Module_requests.md) (GET, POST запросы к ресурсам)
     - [Модуль socket](Theory/Part_9/Module_socket.md) (Работа с сокетами)
+    - [Модуль moviepy](Theory/Part_9/Module_moviepy.md) (Редактирование видео)
 
 
 10. **Часть №10. Интересные вопросы по Python :**
