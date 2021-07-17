@@ -114,3 +114,55 @@ def func2():
     example_1()
     example_2()
     example_3()
+
+
+def func3():
+    """
+    Еще примеры с декораторами, сложная тема!
+
+    Создав глоб переменную clobal_enable_trae_wraps = True/false
+    и делая проверку таково рода:
+        return inner if clobal_enable_trae_wraps else function
+    мы можем манипулировать будет работать обертка или нет,
+    таким образом мы можем вкл/выкл ее активность.
+
+    Видеоурок:
+    https://www.youtube.com/watch?v=h_B3O5jWMi4&list=PLlb7e2G7aSpTTNp7HBYzCBByaE1h54ruW&index=4
+    """
+
+    import functools
+
+    clobal_enable_trase_wraps = True
+
+    def trace(handle):
+        def decorator(function):
+            @functools.wraps(function)
+            def inner(*args, **kwargs):
+                if clobal_enable_trase_wraps:
+                    result = function(*args, **kwargs)
+                    print('Функция обертка inner отработала')
+                    print('Название:{} Аргументы: {} {}'.format(function.__name__, args, kwargs))
+                    print('Результат: ', result)
+                    return result
+                else:
+                    result = function(*args, **kwargs)
+                    print('Результат: ', result)
+                    return result
+            return inner
+            # return inner if clobal_enable_trase_wraps else function(*args, **kwargs)
+        return decorator
+
+    @trace(sys.stderr)
+    def foo(x):
+        """I am do anything useful"""
+        return x
+
+    foo(488)
+    clobal_enable_trase_wraps = False
+    foo(555)
+
+# Раскоментите нужную функцию
+# func1()
+# func2()
+# func3()
+# func4()
