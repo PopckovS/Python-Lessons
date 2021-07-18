@@ -180,6 +180,68 @@ def func4():
     print(function.cache_info())
 
 
+def func5():
+    """
+    Примеры конвертациии символов в кодировке Юникода
+    """
+
+    # UTF-8
+    a = 'hello world'
+    print(list(map(ord, a)))
+
+    # UTF - 16
+    b = 'Привет мир'
+    print(list(map(ord, b)))
+
+    # UTF - 16
+    c = '⏸'
+    print(list(map(ord, c)))
+
+    # UTF-16
+    print(chr(9208))
+
+    # UTF - 32
+    print(chr(127025))
+
+
+def func6():
+    """
+    Примеры методов строк.
+    """
+
+    print('.upper() Оригинал: "foo bar" =', 'foo bar'.upper())
+    print('.lower() Оригинал: "foo bar" =', 'foo bar'.lower())
+    print('.swapcase() Оригинал: "Foo Bar" =', 'foo bar'.swapcase())
+    print('.title() Оригинал: "foo bar" =', 'foo bar'.title())
+    print('.capitalize() Оригинал: "foo bar" =', 'foo bar'.capitalize())
+
+    print(".rjust(20, '-') 'foo bar' = ", "foo bar".rjust(20, '-'))
+    print(".ljust(20, '-') 'foo bar' = ", "foo bar".ljust(20, '-'))
+    print(".center(20, '-') 'foo bar' = ", "foo bar".center(20, '-'))
+
+    print('lstrip("[]") "foo bar" = ', '[]foo bar[]'.lstrip('[]'))
+    print('rstrip("[]") "foo bar" = ', '[]foo bar[]'.rstrip('[]'))
+    print('strip("[]") "foo bar" = ', '[]foo bar[]'.strip('[]'))
+
+    print('split(",") "foo,,,bar" = ', 'foo,,,bar'.split(','))
+    print('split() "foo zap bar" = ', 'foo zap bar'.split())
+
+    my_list = ['a','b','c','d','e']
+    print(','.join(my_list))
+
+    str_1 = 'привет мир!'
+    print(str_1, ' = ', 'привет' in str_1)
+
+    str_2 = 'привет мир!'
+    print(str_2, ' = ', 'привsdет' not in str_2)
+
+    str_3 = 'привет мир!'
+    print(str_3, ' = ', str_3.startswith('при'))
+
+    str_4 = 'привет мир!'
+    print(str_4, ' = ', str_4.endswith('мир!'))
+
+
 
 
 # Раскоментите нужную функцию
@@ -187,3 +249,5 @@ def func4():
 # func2()
 # func3()
 # func4()
+# func5()
+# func6()
