@@ -242,6 +242,88 @@ def func6():
     print(str_4, ' = ', str_4.endswith('мир!'))
 
 
+def func7():
+    """
+    Примеры работы с файлами.
+    """
+
+    file_name = 'test.txt'
+    file = open(file_name, 'w')
+
+    print('Название файла: ', file_name)
+    print('Файл: ', file)
+    print('Тип файла: ', type(file))
+    print('file.fileno() Номер файлового дескриптора: ', file.fileno())
+    print('file.mode: ', file.mode)
+    print('file.closed: ', file.closed)
+    print('file.name: ', file.name)
+    print('file.closed Файл закрыт ? : ', file.closed)
+    print('sys.stdout : ', sys.stdout)
+
+    result = input('Что записать в конец файла ? ')
+
+    # 2 способа записи данных в файл
+    file.write('Первая строчка\n')
+    file.write('Вторая строчка\n')
+
+    file.write(f'В файл записано: {result}')
+    # print(f'В файл записано : {result}', file=file)
+
+    file.close()
+    if file.closed:
+        print('\nФайл был закрыт\n')
+
+    file = open(file_name, 'r')
+
+    if not file.closed:
+        print('***Файл снова открыт***')
+
+    print('Считаем из файла текст: \n')
+
+    # Далее 3 способа считать данные из текстового фала
+
+    # Первый способ прочитать все сразу
+    print(file.read())
+
+    # Второй способ прочитать по одной строчек за раз
+    # тоесть проитерироваться как по итерируемому обьекту
+    # print(file.readline())
+    # print(file.readline())
+    # print(file.readline())
+
+    # Схож со вторым способом, итерация по строчке
+    # методом for
+    # for line in file:
+    #     print(line)
+
+    file.close()
+    if file.closed:
+        print('\nФайл снова закрыт\n')
+
+
+def func8():
+    """
+    Пример работы метода file.flush() который
+    отправляет содержимое буфера в файл с которым работает.
+    """
+    import io
+
+    file = open('test.txt', 'w+')
+
+    print(sys.stdout)
+    print(file)
+
+    file.write('Этот текст\n')
+    file.write('и он попадет на жесткий диск\n')
+    file.write('и попадет он в файл еще до закрытия файла\n')
+    file.write('метод file.flush() вызывает этот вывод\n')
+
+    file.flush()
+
+    file.write('А вот этот текст попадет после.')
+
+    file.close()
+
 
 
 # Раскоментите нужную функцию
@@ -251,3 +333,5 @@ def func6():
 # func4()
 # func5()
 # func6()
+# func7()
+# func8()
