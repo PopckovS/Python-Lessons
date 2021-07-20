@@ -5,11 +5,11 @@ Python-programm
 
 [Ссылки на полезный материал.](links.md)
 
-[Вопросики.](questions.md)
+[опросы для разбора.](questions.md)
 
 ---
 
-Теория :
+Теория Python :
 ---
  
 1.  **Часть №1. Основное :**
@@ -147,14 +147,18 @@ Python-programm
 
 ---
 
-Практика :
+Практика Python :
 ---
 
-1) **[Часть №1 :](Example/)**
+1) **Часть №1 :**
 
-    1 [](Example/Practice_1/1.py)
-    2 [](Example/Practice_1/)
-    3 [](Example/Practice_1/)
+    1 [Сборник примеров №1](Example/Practice_1/1.py)
    
+---
+Разный материал
+---
 
+1. **Часть №1 :**
+    
+    - [Механизм CI / CD](Other-theory/Part_1/Lesson_CI_CD.md)
 
