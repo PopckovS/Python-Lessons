@@ -125,6 +125,7 @@ Python-programm
     - [Модуль requests](Theory/Part_9/Module_requests.md) (GET, POST запросы к ресурсам)
     - [Модуль socket](Theory/Part_9/Module_socket.md) (Работа с сокетами)
     - [Модуль moviepy](Theory/Part_9/Module_moviepy.md) (Редактирование видео)
+    - [Модуль CSV](Theory/Part_9/Module_CSV.md) (Работа с форматом CSV)
 
 
 10. **Часть №10. Интересные вопросы по Python :**
@@ -139,11 +140,14 @@ Python-programm
       
          - [ Урок №1 ](Theory/Part_11/numpy/Lesson_1.md)
        
-    - [Модуль matplotlib : ](Theory/Part_11/matplotlib)
+    - [Модуль matplotlib](Theory/Part_11/matplotlib)
          
          - [Установка, запуск, здание графиков и закраска. ](Theory/Part_11/matplotlib/Lesson_1.md)
-         - [  ](Theory/Part_11/matplotlib/Lesson_2.md)
-      
+         - [Множество графиков, ](Theory/Part_11/matplotlib/Lesson_2.md)
+   
+    - [Модуль Flask ](Theory/Part_11/Flask)   
+         - [ Урок №1 ](Theory/Part_11/Flask/Lesson_1.md)
+   
 
 ---
 
@@ -152,10 +156,11 @@ Python-programm
 
 1) **Часть №1 :**
 
-    1 [Сборник примеров №1](Example/Practice_1/1.py)
+    - [Сборник примеров №1](Example/Practice_1/1.py)
+    - [Работа с модулем CSV ](Example/Practice_1/CSV/CSV.py)
    
 ---
-Разный материал
+Тестирование и CI / CD
 ---
 
 1. **Часть №1 :**

@@ -1,0 +1,14 @@
+Year,Industry_aggregation_NZSIOC,Industry_code_NZSIOC,Industry_name_NZSIOC,Units,Variable_code
+2021,Level 1,99999,All industries,Dollars (millions),H01
+2020,Level 2,99999,All industries,Dollars (millions),H04
+2022,Level 3,99999,All industries,Dollars (millions),H05
+2020,Level 4,99999,All industries,Dollars (millions),H07
+2019,Level 5,99999,All industries,Dollars (millions),H08
+2021,Level 6,99999,All industries,Dollars (millions),H09
+2018,Level 7,99999,All industries,Dollars (millions),H10
+2015,Level 8,99999,All industries,Dollars (millions),H11
+2016,Level 9,99999,All industries,Dollars (millions),H12
+2017,Level 10,99999,All industries,Dollars (millions),H13
+2018,Level 11,99999,All industries,Dollars (millions),H14
+2019,Level 12,99999,All industries,Dollars (millions),H19
+2020,Level 13,99999,All industries,Dollars (millions),H20

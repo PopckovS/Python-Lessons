@@ -1,6 +1,11 @@
 Ссылки на полезный материал
 ---
 
+---
+
+Изучаем Python по Лутцу 
+
+---
 61 репозиторий для программистов на Github
 
 https://tproger.ru/digest/7-repozitoriev-na-github-kotorye-pomogajut-razrabotchikam-prokachivat-navyki/
