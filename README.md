@@ -163,10 +163,14 @@ Python-programm
 
 ---
 Алгоритмы и структуры данных
----   
-   1. Бинарный поиск
+---
+   1. [ Сложность алгоритмов, память, массивы, списки. ](Algorithm/Lesson_1.md)
+   2. Бинарный поиск
       - [ Теория ](Algorithm/binary/binary.md) 
-      - [ Практика ](Algorithm/binary/binary.py) 
+      - [ Практика ](Algorithm/binary/binary.py)
+   3. Сортировка выбором
+      - [ Теория ](Algorithm/selection/selection_sort.md)
+      - [ Практика ](Algorithm/selection/selection_sort.md)
 
 ---
 Тестирование и CI / CD
