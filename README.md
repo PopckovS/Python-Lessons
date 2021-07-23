@@ -126,7 +126,8 @@ Python-programm
     - [Модуль socket](Theory/Part_9/Module_socket.md) (Работа с сокетами)
     - [Модуль moviepy](Theory/Part_9/Module_moviepy.md) (Редактирование видео)
     - [Модуль CSV](Theory/Part_9/Module_CSV.md) (Работа с форматом CSV)
-
+      
+[comment]: <> (добавить модуль cmd)
 
 10. **Часть №10. Интересные вопросы по Python :**
 
@@ -158,7 +159,15 @@ Python-programm
 
     - [Сборник примеров №1](Example/Practice_1/1.py)
     - [Работа с модулем CSV ](Example/Practice_1/CSV/CSV.py)
-   
+
+
+---
+Алгоритмы и структуры данных
+---   
+   1. Бинарный поиск
+      - [ Теория ](Algorithm/binary/binary.md) 
+      - [ Практика ](Algorithm/binary/binary.py) 
+
 ---
 Тестирование и CI / CD
 ---
