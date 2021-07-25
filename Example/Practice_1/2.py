@@ -359,6 +359,32 @@ def func9():
     test_object_links()
 
 
+def func10():
+    """
+    Пример циклических ссылок, количество ссылок на такие обьекты,
+    никогда не упадет до нуля, так что сборщик мусора их не соберет,
+    и память бедет потрачена на содержание обьектов, которые уже на
+    используются.
+    """
+    class Cicle:
+
+        def __init__(self, name):
+            self.name = name
+
+        def set_link(self, value):
+            self.value = value
+
+    main = Cicle('main')
+    left = Cicle('left')
+    right = Cicle('right')
+
+    main.set_link('left')
+    left.set_link('right')
+    right.set_link('left')
+
+    print(main.__dict__)
+    print(left.__dict__)
+    print(right.__dict__)
 
 
 # Раскоментите нужную функцию
