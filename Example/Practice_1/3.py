@@ -50,3 +50,33 @@ def func2():
     print('float.__weakrefoffset__ = ', float.__weakrefoffset__)
 
     # class DictClass:
+
+
+def func3():
+    """
+    Примеры того как выводить память обьектов, разными методами
+    pympler, __sizeof__, sys.getsizeof
+    """
+
+    from pympler import asizeof
+
+    class Point:
+        def __init__(self, x, y):
+            self.x = x
+            self.y = y
+
+    def get_memory(obj):
+        print(f'\nОбьект: {obj}')
+        print('sys.getsizeof(obj) = ', sys.getsizeof(obj))
+        print('obj.__sizeof__() = ', obj.__sizeof__())
+        print('pympler.asizeof.asizeof(obj)  = ', asizeof.asizeof(obj))
+
+    a = [1, 2, 3]
+    b = [1, 2, [1, 2, 3]]
+    с = [1, 2, [Point(10, 10), Point(10, 10), Point(10, 10)]]
+    d = Point(10, 10)
+
+    get_memory(a)
+    get_memory(b)
+    get_memory(с)
+    get_memory(d)
