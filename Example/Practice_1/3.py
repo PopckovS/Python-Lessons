@@ -162,3 +162,41 @@ def func5():
 
     summary.print_(summary.get_diff(sum1, sum2))
 
+
+def func6():
+    """
+    Интересное о строках
+
+    Механизм создания ссылок на строки можно легко сломать !
+    Форматирование при помощи + требует гораздо больше времени
+    чем использование метода .format() для сложения требуется:
+        Метод + требует: 2.3470056476071477e-06
+        Метод format() требует: 6.971997208893299e-06
+    """
+
+    import time
+
+    a = "sgfsdgsgsfgd"
+    b = "sgfsdgsgsfgd"
+    print('id(a) == id(b) : ', id(a) == id(b))
+    print('a is b : ', a is b)
+
+    a1 = 'a'*40
+    b1 = 'a'*40
+    print('\nid(a1) == id(b1) : ', id(a1) == id(b1))
+    print('a1 is b1 : ', a1 is b1)
+
+    print('\nid(2*3*3) == id(2*3*3) : ', id(2*3*3) == id(2*3*3))
+    print('2*3*3 is 2*3*3 : ', 2*3*3 is 2*3*3)
+
+    # Подсчет конкатенацией +
+    time1 = time.perf_counter()
+    print('10'+' '+' '+'20'+' '+'30'+' '+'40'+' '+'50'+' '+'60')
+    time2 = time.perf_counter()
+    print(f"{time2} - {time1} = {time2 - time1}")
+
+    # Подсчте при помощи метода format()
+    time1 = time.perf_counter()
+    print('{0} {1} {2} {3} {4} {5}'.format(10,20,30,40,50,60))
+    time2 = time.perf_counter()
+    print(f"{time2} - {time1} = {time2 - time1}")
