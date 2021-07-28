@@ -129,3 +129,36 @@ def func4():
 
     print('Rect_1 : ', asizeof.asizeof(Rect_1(0, 0, 0, 0)))
     print('Rect_2 : ', asizeof.asizeof(Rect_2(0, 0, 0, 0)))
+
+
+def func5():
+    """
+    Модуль pympler
+
+    muppy.get_objects() - метод считывает все существующтие
+    обьекты в Python вызывая этот метод 2 раза в разный
+    промежуток времени, мы можем выявить какие обьекты были
+    созданы с первого среза.
+
+    summary.get_diff() - выявляет какие обьекты как разницу между
+    двумя срезами.
+
+    summary.print_() - красиво выводит на экран обьекты и память
+    ими занимаемую.
+    """
+    from pympler import asizeof
+    from pympler import muppy
+    from pympler import summary
+
+    print('\nИспользование muppy :')
+    alll_obj_1 = muppy.get_objects()
+
+    data = list(range(1000))
+
+    alll_obj_2 = muppy.get_objects()
+
+    sum1 = summary.summarize(alll_obj_1)
+    sum2 = summary.summarize(alll_obj_2)
+
+    summary.print_(summary.get_diff(sum1, sum2))
+
