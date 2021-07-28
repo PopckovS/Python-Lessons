@@ -80,3 +80,52 @@ def func3():
     get_memory(b)
     get_memory(с)
     get_memory(d)
+
+
+
+def func4():
+    """
+    Сколько памяти занимают различные обьекты в Python.
+
+    None - это ничего а занимает 16 байт
+    int - числа почти всегда одинаково 32 байта
+    dict - хуже всего это словарь 240 байт
+
+    Использование __slots__ в качестве tuple почти в 3 раза
+    уменьшает размер хранимых значенией.
+    """
+    from pympler import asizeof
+
+    def show_memory(obj):
+        print(str(obj), ' = ', asizeof.asizeof(obj))
+
+    show_memory(None)
+    show_memory(3)
+    show_memory(30000000)
+    show_memory(30.45)
+    show_memory([])
+    show_memory({})
+    show_memory(tuple())
+    show_memory(set())
+    show_memory('Hello world !')
+    show_memory('')
+
+    class Rect_1:
+        def __init__(self, x1,x2,x3,x4):
+            self.x1 = x1
+            self.x2 = x2
+            self.x2 = x2
+            self.x2 = x2
+
+    class Rect_2:
+        # __slots__ = ['x1','x2','x3','x4']
+        __slots__ = ('x1', 'x2', 'x3', 'x4')
+
+        def __init__(self, x1, x2, x3, x4):
+            self.x1 = x1
+            self.x2 = x2
+            self.x2 = x2
+            self.x2 = x2
+
+    print('Rect_1 : ', asizeof.asizeof(Rect_1(0, 0, 0, 0)))
+    print('Rect_2 : ', asizeof.asizeof(Rect_2(0, 0, 0, 0)))
