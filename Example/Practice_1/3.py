@@ -200,3 +200,64 @@ def func6():
     print('{0} {1} {2} {3} {4} {5}'.format(10,20,30,40,50,60))
     time2 = time.perf_counter()
     print(f"{time2} - {time1} = {time2 - time1}")
+
+
+def func7():
+    """
+    """
+    a = 40
+    b = 20
+    большее_число = a if a > b else b
+    print(большее_число)
+
+    class Point:
+        """Описние класса"""
+        static_x = 10
+        static_y = 20
+
+        def __init__(self, x, y):
+            self.x = x
+            self.y = y
+
+        def show(self):
+            print(self.x, self.y)
+
+    obj = Point(100, 200)
+    print(dir(Point))
+    print(dir(obj))
+
+    print('\n')
+    # help(Point)
+    help(obj)
+
+
+def func8():
+    """
+    Различные примеры работы разных функций.
+    """
+    name = "M234onica"
+    print(name.isalnum())
+
+    name = "M3onica Gell22er "
+    print(name.isalnum())
+
+    name = "Mo3nicaGell22er"
+    print(name.isalnum())
+
+    name = "133"
+    print(name.isalnum())
+
+    name = "133!"
+    print(name.isalnum())
+
+    print('Мы находимс в : ', os.getcwd())
+
+    string1 = "flyiNg"
+    string2 = "flyiNgz"
+    print(f'{string1} : ', max(string1))
+    print(f'{string2} : ', max(string2))
+
+    nums = ["one", "two", "three", "four", "five", "six", "seven"]
+    s = " ".join(nums)
+    print(s)
+
