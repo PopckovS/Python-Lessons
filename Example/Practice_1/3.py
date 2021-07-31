@@ -261,3 +261,30 @@ def func8():
     s = " ".join(nums)
     print(s)
 
+
+def func9():
+    """Различные примеры кода."""
+    first = 'a'
+    second = 'ф'
+
+    print(first > second)
+    # print(ord(first), ord(second))
+
+    def facto(n):
+        if n == 1:
+            return 1
+        return n * facto(n - 1)
+
+    print(facto(4))
+
+    string = 'I love Python'
+    print(f'Вывести все буквы t в строчке "{string}" : ')
+    for i in range(len(string)):
+        if string[i] == 't':
+            print(string[i])
+
+    print(f'Вывести строку "{string}" без пробелов : ')
+    for i in range(len(string)):
+        if string[i] != " ":
+            print(string[i], end='')
+    print('\n')
