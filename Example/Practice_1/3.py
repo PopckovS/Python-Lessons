@@ -288,3 +288,54 @@ def func9():
         if string[i] != " ":
             print(string[i], end='')
     print('\n')
+
+
+def func10():
+    """
+    Очень интересный вопрос !
+    """
+    def extendList(val, list=[]):
+        list.append(val)
+        print(list)
+        print(val)
+        return list
+
+    list1 = extendList(10)
+    list2 = extendList(123, [])
+    list3 = extendList('a')
+
+    print(list1)
+    print(list2)
+    print(list3)
+
+
+def func11():
+    """ """
+    a = b = c = 3
+    print(a, b, c)
+
+    print(','.join('12345'))
+
+    x = ['ab', 'cd']
+    print(map(list, x))
+
+    # ример функции map
+    # for i in map(lambda i: i ** 3, (2, 3, 7)):
+    #   print(i)
+
+    b = (1)
+    print(b)
+
+# func1()
+# func2()
+# func3()
+# func4()
+# func5()
+# func6()
+# func7()
+# func8()
+# func9()
+# func10()
+func11()
+
+
