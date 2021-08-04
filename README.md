@@ -5,7 +5,7 @@ Python-programm
 
 [Ссылки на полезный материал.](links.md)
 
-[опросы для разбора.](questions.md)
+[Вопросы для разбора.](questions.md)
 
 ---
 
@@ -149,6 +149,10 @@ Python-programm
     - [Модуль Flask ](Theory/Part_11/Flask)   
          - [ Урок №1 ](Theory/Part_11/Flask/Lesson_1.md)
    
+
+12. **Часть №12. Django :**
+   
+    - [Установка, начало ](Theory/Part_12/django_1.md)
 
 ---
 
