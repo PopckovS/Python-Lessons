@@ -152,7 +152,8 @@ Python-programm
 
 12. **Часть №12. Django :**
    
-    - [Установка, начало ](Theory/Part_12/django_1.md)
+    - [Урок №1 Установка, начало. ](Theory/Part_12/django_1.md)
+    - [Урок №2 ](Theory/Part_12/django_2.md)
 
 ---
 
