@@ -48,4 +48,88 @@ DEBUG = False
 ALLOWED_HOSTS = ['127.0.0.1']
 ```
 
+---
+Переопределение страницы ошибок
+---
+В главном файле настроек `settings.py` можно переопределить системную 
+переменную `handler404` присвоить ей функцию, которая будет отрабатывать 
+при ошибке 404
+
+```python
+from women.views import *
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('women.urls'))
+]
+handler404 = pageNotFound
+```
+
+Саму функцию для обработки ошибок можно поместить в виды любого приложения,
+такая функция должна возвращать обьект спец класса `HttpResponseNotFound`
+и принимать 2 параметра, с информацией запроса и возникшей ошибкой.
+
+```python
+from django.http import HttpResponse, HttpResponseNotFound
+
+def pageNotFound(request, exception):
+    return HttpResponseNotFound("<h1>Страница не найдена, ошибка 404</h1>")
+```
+
+В случае если требуется в любом другом виде, при неком условии отобразить 
+страницу 404, то сделать это можно при помощи спец метода `Http404()`
+
+```python
+from django.http import HttpResponse, Http404
+
+def archive(request, year):
+    if int(year) > 2021:
+        raise Http404()
+    return HttpResponse(f"<h1>Архив по годам {year}</h1>")
+```
+
+Аналогичным образом можно переопределять страницы ошибок, и при других 
+ситуациях:
+
+    handler500 - Ошибка сервера
+    handler403 - Доступ запрещен
+    handler400 - Невозможно обработать запрос
+
+Но все эти страницы ошибок будут срабатывать, если `DEBUG = False` иначе
+мы всегда будем видить страницу с отладочной информацией.
+
+---
+Создание Редиректов 301, 302
+---
+
+301 - Ресурс перемещен на постоянной основе.
+
+302 - Ресурс перемещен на временной основе.
+
+Импортируем спей функцию `redirect()` которой указываем куда делать 
+перенаправление, при определенных обстоятельствах, в дефолтном 
+использовании `redirect()` пользует перенаправление с кодом `302`
+
+```python
+from django.shortcuts import render, redirect
+
+def archive(request, year):
+    if int(year) > 2021:
+        return redirect('/')
+
+    return HttpResponse(f"<h1>Архив по годам {year}</h1>")
+
+    # Вывод в терминале
+    # "GET /archive/2025 HTTP/1.1" 302 0
+```
+
+Если передать в функцию именной параметр, `permanent=True` то 
+перенаправление будет постоянным.
+
+```python
+    return redirect('/', permanent=True)
+
+    # Вывод в терминале
+    # "GET /archive/2025 HTTP/1.1" 301 0
+```
 
