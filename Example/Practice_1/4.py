@@ -27,3 +27,40 @@ def func1():
     print(string3)
 
 
+def func2():
+    """
+    Проблема индексов !
+    Как думаете что выведет этот код ?
+    """
+    nums = [1, 2, 5, 10, 3, 100, 9, 24]
+
+    for i in nums:
+        print(i)
+        if i < 5:
+            nums.remove(i)
+
+    print('\nФинальный результат: ', nums)
+
+
+def func3():
+    """
+    Примеры различных итераций по структурам.
+
+    enumerate() - возвращает кортеж из ключа и значения послед.
+    при этом действует на list, tuple, set
+
+    Для итерации по словарям следует использовать метод
+    items() - который возвращает кортеж из ключа и значения.
+    """
+    print('Пример enumerate:')
+    nums = [10, 22, 55, 34, 88]
+    # nums = (10, 22, 55, 34, 88)
+    # nums = {10, 22, 55, 34, 88}
+    # nums = {'a': 'aa', 'b': 'bb', 'c': 'cc', 'd': 'dd'}
+    for key, val in enumerate(nums):
+        print(f'{key} : {val}')
+
+    print('\nПример dict.items()')
+    dicts = {'a': 'aa', 'b': 'bb', 'c': 'cc', 'd': 'dd'}
+    for key, val in dicts.items():
+        print(f'{key} : {val}')
