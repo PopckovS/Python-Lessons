@@ -117,8 +117,28 @@ def func5():
         line_min += 1
 
 
+def func6():
+    """
+    Разница между get() и доступу по ключу к словарей.
+
+    Если элемента не сущ-ет то обращение по ключу даст ошибку,
+    в то время как метод .get() ошибки не даст, вернет только None
+    или дефолтное значение если оно указано.
+    """
+    person = {'name': 'Phill', 'age': 22}
+
+    # Тут будет ошибка, по несущ-му ключу обращаться нельзя
+    # print(person['some-value'])
+
+    print('Name: ', person.get('name'))
+    print('Age: ', person.get('age'))
+    print('Salary: ', person.get('salary'))
+    print('Salary: ', person.get('salary', 0.0))
+
+
 # func1()
 # func2()
 # func3()
 # func4()
-func5()
+# func5()
+func6()
