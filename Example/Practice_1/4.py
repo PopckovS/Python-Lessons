@@ -64,3 +64,23 @@ def func3():
     dicts = {'a': 'aa', 'b': 'bb', 'c': 'cc', 'd': 'dd'}
     for key, val in dicts.items():
         print(f'{key} : {val}')
+
+
+def func4():
+    """
+    Вывод елочки из указанного количества символов.
+    """
+    char = str(input('Введите символ: '))
+    max_line = int(input('Количество линий '))
+    for i in range(1, max_line+1):
+        for j in range(1, 1+i):
+            print(char, end='')
+        print('\n')
+
+
+
+
+# func1()
+# func2()
+# func3()
+func4()
