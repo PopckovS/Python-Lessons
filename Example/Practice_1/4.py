@@ -69,6 +69,12 @@ def func3():
 def func4():
     """
     Вывод елочки из указанного количества символов.
+    К примеру так:
+        *
+        **
+        ***
+        ****
+        *****
     """
     char = str(input('Введите символ: '))
     max_line = int(input('Количество линий '))
@@ -78,9 +84,41 @@ def func4():
         print('\n')
 
 
+def func5():
+    """
+    Вывоод елочки, от 0 до указанного числа, пример:
+        1
+        2 3
+        4 5 6
+        7 8 9 10
+        ...
+    """
+
+    # Вывод чисел от 0 до введенного, в виде елочки
+    number = 1
+    max = int(input('Ведите число :'))
+    line_min = 0
+    line_max = 1
+
+    while number <= max:
+        if line_min == line_max:
+            line_min = 0
+            line_max += 1
+            print('\n')
+
+        # Опционально, для красивого вывода, можно заменить на
+        # print(number, end=' ')
+        if number == max:
+            print(number)
+        else:
+            print(number, end=' ')
+
+        number += 1
+        line_min += 1
 
 
 # func1()
 # func2()
 # func3()
-func4()
+# func4()
+func5()
