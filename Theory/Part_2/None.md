@@ -13,3 +13,21 @@ None - это класс у которого реализован паттерн
     # True
     # True
 ```
+
+Тип данных `None` занимает `16 байт`, является классом и реализует 
+паттерн `singlton`
+
+```python
+    import sys
+    
+    var = None
+    
+    memory = sys.getsizeof(var)
+    
+    print(var.__sizeof__())
+    print(memory)
+    
+    # Вывод
+    # 16
+    # 16
+```
