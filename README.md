@@ -1,4 +1,4 @@
-Python-programm
+Python-Lessons
 ---
 
 Сборник теории и решения практических упражнений по python-3.8.
