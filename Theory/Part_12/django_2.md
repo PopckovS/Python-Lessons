@@ -25,7 +25,7 @@ def categories(request, catID: int):
 ---
 Обработка исключений
 ---
-В файле с настройками `settings.py` есть переменная, что отвечает за
+В файле с настройками `coolsite/settings.py` есть переменная, что отвечает за
 настройку отладки, при параметре `True` мы находимся в режиме отладки,
 при котором страница `404` отображает дополнительную информацию для 
 разработчика.
@@ -33,7 +33,6 @@ def categories(request, catID: int):
 ```python
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 ALLOWED_HOSTS = []
 ```
 
@@ -51,13 +50,11 @@ ALLOWED_HOSTS = ['127.0.0.1']
 ---
 Переопределение страницы ошибок
 ---
-В главном файле настроек `settings.py` можно переопределить системную 
+В главном файле настроек `coolsite/settings.py` можно переопределить системную 
 переменную `handler404` присвоить ей функцию, которая будет отрабатывать 
-при ошибке 404
+при ошибке `404`
 
 ```python
-from women.views import *
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('women.urls'))
@@ -77,10 +74,11 @@ def pageNotFound(request, exception):
 ```
 
 В случае если требуется в любом другом виде, при неком условии отобразить 
-страницу 404, то сделать это можно при помощи спец метода `Http404()`
+страницу `404`, то сделать это можно при помощи спец метода `Http404()`
+делается это путем поднятия ошибки `raise`
 
 ```python
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse, HttpResponseNotFound, Http404
 
 def archive(request, year):
     if int(year) > 2021:
@@ -99,14 +97,14 @@ def archive(request, year):
 мы всегда будем видить страницу с отладочной информацией.
 
 ---
-Создание Редиректов 301, 302
+Создание редиректов 301, 302
 ---
 
-301 - Ресурс перемещен на постоянной основе.
+`301` - Ресурс перемещен на постоянной основе.
 
-302 - Ресурс перемещен на временной основе.
+`302` - Ресурс перемещен на временной основе.
 
-Импортируем спей функцию `redirect()` которой указываем куда делать 
+Импортируем специальную функцию `redirect()` которой указываем куда делать 
 перенаправление, при определенных обстоятельствах, в дефолтном 
 использовании `redirect()` пользует перенаправление с кодом `302`
 
@@ -127,9 +125,45 @@ def archive(request, year):
 перенаправление будет постоянным.
 
 ```python
-    return redirect('/', permanent=True)
+from django.shortcuts import render, redirect
+
+def archive(request, year):
+    if int(year) > 2021:
+        return redirect('/', permanent=True)
+
+    return HttpResponse(f"<h1>Архив по годам {year}</h1>")
 
     # Вывод в терминале
     # "GET /archive/2025 HTTP/1.1" 301 0
 ```
 
+Когда мы явно указываем редирект на страницу, можно использовать не только
+хардкорные пути, но и алиасы, которые хорошо использовать в случае если
+путь может поменяться, а сам алиас останется
+
+```python
+return redirect('/', permanent=True)
+```
+
+Заменяем на `home`
+
+```python
+return redirect('home', permanent=True)
+```
+
+Задать такой алиас для определенного пути, можно в самих маршрутах
+`women/urls.py`
+
+```python
+# URL внутри приложения women
+urlpatterns = [
+    path('', index, name='home'),
+
+    path('categories/<int:catID>', categories),
+
+    re_path(r'^archive/(?P<year>[0-9]{4})', archive),
+]
+```
+
+Теперь обращаясь к этому пути по его алиасу `home` будет отрабатывать 
+маршрут `women/`
