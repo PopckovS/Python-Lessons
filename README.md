@@ -153,8 +153,9 @@ Python-Lessons
 
 12. **Часть №12. Django :**
    
-    - [Урок №1 Установка, начало. ](Theory/Part_12/django_1.md)
-    - [Урок №2 ](Theory/Part_12/django_2.md)
+    - [Урок №1 ](Theory/Part_12/django_1.md) ( Установка, URL )
+    - [Урок №2 ](Theory/Part_12/django_2.md) ( GET, POST, обработка исключений, 404 )
+    - [Урок №3 ](Theory/Part_12/django_3.md) ( Модели, миграции, создание пользователей, подключение моделей к админке )
 
 ---
 
