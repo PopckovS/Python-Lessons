@@ -127,3 +127,139 @@ class Choice(models.Model):
     votes = models.IntegerField(default=0)
 ```
 
+---
+Создание миграции на модели
+---
+
+После того как модели для приложения `polls` созданы, на эти модели 
+требуется создать миграции, миграции для моделей именно приложения `polls`
+можно создать при помощи следующей команды:
+
+```
+python3 manage.py makemigrations polls
+
+# Вывод
+# Создана миграция с созданием 2 моделей/таблиц
+Migrations for 'polls':
+  polls/migrations/0001_initial.py
+    - Create model Question
+    - Create model Choice
+```
+
+После этого будет создана миграция именно и только для приложения `polls`
+и будет помещена в пакет `polls/migrations` сформирована в файл 
+`0001_initial.py` в последующем каждая новая миграция, на новую модель или 
+изменение старых моделей будет сформирована и положена в новый файл миграции,
+с номером по порядку.
+
+---
+Просмотр SQL кода, что создан миграцией 
+---
+Когда миграция на основе новых моделей создана, она еще не применена, то
+есть миграция создана и заложена в файл `0001_initial.py` но еще не применена,
+и в самой БД таблицы на ее основе не созданы.
+
+Перед запуском миграции на исполнение, можно посмотреть тот `SQL` код
+который будет применен этой миграцией, сделать это можно следующим способом.
+
+Используем специальную утилиту `sqlmigrate` по следующему примеру, 
+`sqlmigrate <project_name> <number_of_migration>` посмотрим `SQL` 
+созданных моделей:
+
+```
+python3 manage.py sqlmigrate polls 0001
+
+
+    BEGIN;
+    --
+    -- Create model Question
+    --
+    CREATE TABLE "polls_question" (
+      "id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, 
+      "question_text" varchar(200) NOT NULL, 
+      "pub_date" datetime NOT NULL
+     );
+    --
+    -- Create model Choice
+    --
+    CREATE TABLE "polls_choice" (
+      "id" integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+      "choice_text" varchar(200) NOT NULL,
+      "votes" integer NOT NULL,
+      "question_id" bigint NOT NULL 
+      REFERENCES "polls_question" ("id") DEFERRABLE INITIALLY DEFERRED
+     );
+    --
+    --
+    CREATE INDEX 
+    "polls_choice_question_id_c5b4b260" ON "polls_choice" ("question_id");
+    --
+    COMMIT;
+```
+
+Именно этот `SQL` и будет выполнен при запуске миграции.
+
+Первичные ключи созданы в таблицах автоматически, даже без описания их в 
+самих моделях.
+
+В классе моделей мы определяли названия классов с большой буквы, в запросе
+видим что Django автоматически переводит название моделей в нижний регистр, и 
+добавляет префикс в виде названия приложения, таким образом это позволяет
+по первому слову таблицы сразу определить к какому приложению оно относится
+`polls_choice` и `polls_question`.
+
+Также при создании связи на уровне СУБД, название поля по которому будет 
+создана связь, `question` автоматически получает `id` для указания, что это 
+поле `question_id` служит связью.
+
+Помимо просмотр SQL при помощи `sqlmigrate` также есть команда для проверки
+ошибок в миграциях, для этого используем команду:
+
+      python3 manage.py check
+
+В результате получаем ответ:
+
+      System check identified no issues (0 silenced)
+
+---
+Применение миграций `migrate`
+---
+
+Когда мы создали миграцию и посмотрели на ее `SQL` код, теперь ее 
+требуется исполнить, для этого можно воспользоваться все той же командой
+`python3 manage.py migrate` она анализирует все приложения, ищет все файлы
+в папках миграций всех приложений, и сверяет не появилось ли там новых 
+миграций, информация о том какие миграции уже были применены, хранятся в
+специальных таблицах в БД.
+
+```
+python3 manage.py migrate
+
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, polls, sessions
+Running migrations:
+  Applying polls.0001_initial... OK
+```
+
+В выводе можно увидеть что для приложений: admin, auth, contenttypes, 
+polls, sessions ведется поиск на новые миграции, в разделе 
+`Running migrations` показаны какие миграции применены к БД, строка
+`polls.0001_initial` говорит о том что для приложения `polls` применена
+миграция `0001_initial`  файла `polls/migrations/0001_initial.py`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
