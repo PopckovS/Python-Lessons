@@ -183,7 +183,7 @@ Python-Lessons
       - [ Практика ](Algorithm/binary/binary.py)
    3. Сортировка выбором
       - [ Теория ](Algorithm/selection/selection_sort.md)
-      - [ Практика ](Algorithm/selection/selection_sort.md)
+      - [ Практика ](Algorithm/selection/selection_sort.py)
 
 ---
 Тестирование и CI / CD
