@@ -156,7 +156,9 @@ Python-Lessons
     - [Урок №1 ](Theory/Part_12/django_1.md) ( Установка, URL )
     - [Урок №2 ](Theory/Part_12/django_2.md) ( GET, POST, обработка исключений, 404 )
     - [Урок №3 ](Theory/Part_12/django_3.md) ( Модели, миграции, создание пользователей, подключение моделей к админке )
-    - [Урок №4 ](Theory/Part_12/django_4.md) ( Пользователь )
+    - [Урок №4 ](Theory/Part_12/django_4.md) ( Супер юзер )
+    - [Урок №5 ](Theory/Part_12/django_5.md) ( Views )
+
 ---
 
 Практика Python :
