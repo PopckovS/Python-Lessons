@@ -216,9 +216,8 @@ all_questions = Question.objects.all()
 Когда все записи в виде множества обьектов, попадают в шаблон, мы
 можем вывести их в шаблон при помощи синтаксиса шаблонизатора.
 
-
 ---
-`Пример: Цикл for`
+`Пример 1: Цикл for`
 
 Если мы просто передаем в шаблон текст в виде не которого списка
 
@@ -240,15 +239,55 @@ def index(request):
     {% endfor %}
 </ul>
 
-
 О сайте
 Добавить статью
 Обратная связь
 Войти
 ```
 
+---
+`Пример 2: Цикл for и условие if`
 
+Передаем в шаблон набор обьектов полученных из модели, каждый из
+обьектов имеет свои атрибуты, вывести его атрибуты можно указывая их 
+через точку, так как если бы мы вызывали атрибуты обьекта прямо в 
+`python3`
 
+```python
+def index(request):
+    all_questions = Question.objects.all()
+    context = {
+        'var_title': 'Главная страница для приложения polls',
+        'all_questions': all_questions,
+    }
+    return render(request, 'polls/index.html', context=context)
+```
+
+```html
+    <h3>{{ var_title }}</h3>
+
+    {% if all_questions %}
+        <ul>
+            {% for question in all_questions %}
+                <li>
+                    <a href="/polls/{{ question.id }}">
+                        {{ question.question_text }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Вопросов нету</p>
+    {% endif %}
+
+Главная страница для приложения polls
+
+Вопрос №1
+Вопрос №2
+Вопрос №3
+Вопрос №4
+Вопрос №5
+```
 
 
 
