@@ -117,14 +117,135 @@ def index(request):
 
 Таким образом мы можем получать записи из БД, и отдавать их
 пользователю, но делать это на прямую прямо в методе вида не удобно,
-для этого есть шаблоны
+для этого есть шаблоны.
 
 ---
-
+Шаблоны `templates` и метод `render`
 ---
 
+Для работы шаблонов внутри приложения, требуется создать папку `templates`
+внутри этого приложения, то есть внутри каждого из приложений есть своя
+директория `templates`.
+
+Когда проект будет собран в финальную версию, все шаблоны будут помещены 
+в единую директорию `templates`, и если среди них есть шаблоны с одинаковыми
+названиями, то будет путаница, для того чтобы этого не произошло принято,
+внутри каждого из них создать еще поддиректорию с названием этого 
+приложения.
+
+Для приложения `women` это `templates/women`, для `polls` это 
+`templates/polls`.
+
+В файле настроек `collsite/settings.py` проекта есть параметр
+`INSTALLED_APPS` в котором описываются все приложения, что подключаются
+к проекту как дефолтные, так и созданные нами. Также в настройках есть
+параметр `TEMPLATES` который отвечает за поведение проекта в отношении
+шаблонов, одним из параметров является `'APP_DIRS': True` если он 
+установлен в `True` то поиск всех шаблонов для проектов что перечислены
+в `INSTALLED_APPS` будет происходить в их поддиректориях `templates`
+
+```python
+    TEMPLATES = [
+        {
+            'BACKEND': 'django.template.backends.django.DjangoTemplates',
+            'DIRS': [],
+            'APP_DIRS': True,
+            'OPTIONS': {
+                'context_processors': [
+                    'django.template.context_processors.debug',
+                    'django.template.context_processors.request',
+                    'django.contrib.auth.context_processors.auth',
+                    'django.contrib.messages.context_processors.messages',
+                ],
+            },
+        },
+    ]
+```
+
+Как использовать шаблоны в видах. 
+
+Для того чтобы использовать шаблоны в видах, нам потребуется специальный
+метод `render` этот метод первым аргументом принимает первый параметр 
+метода вида `request`, второй параметр это путь к шаблону `html`
+
+В файле `women/views.py` использование шаблонов:
+```python
+from django.shortcuts import render
+
+def index(request):
+    """Главная страница"""
+    return render(request, 'polls/index.html')
+```
+
+Таким образом мы указываем что для отработки метода `index` в 
+приложении `polls` надо использовать шаблон по пути 
+`templates/polls/index.html` внутри приложения `polls`
+а полный путь от корня сайта будет `polls/templates/polls/index.html`
+
+Для передачи переменных в шаблонизатор, метода `render` есть еще один 
+параметр `context` - это словарь с переменными.
+
+Импортируем модель `Question` и получим из нее все записи, все записи
+из таблицы будут представлены в виде набора обьектов класса `Question`
+
+```python
+from .models import Question
+
+def index(request):
+    all_questions = Question.objects.all()
+    context = {
+        'var_title': 'Главная страница для приложения polls',
+        'latest_question_list': all_questions,
+    }
+    return render(request, 'polls/index.html', context=context)
+```
+
+Получение всех записей из модели, возвращает особое множество типа
+`QuerySet`
+
+```python
+all_questions = Question.objects.all()
+```
+
+---
+Шаблонизатор
+---
+
+`Jinja2` - шаблонизатор который используется в `Django`.
+
+Когда все записи в виде множества обьектов, попадают в шаблон, мы
+можем вывести их в шаблон при помощи синтаксиса шаблонизатора.
 
 
+---
+`Пример: Цикл for`
+
+Если мы просто передаем в шаблон текст в виде не которого списка
+
+```python
+def index(request):
+    """Главная страница опросов"""
+    context = {
+        'title': 'Women Главная страница',
+        'menu': ['О сайте', 'Добавить статью', 'Обратная связь', 'Войти']
+    }
+    return render(request, 'women/index.html', context=context)
+```
+```html
+<ul>
+    {% for line in menu %}
+        <li>
+            {{ line }}
+        </li>
+    {% endfor %}
+</ul>
+
+
+О сайте
+Добавить статью
+Обратная связь
+Войти
+```
 
 
 
