@@ -289,6 +289,75 @@ def index(request):
 Вопрос №5
 ```
 
+---
+Наследование шаблонов
+---
+Что бы не дублировать часть шаблонов, шаблоны можно наследовать, 
+создадим еще один шаблон `base.html` блок с названием 
+`{% block mainmenu %}` будет вмещать в себя меню, это меню будет 
+учавствовать в нескольких разных видах, по этому мы ее и выносим в
+отдельный блок.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+
+    {% block mainmenu %}
+        <ul>
+            {% for line in menu %}
+                <li>{{ line }}</li>
+            {% endfor %}
+        </ul>
+    {% endblock mainmenu %}
+
+    
+    {% block content %}
+        {# Тут будет внутренний контент #}
+    {% endblock content %}
+
+</body>
+</html>
+```
+
+Другой блок `{% block content %}` будет содержать уже уникальные 
+данные, которые будут свои для каждого из видов.
+
+Создадим 2 других вида, что будут наследоваться от основного шаблона.
+
+Шаблон `index.html`
+
+```html
+{% extends 'women/base.html' %}
+
+{% block content %}
+    <h1>{{ title }}</h1>
+    <p>Содержимое главной страницы</p>
+{% endblock content %}
+
+```
+
+Шаблон `about.html`
+
+```html
+{% extends 'women/base.html' %}
+
+{% block content %}
+    <h1>{{ title }}</h1>
+    <p>Содержимое страницы о сайте</p>
+{% endblock content %}
+```
+
+
+
+
+
+
+
 
 
 
