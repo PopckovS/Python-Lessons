@@ -159,7 +159,7 @@ Python-Lessons
     - [Урок №4 ](Theory/Part_12/django_4.md) ( Supeuser, Получение данных из моделей )
     - [Урок №5 ](Theory/Part_12/django_5.md) ( Templates, Views, Jinja2 )
     - [Урок №6 ](Theory/Part_12/django_6.md) ( Подключение статических файлов )
-    - [Урок №7 ](Theory/Part_12/django_7.md) ( Установка ckeditor, настройка админки )
+    - [Урок №7 ](Theory/Part_12/django_7.md) ( Отправка Email, Установка ckeditor, настройка админки )
 
 ---
 
