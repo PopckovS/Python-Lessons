@@ -201,11 +201,31 @@ class Model_1(models.Model):
 ---
 
 Когда мы создали модели в `python/model.py`, эти модели можно 
-зарегистрировать в `python/admin.py` 
+зарегистрировать в `python/admin.py` и тем подключить эти модели в
+админку, регистрировать модели можно следующей командой : 
 
-`list_display_links` - что является ссылкой на сам обьект
-`search_fields` - по как и с полем вести поиск в админке
-`list_display` - Что показывать на дисплее админки
+```python
+from django.contrib import admin
+from .models import python_section, python_lesson
+
+admin.site.register(python_section)
+admin.site.register(python_lesson)
+```
+
+В этом же файле можно зарегистрировать специальные классы, 
+которые будут наследоваться от `admin.ModelAdmin` в нем можно 
+создать ряд списков или множеств, с заранее предопределенными
+именами, эти параметры будут отвечать за то как отображать и 
+взаимодействовать с моделью через аминку:
+
+1) `list_display_links` - какие поля из отображаемых будут являться 
+ ссылками на сам обьект.
+2) `search_fields` - по каким полям вести поиск.
+3) `list_display` - какие поля показывать в разделе просмотра
+записей модели.
+
+После создания таких классов, передаем их в качестве второго 
+параметра при регистрации моделей.
 
 ```python
 from django.contrib import admin
@@ -229,4 +249,6 @@ class python_lesson_admin(admin.ModelAdmin):
 admin.site.register(python_section, python_section_admin)
 admin.site.register(python_lesson, python_lesson_admin)
 ```
+
+
 
