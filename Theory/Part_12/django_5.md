@@ -392,6 +392,124 @@ def index(request):
 {% endautoescape %}
 ```
 
+---
+
+Формирование URL в шаблонах
+---
+
+Для этого используется специальный тег такого формата :
+
+`{% url '<URL-алрес или имя маршрута>'[параметры ссылки] %}`
+
+Мы можем указывать `url` путь хардкодно, а можем создавать
+динамические пути.
+```html
+ <a href="/">
+    <div class="logo"></div>
+ </a>
+```
+
+Создание динамического пути, мы можем указать название url 
+маршрута, о самое название которое мы указываем при определении 
+url
+
+```python
+urlpatterns = [
+    path('', index, name='home'),
+]
+```
+
+И далее по нему обращаться в маршрутах
+
+```html
+<a href="{% url 'home' %}">
+    <div class="logo"></div>
+</a>
+```
+
+---
+
+Если наш url маршрут принимает некоторый параметр типа id
+записи в таблице, примеру такого типа `post/<int:post_id>/`
+
+```python
+urlpatterns = [
+    path('post/<int:post_id>/', show_post, name='post')
+]
+```
+
+То этот параметр мы можем указывать после названия url, 
+следующим образом
+
+```html
+<a href="{% url 'post' p.pk %}">
+    Читать пост
+</a>
+
+post/1
+post/3
+post/5
+```
+
+---
+
+Также есть и другой метод создания таких динамических ссылок,
+которые привязаны к отображению не котрой модели, для этого в
+самой модели создается специальный метод с предопределенным
+названием `get_absolute_url`
+
+С начала импортируем метод `from django.urls import reverse` и
+реализуем метод `get_absolute_url` где первый параметр это название
+маршрута `url` второй, именованный параметр указывает те самые
+дополнительные параметры, что передаются вместе с маршрутом 
+
+```python
+from django.db import models
+from django.urls import reverse
+
+class Model_1(models.Model):
+    title = models.CharField(max_length=255)
+    content = models.TextField(blank=True)
+    is_published = models.BooleanField(default=True)
+
+    def get_absolute_url(self):
+        return reverse('post', kwargs={'post_id': self.pk})
+        # return reverse('post', kwargs={'post_id': self.pk,'is_published': self.is_published})
+```
+
+Этот способ сформирует такой же url путь как и превыдущий, если
+нам требуется указать еще один параметр, то указываем его так:
+
+```python
+
+    def get_absolute_url(self):
+        return reverse(
+                    'post', 
+                    kwargs={
+                        'post_id': self.pk, 
+                        'is_published': self.is_published
+                    }
+        )
+```
+
+Это сформирует путь такого типа `post/5/True`  или `post/5/False`.
+
+Когда мы указываем этот путь в шаблоне, мы можем использовать этот
+самый метод прямо в шаблоне, только указывая его уже как атрибут,
+к примеру так `{{ p.get_absolute_url }}`
+
+Следующие 2 метода полностью одинаковые:
+
+```html
+<p class="link-read-post">
+    <a href="{% url 'post' p.pk %}">Читать пост</a>
+    <a href="{{ p.get_absolute_url }}">Читать пост</a>
+</p>
+```
+
+
+
+
 
 
 
