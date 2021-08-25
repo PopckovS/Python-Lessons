@@ -161,6 +161,7 @@ Python-Lessons
     - [Урок №6 ](Theory/Part_12/django_6.md) ( Подключение статических файлов )
     - [Урок №7 ](Theory/Part_12/django_7.md) ( Отправка Email, Установка ckeditor, настройка админки )
     - [Урок №8 ](Theory/Part_12/django_8.md) ( Связи между моделями, Form, )
+    - [Взаимодействие с БД ](Theory/Part_12/django_sql.md)
 
 ---
 
