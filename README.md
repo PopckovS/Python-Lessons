@@ -160,7 +160,7 @@ Python-Lessons
     - [Урок №5 ](Theory/Part_12/django_5.md) ( Templates, Views, Jinja2, Фильтры шаблонов )
     - [Урок №6 ](Theory/Part_12/django_6.md) ( Подключение статических файлов )
     - [Урок №7 ](Theory/Part_12/django_7.md) ( Отправка Email, Установка ckeditor, настройка админки )
-    - [Урок №8 ](Theory/Part_12/django_8.md) ( Form )
+    - [Урок №8 ](Theory/Part_12/django_8.md) ( Связи между моделями, Form, )
 
 ---
 
