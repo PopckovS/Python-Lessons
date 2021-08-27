@@ -1,7 +1,8 @@
 Python-Lessons
 ---
 [comment]: <> (https://api.github.com/users/PopckovS)
-Сборник теории и решения практических упражнений по python-3.8.
+Сборник теории и решения практических упражнений по python-3.8 
+и многое другое.
 
 [Ссылки на полезный материал.](links.md)
 
@@ -161,7 +162,7 @@ Python-Lessons
     - [Урок №6 ](Theory/Part_12/django_6.md) ( Подключение статических файлов )
     - [Урок №7 ](Theory/Part_12/django_7.md) ( Отправка Email, Установка ckeditor, настройка админки )
     - [Урок №8 ](Theory/Part_12/django_8.md) ( Связи между моделями, Form, )
-    - [Взаимодействие с БД ](Theory/Part_12/django_sql.md)
+    - [Взаимодействие с Моделями, БД ](Theory/Part_12/django_sql.md)
 
 ---
 
@@ -195,4 +196,14 @@ Python-Lessons
 
 1. **Часть №1 :**
     
-    - [Механизм CI / CD](Other-theory/Part_1/Lesson_CI_CD.md)
+    - [Механизм CI / CD](Test/Lesson_CI_CD.md)
+
+---
+
+Разное
+---
+
+1. **Теория :**
+
+    - [Принципы KISS](Other-theory/KISS.md)
+    
