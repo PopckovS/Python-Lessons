@@ -164,6 +164,11 @@ Python-Lessons
     - [Урок №8 ](Theory/Part_12/django_8.md) ( Связи между моделями, Form, )
     - [Взаимодействие с Моделями, БД ](Theory/Part_12/django_sql.md)
 
+
+13. **Часть №13. Паттерны :**
+
+     - [Делегирование и Композиция](Theory/Part_13/pattern_1.md)   
+
 ---
 
 Практика Python :
@@ -177,7 +182,6 @@ Python-Lessons
     - [Сборник примеров №4](Example/Practice_1/4.py)
     - [Работа с модулем CSV ](Example/Practice_1/CSV/CSV.py)
     - [Программа для скачивания видео с YouTube ](Example/Practice_1/get_videos.py)
-
 
 ---
 Алгоритмы и структуры данных
@@ -205,5 +209,5 @@ Python-Lessons
 
 1. **Теория :**
 
-    - [Принципы KISS](Other-theory/KISS.md)
+    - [Принципы KISS, DRY, SOLID, YAGNI](Other-theory/KISS.md)
     
