@@ -63,7 +63,7 @@ Python-Lessons
 
     - [Функции](Theory/Part_5/Functions.md)
     - [Замыкания функций](Theory/Part_5/Function_closures.md)
-    - [Функции - lambda](Theory/Part_5/Function_lambda.md)
+    - [Функции - lambda, map, filter, zip](Theory/Part_5/Function_lambda.md)
     - [Аргументы функции упаковка / распаковка](Theory/Part_5/Packing_and_unpacking_function_arguments.md)
     - [Аргументы функции по умолчанию](Theory/Part_5/Default_function_arguments.md)
 
@@ -209,4 +209,5 @@ Python-Lessons
 1. **Теория :**
 
     - [Принципы KISS, DRY, SOLID, YAGNI](Other-theory/KISS.md)
+    - [REST, SOAP](Other-theory/REST_SOAP.md)
     
