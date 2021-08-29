@@ -66,7 +66,6 @@ Python-Lessons
     - [Функции - lambda](Theory/Part_5/Function_lambda.md)
     - [Аргументы функции упаковка / распаковка](Theory/Part_5/Packing_and_unpacking_function_arguments.md)
     - [Аргументы функции по умолчанию](Theory/Part_5/Default_function_arguments.md)
-    - [Методы range и xrange](Theory/Part_5/Method_range_xrange.md)
 
 
 6. **Часть №6. Обьекты :**

@@ -16,21 +16,26 @@ Ellipsis
 
     func1()
     func2()   
+
+    # Вывод
+    # Внутреняя функция func1
+    # Внутреняя функция func2
 ```
 
-2) Второй способ это отсутствие каких либо аргументов вабще, None это тоже аргумент.
+2) Второй способ это отсутствие каких либо аргументов совсем, `None`
+это тоже аргумент.
    
 ```python
-        def original_num(m=...):
-            if m is ...:
-                print('Было передано ...')
-            if m is None:        
-                print('Было передано None')
-            if instance(m, int) :
-                print('Было передано int')
+    def original_num(m=...):
+        if m is ...:
+            print('Было передано ...')
+        if m is None:        
+            print('Было передано None')
+        if instance(m, int) :
+            print('Было передано int')
 
-        original_num()
+    original_num()
 
-        # Вывод
-        # print('Было передано ...')
+    # Вывод
+    # print('Было передано ...')
 ```

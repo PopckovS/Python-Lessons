@@ -1,4 +1,18 @@
 
+[comment]: <> (Композиция и агрегация)
+
+[comment]: <> (---)
+
+[comment]: <> (SOAP )
+
+[comment]: <> (JSON RPC )
+
+[comment]: <> (REST API)
+
+[comment]: <> (Unit тесты)
+
+[comment]: <> (Django FastAPI)
+
 Делегирование  
 ---
 
