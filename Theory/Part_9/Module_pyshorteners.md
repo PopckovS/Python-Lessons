@@ -1,4 +1,4 @@
-Модуль pyshorteners
+Модуль `pyshorteners`
 ---
 ---
 
