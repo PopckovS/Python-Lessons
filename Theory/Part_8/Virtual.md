@@ -13,11 +13,11 @@
 
     pip3 install --user virtualenv virtualenvwrapper
 
-Установка python3.8 для создания вирт-окруж
+Установка python3.8 для создания вирт-окружение
 
     sudo apt install python3.8-venv
 
-В самом созданном проекте создаем вирт-окруж с версией 3.8
+В самом созданном проекте создаем вирт-окружение с версией 3.8
 
     python3.8 -m venv venv
 
