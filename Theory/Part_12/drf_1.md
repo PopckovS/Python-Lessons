@@ -131,22 +131,120 @@ from . import views
 from .api import views
 
 urlpatterns = [
-    path('', views.PostListView.as_view(), name=None)
+     path('list', views.PostListView.as_view(), name=None),
 ]
 ```
 
+Теперь если мы перейдем на URL `/list` то отработает метод 
+представления от нашего API, сработает представление `PostListView`
+которое наследуется от `ListAPIView` которое отрабатывает по 
+методу `GET`, метод `GET` в архитектуре `REST` покажет нам все
+записи по этой модели, модели к которой мы привязаны. 
+
 ---
 
+Таким образом мы создали представление API которое отдает 
+данные на `GET` запрос, теперь создадим другие методы, для 
+создания полноценной `CRUD` системы
 
+`POST` — это метод, используемый для создания новых ресурсов в
+нашей базе данных либо для обновления старых.
 
+Создадим представление API которое будут отрабатывать на метод 
+`POST` и тем самым будет создавать новые сущности в модели, 
+внешне это будет реализовано как отправка формы, загрузкой 
+картинки.
 
+```python
+from ..models import Post
+from . import serializers
+from rest_framework import generics, status
+from rest_framework.response import Response
 
+class PostCreateView(generics.CreateAPIView):
+    """API POST создать новую запись"""
+    queryset = Post.objects.all()
+    serializer_class = serializers.PostSerializer
 
+    def create(self, request, *args, **kwargs):
+        super(PostCreateView, self).create(request, args, kwargs)
+        response = {
+            "status_code": status.HTTP_200_OK,
+            "message": "Successfully created",
+            "result": request.data
+        }
+        return Response(response)
+```
 
+Тут метод `create` будет создавать новую запись по полученному 
+`POST` запросу.
 
+---
 
+Добавим представление для получения одной записи, обновления 
+записи и ее удаления, для отработки методов `GET` `PATCH` 
+`DELETE`
 
+```python
+class PostDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Post.objects.all()
+    serializer_class = serializers.PostSerializer
 
+    def retrieve(self, request, *args, **kwargs):
+        """Получить обьект"""
+        super(PostDetailView, self).retrieve(request, args, kwargs)
+        instance = self.get_object()
+        serializer = self.get_serializer(instance)
+        data = serializer.data
+        response = {"status_code": status.HTTP_200_OK,
+                    "message": "Successfully retrieved",
+                    "result": data}
+        return Response(response)
+
+    def patch(self, request, *args, **kwargs):
+        """Обновление"""
+        super(PostDetailView, self).patch(request, args, kwargs)
+        instance = self.get_object()
+        serializer = self.get_serializer(instance)
+        data = serializer.data
+        response = {"status_code": status.HTTP_200_OK,
+                    "message": "Successfully updated",
+                    "result": data}
+        return Response(response)
+
+    def delete(self, request, *args, **kwargs):
+        """Удаление ресурса"""
+        super(PostDetailView, self).delete(request, args, kwargs)
+        response = {"status_code": status.HTTP_200_OK,
+                    "message": "Successfully deleted"}
+        return Response(response)
+```
+
+Далее обновим наши url
+
+```python
+from django.urls import path
+from . import views
+from .api import views
+
+urlpatterns = [
+    path('list', views.PostListView.as_view(), name=None),
+    path('create', views.PostCreateView.as_view(), name=None),
+    path('<int:pk>', views.PostDetailView.as_view(), name=None)
+]
+```
+
+Метод `PostListView` принимает `GET` запрос и отдает все что
+найдено, при обращении к url:`list`
+
+Метод `PostCreateView` принимает `POST` запрос и создает запись
+по обращению на url:`create/`
+
+Метод `PostDetailView` принимает любой из `GET` `PATCH` `DELETE`
+методов, и при обращении по url:`15` применяет данный метод к 
+записи с этим `id`
+
+---
 
 
 

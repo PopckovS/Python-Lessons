@@ -166,6 +166,7 @@ Python-Lessons
     - [Взаимодействие с Моделями, БД ](Theory/Part_12/django_sql.md)
     - Django Rest Framework
       - [ Часть №1 ](Theory/Part_12/drf_1.md)
+      - [ Часть №2 ](Theory/Part_12/drf_2.md)
       
 
 13. **Часть №13. Паттерны :**
