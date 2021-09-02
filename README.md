@@ -164,7 +164,8 @@ Python-Lessons
     - [Урок №9 ](Theory/Part_12/django_9.md) ( Настройка админки )
     - [Урок №10 ](Theory/Part_12/django_10.md) ( пока разное всякое )
     - [Взаимодействие с Моделями, БД ](Theory/Part_12/django_sql.md)
-
+    - Django Rest Framework
+      - [ Часть №1 ](Theory/Part_12/drf_1.md)
       
 
 13. **Часть №13. Паттерны :**
