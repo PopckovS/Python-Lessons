@@ -243,3 +243,116 @@ urlpatterns = [
 Метод `PostDetailView` принимает любой из `GET` `PATCH` `DELETE`
 методов, и при обращении по url:`15` применяет данный метод к 
 записи с этим `id`
+
+Пагинация методом GET и Ленивая загрузка
+---
+
+[Почитать про пагинацию](https://sunscrapers.com/blog/the-ultimate-tutorial-for-django-rest-framework-pagination-part-4/)
+
+Когда мы используем метод GET для доступа к API, по URL:`/book/`
+то по дефолту получаем все найденные записи, их может быть много.
+
+Тут есть несколько важных моментов, обьектов может быть очень 
+много, и на получение данных из БД с последующей сериализацией,
+и передачей всех обьектов на фронт может занять много времени.
+
+Для таких ситуация есть механизм называемый `"Ленивая загрузка"`
+суть механизма в том что мы получаем только часть обьектов, и 
+только когда пользователь совершит действие на сайте, активируем
+`JS` скрипт, который обратится к API и получит новую небольшую
+партию записей.
+
+`Пагинация API` - при обращении к url:`/book/` методом GET, мы 
+дополнительно передам параметры, что отвечают сколько записей
+выводить, и с каким отступом.
+
+`Параметры пагинации:`
+
+1) `limit` - где параметр limit, переданный в GET, определяет 
+количество элементов которое требуется получить.
+
+2) `offset` - определяет смещение относительно начала списка.
+
+---
+
+В файле `settings.py` добавим настройки для создания пагинации,
+тут параметр `PAGE_SIZE` отвечает за то какое количество элементов
+отдавать по дефолту.
+
+```python
+REST_FRAMEWORK = {
+    ....
+    'DEFAULT_PAGINATION_CLASS' : 'rest_framework.pagination.LimitOffsetPagination' ,
+    'PAGE_SIZE': 100 ,
+    ...
+}
+```
+
+---
+
+**Пример запроса**
+
+Получить 1 единственную самую первую запись:
+
+    http://127.0.0.1:8000/book/?limit=1
+
+Ответ от сервера
+
+    {
+        "count": 4,
+        "next": "http://127.0.0.1:8000/book/?limit=1&offset=1",
+        "previous": null,
+        "results": [
+                {
+                    "id": 1,
+                    "name": "Книга-1",
+                    "type": "",
+                    "status": "",
+                    "content": "Привет мир !",
+                    "photo": "http://127.0.0.1:8000/media/photos/store/photo_2020-06-28_04-27-44.jpg",
+                    "time_create": "2021-09-02T19:04:38.254089Z",
+                    "time_update": "2021-09-02T19:04:38.254112Z",
+                    "is_published": true
+                }
+        ]
+    }
+---
+
+Получение данных для Аутентифицированных пользователей
+---
+
+
+
+В файле `/store/models.py`
+```python
+from django.db import models
+
+class Book(models.Model):
+    ...
+    owner = models.ForeignKey(
+        'auth.User', default=True, blank=True, on_delete=models.CASCADE
+    )
+    ...
+```
+
+В файле `/store/views.py`
+```python
+class BookList(generics.ListAPIView):
+    serializer_class = BooksSerializer
+    queryset = Book.objects.all()
+
+    def get_queryset(self):
+        user = self.request.user
+        return Book.objects.filter(owner=user)
+        print('='*180)
+        print('user : ', user)
+        print('='*50)
+        print('return Book.objects.filter(owner=user) : ',
+             Book.objects.filter(owner=user))
+        print('='*180)
+```
+
+
+
+
+---
