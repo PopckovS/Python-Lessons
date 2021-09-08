@@ -176,7 +176,7 @@ class BookViewSet(ModelViewSet):
 
 ---
 
-Сортировка `Ordering` в API
+Сортировка `OrderingFilter` в API
 ---
 
 Сделаем сортировку для API, импортируем `OrderingFilter`
@@ -205,13 +205,8 @@ class BookViewSet(ModelViewSet):
 
     http://127.0.0.1:8000/book/?ordering=type
 
----
+Также в сортировке можно сортировать `DESC` в обратном направлении,
+для этого требуется указать поле с отрицательным знаком
 
-
-
-
-
-
-
-
-
+    http://127.0.0.1:8000/book/?ordering=-status
+    http://127.0.0.1:8000/book/?ordering=-type

@@ -166,8 +166,9 @@ Python-Lessons
     - [Взаимодействие с Моделями, БД ](Theory/Part_12/django_sql.md)
     - Django Rest Framework
       - [ Часть №1 ](Theory/Part_12/drf_1.md)
-      - [ Часть №2 ](Theory/Part_12/drf_2.md)
-      
+      - [ Часть №2 ](Theory/Part_12/drf_2.md) (API Фильтрация, Поиск, Сортировка)
+      - [ Часть №3 ](Theory/Part_12/drf_3.md) (Аутентификация OAuth)
+      - [ Часть №4 ](Theory/Part_12/drf_4.md) (Swagger)
 
 13. **Часть №13. Паттерны :**
 
@@ -187,6 +188,7 @@ Python-Lessons
     - [Работа с модулем CSV ](Example/Practice_1/CSV/CSV.py)
     - [Программа для скачивания видео с YouTube ](Example/Practice_1/get_videos.py)
     - [Игра Крестики-Нолики на 2 игрока](Example/Practice_1/tic_tac_toe.py)
+    - [Конвертация изображений и наложение изображений](Example/Practice_1/convertor_cover_img.py)
 
 
 ---
