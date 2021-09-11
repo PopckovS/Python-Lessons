@@ -104,8 +104,8 @@ Python-Lessons
     - [Функции globals() locals() vars()](Theory/Part_8/Scopes_functions.md)
     - [Хэширование hash()](Theory/Part_8/Hash.md)
     - [Создание модулей](Theory/Part_8/Module.md)
-    - [Виртуальное окружение venv](Theory/Part_8/Virtual.md)
     - [Как публиковать пакеты на PyPi](Theory/Part_8/pypi.md)
+    - [Виртуальное окружение venv и freeze. Установка зависимостей.](Theory/Part_8/Virtual.md)
 
 
 9. **Часть №9. Модули :**
