@@ -170,7 +170,8 @@ Python-Lessons
       - [ Часть №3 ](Theory/Part_12/drf_3.md) (Аутентификация OAuth)
       - [ Часть №4 ](Theory/Part_12/drf_4.md) (Swagger)
     - Django Celery
-      - [ Часть №1 ](Theory/Part_12/celery_1.md)
+      - [ Часть №1 ](Theory/Part_12/celery_1.md) (Установка)
+      - [ Часть №2 ](Theory/Part_12/celery_2.md) (Начало работы)
 
 
 13. **Часть №13. Паттерны :**
