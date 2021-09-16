@@ -31,11 +31,29 @@ Signals - сигналы
 > 
 >2. Использовать декоратор `receiver`
 
+---
+
+
+
+
+---
+
+
+Пример сигнала срабатывающего после создания/обновления записи
+в модели `ImagesModel`
+В файле `models.py`
 ```python
 from django.dispatch import receiver, Signal
 from django.db.models.signals import post_save, 
                                      pre_delete, 
                                      pre_save
+
+@receiver(post_save, sender=ImagesModel)
+def on_change_post(sender, instance, **kwargs):
+    """Сигнал post_save - Создаем мини версию изображение"""
+    if instance.big_image and os.path.isfile(instance.big_image.path):
+        create_small_img(instance, size=500)
+
 ```
 
 
