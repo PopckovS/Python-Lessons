@@ -219,8 +219,13 @@ Python-Lessons
 Разное
 ---
 
-1. **Теория :**
+1. **Теория пограммирвоания :**
 
     - [Принципы KISS, DRY, SOLID, YAGNI](Other-theory/KISS.md)
     - [REST, SOAP](Other-theory/REST_SOAP.md)
-    
+
+
+2. **Теория :**
+
+   - [AMQR Протокол](Other-theory/AMQR.md)
+
