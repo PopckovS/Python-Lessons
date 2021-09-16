@@ -155,7 +155,7 @@ Python-Lessons
    
     - [Урок №1 ](Theory/Part_12/django_1.md) ( Установка, URL )
     - [Урок №2 ](Theory/Part_12/django_2.md) ( GET, POST, обработка исключений, 404 )
-    - [Урок №3 ](Theory/Part_12/django_3.md) ( Модели, миграции, создание пользователей, подключение моделей к админке )
+    - [Урок №3 ](Theory/Part_12/django_3.md) ( Модели, миграции, создание пользователей, модели и админка)
     - [Урок №4 ](Theory/Part_12/django_4.md) ( Supeuser, Получение данных из моделей )
     - [Урок №5 ](Theory/Part_12/django_5.md) ( Templates, Views, Jinja2, Фильтры шаблонов )
     - [Урок №6 ](Theory/Part_12/django_6.md) ( Подключение статических файлов )
@@ -172,6 +172,9 @@ Python-Lessons
     - Django Celery
       - [ Часть №1 ](Theory/Part_12/celery_1.md) (Установка)
       - [ Часть №2 ](Theory/Part_12/celery_2.md) (Начало работы)
+    - Django Сигналы
+      - [ Часть №1 ](Theory/Part_12/signals_1.md)
+      
 
 
 13. **Часть №13. Паттерны :**
