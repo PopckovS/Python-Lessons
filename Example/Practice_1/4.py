@@ -136,9 +136,56 @@ def func6():
     print('Salary: ', person.get('salary', 0.0))
 
 
+def func7():
+    """
+    Пример использования Monkey Patching
+    """
+    import math
+
+    # Backup the original value before monkey patching
+    original_pi = math.pi
+    print(math.pi)  # Output: 3.141592653589793
+
+    # Now monkey patch pi to have the value 3.14
+    math.pi = 3.14
+    print(math.pi)  # Output: 3.14
+
+    # Remove the patch
+    math.pi = original_pi
+    print(math.pi)  # Output: 3.141592653589793
+
+
+def func8():
+    """
+    3 способа инвертировать список.
+    Требуется развернуть список на изнанку.
+    """
+    import copy
+
+    alist = [1, 2, 3, 4, 5]
+
+    a = copy.copy(list(reversed(alist)))
+    b = alist[::-1]
+
+    c = copy.copy(alist)
+    c.reverse()
+
+    print('a = ', a, ' id = ', id(a))
+    print('b = ', b, ' id = ', id(b))
+    print('c = ', c, ' id = ', id(c))
+
+    print('\n Другой пример')
+    alist = [[1, 2], [3, 4]]
+    new_list = [x for el in alist for x in el]
+    # new_list = [el for el in alist]
+    print(new_list)
+
+
 # func1()
 # func2()
 # func3()
 # func4()
 # func5()
-func6()
+# func6()
+# func7()
+func8()
