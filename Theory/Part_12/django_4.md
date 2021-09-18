@@ -131,26 +131,3 @@ def index(request):
 по `id` или `None` 
 
 `<Model>` - 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

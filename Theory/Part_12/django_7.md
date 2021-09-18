@@ -244,11 +244,7 @@ class python_lesson_admin(admin.ModelAdmin):
     list_display_links = ('id', 'title', 'time_create')
     search_fields = ('id', 'title')
 
-    
 # Register your models here.
 admin.site.register(python_section, python_section_admin)
 admin.site.register(python_lesson, python_lesson_admin)
 ```
-
-
-

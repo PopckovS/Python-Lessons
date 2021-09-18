@@ -352,8 +352,3 @@ class BookList(generics.ListAPIView):
              Book.objects.filter(owner=user))
         print('='*180)
 ```
-
-
-
-
----

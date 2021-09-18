@@ -118,10 +118,3 @@ coolsite /
 ```html
 href="{% static 'women/css/styles.css' %}"
 ```
-
----
-
-
-
-
-

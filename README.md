@@ -153,6 +153,7 @@ Python-Lessons
 
 12. **Часть №12. Django :**
    
+    - [Удобный сборник команд](Theory/Part_12/commands.md)
     - [Урок №1 ](Theory/Part_12/django_1.md) ( Установка, URL )
     - [Урок №2 ](Theory/Part_12/django_2.md) ( GET, POST, обработка исключений, 404 )
     - [Урок №3 ](Theory/Part_12/django_3.md) ( Модели, миграции, создание пользователей, модели и админка)
@@ -163,18 +164,22 @@ Python-Lessons
     - [Урок №8 ](Theory/Part_12/django_8.md) ( Связи между моделями, Form, )
     - [Урок №9 ](Theory/Part_12/django_9.md) ( Настройка админки )
     - [Урок №10 ](Theory/Part_12/django_10.md) ( пока разное всякое )
-    - [Взаимодействие с Моделями, БД ](Theory/Part_12/django_sql.md)
+    - Django Model
+      - [Взаимодействие с Моделями, БД ](Theory/Part_12/django_sql.md)
     - Django Rest Framework
       - [ Часть №1 ](Theory/Part_12/drf_1.md)
       - [ Часть №2 ](Theory/Part_12/drf_2.md) (API Фильтрация, Поиск, Сортировка)
       - [ Часть №3 ](Theory/Part_12/drf_3.md) (Аутентификация OAuth)
       - [ Часть №4 ](Theory/Part_12/drf_4.md) (Swagger)
-    - Django Celery
+    - Django + Celery
       - [ Часть №1 ](Theory/Part_12/celery_1.md) (Установка)
       - [ Часть №2 ](Theory/Part_12/celery_2.md) (Начало работы)
+      - [ Часть №3 ](Theory/Part_12/celery_3.md) (Flower логер сообщений для Celery)
     - Django Сигналы
       - [ Часть №1 ](Theory/Part_12/signals_1.md)
-      
+    - Cookiecutter
+      - [ Часть №1 ](Theory/Part_12/cookiecutter_1.md)
+    
 
 
 13. **Часть №13. Паттерны :**

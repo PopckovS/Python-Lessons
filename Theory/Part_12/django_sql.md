@@ -4,7 +4,7 @@
 Для работы с PostgreSQL требуется установить модуль `psycopg2`
 
 ```
-pip install psycopg2-binary
+pip3 install psycopg2-binary
 ```
 
 В файл с настройками `settings.py` устанавливаем параметры для

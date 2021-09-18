@@ -506,15 +506,3 @@ class Model_1(models.Model):
     <a href="{{ p.get_absolute_url }}">Читать пост</a>
 </p>
 ```
-
-
-
-
-
-
-
-
-
-
-
-
