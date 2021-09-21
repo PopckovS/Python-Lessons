@@ -179,12 +179,15 @@ Python-Lessons
       - [ Часть №1 ](Theory/Part_12/signals_1.md)
     - Cookiecutter
       - [ Часть №1 ](Theory/Part_12/cookiecutter_1.md)
-    
+    - Unit Test
+      - [ Часть №1 ](Theory/Part_12/UnitTest_1.md)
+    - Unit Test Django Rest Framework
+      - [ Часть №1 ](Theory/Part_12/DRFUnitTest_1.md)
 
 
 13. **Часть №13. Паттерны :**
 
-     - [Делегирование и Композиция](Theory/Part_13/pattern_1.md)   
+     - [Делегирование и Композиция](Theory/Part_13/pattern_1.md)
 
 ---
 
@@ -202,6 +205,13 @@ Python-Lessons
     - [Игра Крестики-Нолики на 2 игрока](Example/Practice_1/tic_tac_toe.py)
     - [Конвертация изображений и наложение изображений](Example/Practice_1/convertor_cover_img.py)
 
+---
+Docker, Docker-compose
+---
+
+1. **Часть №1 :**
+    
+    - [Docker](Docker/docker_1.md)
 
 ---
 Алгоритмы и структуры данных
