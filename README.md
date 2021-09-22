@@ -153,7 +153,7 @@ Python-Lessons
 
 12. **Часть №12. Django :**
    
-    - [Удобный сборник команд](Theory/Part_12/commands.md)
+    - [Удобный сборник команд Django](Theory/Part_12/django_commands.md)
     - [Урок №1 ](Theory/Part_12/django_1.md) ( Установка, URL )
     - [Урок №2 ](Theory/Part_12/django_2.md) ( GET, POST, обработка исключений, 404 )
     - [Урок №3 ](Theory/Part_12/django_3.md) ( Модели, миграции, создание пользователей, модели и админка)
@@ -211,6 +211,7 @@ Docker, Docker-compose
 
 1. **Часть №1 :**
     
+    - [Удобный сборник команд Docker](Docker/docker_commands.md)
     - [Docker](Docker/docker_1.md)
 
 ---
