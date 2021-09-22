@@ -181,6 +181,62 @@ def func8():
     print(new_list)
 
 
+def func9():
+    """
+    Разница между обычной функцией и функцией-генератором
+    что использует yield для создания обьекта итератора.
+    """
+
+    def get_all_average(N):
+        """
+        Обычная функция. при N = 100 размер ее будет
+        равен = 888 байт.
+        """
+        avs = []
+        count = 0
+        s = 0
+        for i in range(1, N+1):
+            count += 1
+            s += i
+            # print(f'{s} / {count} = {s/count}')
+            avs.append(s/count)
+        return avs
+
+    print('Байт памяти 1-й функции: ', get_all_average(100).__sizeof__())
+
+    def get_number():
+        """
+        Обычная функция, возвращает список, размер этой
+        функции при списке в range(100) имеет размер 984 байт
+        """
+        return list(range(100))
+
+    x = get_number()
+    print('Байт памяти 2-й функции: ', x.__sizeof__())
+
+    def get_yield_number():
+        """
+        Функция-генератор, использует оператор yield
+        для создания обьекта генератора, и благодоря тому
+        что является итератором, занимает всего 64 байт
+        """
+        for x in range(100):
+            yield x
+        print('Это никогда не будет выведено ')
+
+    s = get_yield_number()
+
+    print('Функция-генератор: ', s)
+    print('Память функции-генератора: ', s.__sizeof__())
+
+    print(next(s))
+    print(next(s))
+    print(next(s))
+    print(next(s))
+
+
+
+
 # func1()
 # func2()
 # func3()
@@ -188,4 +244,5 @@ def func8():
 # func5()
 # func6()
 # func7()
-func8()
+# func8()
+func9()
