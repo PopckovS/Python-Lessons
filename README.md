@@ -214,6 +214,7 @@ Docker, Docker-compose
     - [Удобный сборник команд Docker](Docker/docker_commands.md)
     - [Docker](Docker/docker_1.md) (Images, Container)
     - [Dockerfile](Docker/docker_2.md)
+    - [Docke Compose](Docker/docker_compose_3.md)
 
 ---
 Алгоритмы и структуры данных

@@ -96,14 +96,18 @@ CMD ["python3", "manage.py", "migrate"]
 EXPOSE 5000
 ```
 
+---
 
+**ENV**
 
+```dockerfile
+ENV PYTHONUNBUFFERED 1
+```
 
+---
 
+**ADD**
 
-
-
-
-
-
-
+```dockerfile
+ADD . /code/
+```
