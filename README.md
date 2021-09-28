@@ -179,7 +179,7 @@ Python-Lessons
       - [ Часть №3 ](Theory/Part_12/celery_3.md) (Flower логер сообщений для Celery)
     - Django Сигналы
       - [ Часть №1 ](Theory/Part_12/signals_1.md)
-    - Безопасность  
+    - Безопасность строек, модуль django-environ
       - [ Переменные окружения и оболочки в Linux ](Theory/Part_12/environment_1.md)
       - [ Хранение данных в виртуальном окружении ](Theory/Part_12/venv_1.md)
     - Cookiecutter
