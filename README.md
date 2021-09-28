@@ -177,8 +177,11 @@ Python-Lessons
       - [ Часть №3 ](Theory/Part_12/celery_3.md) (Flower логер сообщений для Celery)
     - Django Сигналы
       - [ Часть №1 ](Theory/Part_12/signals_1.md)
+    - Безопасность  
+      - [ Переменные окружения и оболочки в Linux ](Theory/Part_12/environment_1.md)
+      - [ Хранение данных в виртуальном окружении ](Theory/Part_12/venv_1.md)
     - Cookiecutter
-      - [ Часть №1 ](Theory/Part_12/cookiecutter_1.md)
+      - [ Шаблоны Django проектов ](Theory/Part_12/cookiecutter_1.md)
     - Unit Test
       - [ Часть №1 ](Theory/Part_12/UnitTest_1.md)
     - Unit Test Django Rest Framework
