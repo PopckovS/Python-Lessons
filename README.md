@@ -110,7 +110,9 @@ Python-Lessons
 
 9. **Часть №9. Модули :**
    
-    - [Модуль os и shutil ](Theory/Part_9/Module_os.md)
+    - Модуль os
+      - [ Часть №1 ](Theory/Part_9/Module_os_1.md)
+      - [ Часть №2 ](Theory/Part_9/Module_os_2.md)
     - [Модуль sys](Theory/Part_9/Module_sys.md)
     - [Модуль functools](Theory/Part_9/Module_functools.md) (полезные функции)
     - [Модуль weakref](Theory/Part_9/Module_weakref.md) (слабые ссылки)
