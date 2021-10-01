@@ -235,6 +235,27 @@ def func9():
     print(next(s))
 
 
+def func10():
+    """
+    Примере List comprehensions для генерации списков
+    и не только списков
+    """
+    import random
+    x = random.choice([1, 2, 3])
+    print('Рандомно выбранное число: ', x)
+
+    list1 = [elem for elem in range(1, 25, 2)]
+    print(f'Тип: {type(list1)}  Содержимое: {list1}')
+
+    tuple1 = (elem for elem in range(1, 11))
+    tuple1 = tuple(tuple1)
+    print(f'Тип: {type(tuple1)}  Содержимое: {tuple1}')
+
+    set1 = {elem for elem in range(1, 11)}
+    print(f'Тип: {type(set1)}  Содержимое: {set1}')
+
+    dict1 = {elem: elem for elem in range(1, 11)}
+    print(f'Тип: {type(dict1)}  Содержимое: {dict1}')
 
 
 # func1()
@@ -245,4 +266,5 @@ def func9():
 # func6()
 # func7()
 # func8()
-func9()
+# func9()
+func10()
