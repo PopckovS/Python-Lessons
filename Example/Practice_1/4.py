@@ -278,6 +278,35 @@ def func11():
 
         print(f'Список после : {ml_1}')
 
+def func12():
+    """
+    Метод декоратор на основании полученного аргумента
+    проверяет наличие прав на доступ к методу.
+    """
+
+    permissions = ["user", "admin"]
+
+    def check_permission(perm):
+        def wrapper_permission(function):
+            def check_wrapper(*args):
+                if perm not in permissions:
+                    raise ValueError("Нет доступа")
+                result = function(*args)
+                return result
+            return check_wrapper
+        return wrapper_permission
+
+    @check_permission("user")
+    def any_user():
+        print('Есь доступ')
+
+    @check_permission("admin")
+    def for_admin():
+        print('Для admin')
+
+    any_user()
+    for_admin()
+
 # func1()
 # func2()
 # func3()
@@ -288,4 +317,5 @@ def func11():
 # func8()
 # func9()
 # func10()
-func11()
+# func11()
+func12()
