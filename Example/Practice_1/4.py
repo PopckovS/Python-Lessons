@@ -307,6 +307,36 @@ def func12():
     any_user()
     for_admin()
 
+
+def func13():
+    """
+    Создаем декоратор из класса без аргументов самого декоратора,
+    методика такова, тоже есть 2 оборачивающих функции, внешняя
+    принимает аргументом саму функцию, внутреняя принимает аргументом
+    аргументы оборачиваемой функции. Последовательность:
+        __init__(function) - Принимает функцию
+        __call__(*args, **kwargs) - Принимает аргументы функции
+    Тоетсь реализация этого способа, идет через маг метод __call__()
+    """
+
+    class MyDecorator:
+
+        def __init__(self, function):
+            # print(f'Отработал метод __init__ {function}')
+            self._function = function
+
+        def __call__(self, *args, **kwargs):
+            # print('Отработал метод __call__')
+            # print(args, type(args))
+            # print(kwargs, type(kwargs))
+            return self._function(*args, **kwargs)
+
+    @MyDecorator
+    def function(a, b):
+        return a * b
+
+    print(function(2, 5))
+
 # func1()
 # func2()
 # func3()
@@ -318,4 +348,5 @@ def func12():
 # func9()
 # func10()
 # func11()
-func12()
+# func12()
+func13()
