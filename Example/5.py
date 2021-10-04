@@ -25,3 +25,24 @@ def func1():
     print(pt.__dict__)
     print('='*20)
     print(Point.__dict__)
+
+
+def func2():
+    """
+    Спец метод __getitem__ отрабатывает когда к
+    обьекту обращаются как к элементу списка
+    """
+    from string import ascii_letters
+
+    class MyContainer(object):
+
+        def __getitem__(self, key):
+            print('key = ', key)
+            return ascii_letters[key]
+
+    my_container = MyContainer()
+
+    print(my_container[0])  # a
+    print(my_container[16])  # q
+    print(my_container[:])  # вывод всего алфавита
+
