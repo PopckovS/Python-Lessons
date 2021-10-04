@@ -205,6 +205,7 @@ Python-Lessons
     - [Сборник примеров №2](Example/Practice_1/2.py)
     - [Сборник примеров №3](Example/Practice_1/3.py)
     - [Сборник примеров №4](Example/Practice_1/4.py)
+    - [Сборник примеров №5](Example/Practice_1/5.py)
     - [Работа с модулем CSV ](Example/Practice_1/CSV/CSV.py)
     - [Программа для скачивания видео с YouTube ](Example/Practice_1/get_videos.py)
     - [Игра Крестики-Нолики на 2 игрока](Example/Practice_1/tic_tac_toe.py)
