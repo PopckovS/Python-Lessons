@@ -83,6 +83,37 @@ def func3():
             break
 
 
+def func4():
+    """
+    Создание декоратора из класса, с приемом аргументов декоратора.
+    Тут все аткже как и с декор из функций,сть обертка из 3 функций:
+    __init__(decorator_arg) Принимает аргументы самого декоратора
+    __call__(function) Принимает функцию
+    wrapper(function_args) обертка над функцией, принимает арг функции
+    """
+
+    class MyDecorator:
+
+        def __init__(self, decorator_arg):
+            self._decorator_arg = decorator_arg
+            self._function = None
+
+        def __call__(self, function):
+            self._function = function
+
+            def wrapper(*args, **kwargs):
+                result = self._function(*args, **kwargs)
+                return f'{self._decorator_arg} {result}'
+            return wrapper
+
+    @MyDecorator('Р е з у л ь т а т : ')
+    def function(a, b):
+        return a * b
+
+    print(function(10, 5))
+
+
 # func1()
 # func2()
-func3()
+# func3()
+func4()
