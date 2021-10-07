@@ -113,7 +113,34 @@ def func4():
     print(function(10, 5))
 
 
+def func5():
+    """
+    Пример декоратора с аргументами, тут будет тройная
+    вложенность функций, внешний слой принимает аргументы
+    ссамого декоратора, внутренний слой принимает функцию с
+    которой работает, а третий слой, работает как непосредственная
+    обертка над функцией которую мы декорируем.
+    """
+
+    def Decorator1(input_arg):
+        def the_real_decorator(func):
+            def wrapper(*args):
+                result = func(*args)
+                return f'input_arg={input_arg} '+result
+            return wrapper
+        return the_real_decorator
+
+
+    @Decorator1(55)
+    def func1(x, y):
+        # print(f'func1 x = {x} y = {y}')
+        return f'func1 x = {x} y = {y}'
+
+    print(func1(10, 20))
+
+
 # func1()
 # func2()
 # func3()
-func4()
+# func4()
+func5()
