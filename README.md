@@ -167,7 +167,8 @@ Python-Lessons
     - [Урок №9 ](Theory/Part_12/django_9.md) ( Настройка админки )
     - [Урок №10 ](Theory/Part_12/django_10.md) ( пока разное всякое )
     - Django Model
-      - [Взаимодействие с Моделями, БД ](Theory/Part_12/django_sql.md)
+      - [Взаимодействие с Моделями, БД ](Theory/Part_12/django_sql_1.md)
+      - [Класс Meta для моделей](Theory/Part_12/django_sql_2.md)
     - Django Rest Framework
       - [ Часть №1 ](Theory/Part_12/drf_1.md)
       - [ Часть №2 ](Theory/Part_12/drf_2.md) (API Фильтрация, Поиск, Сортировка)
