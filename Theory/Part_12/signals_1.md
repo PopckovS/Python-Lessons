@@ -9,7 +9,13 @@ Signals - сигналы
 Есть ряд типов сигналов:
 
 >- **post_save**,  **pre_save** - происходит когда сохраняют
-   > модель
+   > модель, именно сохраняют, через метод **model.save()** а не через
+   > метод **model.objects.create()** 
+> 
+> 
+>- **pre_init**, **post_init** - отрабатывает на создание обьекта 
+> через метод create(), а не через save() к примеру так
+> **Category.objects.create()**
 > 
 > 
 >- **post_delete**, **pre_delete** - происходит когда удаляют
@@ -44,9 +50,7 @@ Signals - сигналы
 в модели `ImagesModel` в файле `models.py`
 ```python
 from django.dispatch import receiver, Signal
-from django.db.models.signals import post_save, 
-                                     pre_delete, 
-                                     pre_save
+from django.db.models.signals import post_save, pre_delete, pre_save
 
 @receiver(post_save, sender=ImagesModel)
 def on_change_post(sender, instance, **kwargs):
@@ -97,4 +101,32 @@ def on_change_post(sender, instance, **kwargs):
 @receiver(post_save, sender=Images)
 def on_change_post(sender, instance, **kwargs):
     instance.title = 'Новое название'
+```
+
+---
+
+2 разных способа создания объекта(instance) модели
+---
+
+Оба следующих способа создают обьект модели, но делают это разными
+способами.
+
+Первый способ это создание обьекта и явный вызов метода `save()` на
+вызов этого метода будут реагировать зарегистрированные сигналы 
+`pre_save` и `post_save`
+
+```python
+new_category = Category(name='Category №1')
+new_category.save()
+```
+
+Другой способ это вызов метода `create()` который сразу как создает 
+так и сохраняет обьект модели, но на него реагируют другие сигналы,
+такие как `pre_init` и `post_init`
+
+Использование метода `create()` более предпочтительно, если требуется
+создавать большое множество обьектов,
+
+```python
+new_category = Category.objects.create()
 ```
