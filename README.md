@@ -170,7 +170,9 @@ Python-Lessons
       - [Взаимодействие с Моделями, БД ](Theory/Part_12/django_sql_1.md)
       - [Класс Meta для моделей](Theory/Part_12/django_sql_2.md)
     - Django Миграции
-      - [ Часть №1 ](Theory/Part_12/migrate_1.md)
+      - [ Миграции ](Theory/Part_12/migrate_1.md)
+    - Django Транзакции
+      - [ Транзакции ](Theory/Part_12/transactions_1.md)
     - Django Rest Framework
       - [ Часть №1 ](Theory/Part_12/drf_1.md)
       - [ Часть №2 ](Theory/Part_12/drf_2.md) (API Фильтрация, Поиск, Сортировка)
