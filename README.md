@@ -169,6 +169,7 @@ Python-Lessons
     - Django Model
       - [Взаимодействие с Моделями, БД ](Theory/Part_12/django_sql_1.md)
       - [Класс Meta для моделей](Theory/Part_12/django_sql_2.md)
+      - [Взаимодействие с ORM](Theory/Part_12/django_sql_3.md) (bulk_create, )
     - Django Миграции
       - [ Миграции ](Theory/Part_12/migrate_1.md)
     - Django Транзакции
