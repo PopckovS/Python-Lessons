@@ -169,7 +169,7 @@ Python-Lessons
     - Django Model
       - [Взаимодействие с Моделями, БД ](Theory/Part_12/django_sql_1.md)
       - [Класс Meta для моделей](Theory/Part_12/django_sql_2.md)
-      - [Взаимодействие с ORM](Theory/Part_12/django_sql_3.md) (bulk_create, )
+      - [Модели и ORM](Theory/Part_12/django_sql_3.md)
     - Django Миграции
       - [ Миграции ](Theory/Part_12/migrate_1.md)
     - Django Транзакции
@@ -194,7 +194,8 @@ Python-Lessons
       - [ Часть №1 ](Theory/Part_12/UnitTest_1.md)
     - Unit Test Django Rest Framework
       - [ Часть №1 ](Theory/Part_12/DRFUnitTest_1.md)
-
+    - Django + GeoDjango
+      - [ Часть №1 ](Theory/Part_12/geo_django_1.md)
 
 13. **Часть №13. Паттерны :**
 
