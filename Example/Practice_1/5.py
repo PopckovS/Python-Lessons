@@ -139,8 +139,63 @@ def func5():
     print(func1(10, 20))
 
 
+def func6():
+    """
+    Функция декоратор memorize() кеширует значения функции func()
+    сохранение происходит в словаре, если значение уже было
+    вычислено, то просто возвращаем его.
+    """
+    import time
+
+    def memorize(function):
+        mem = {}
+
+        def wrapper(*args):
+            if args in mem:
+                print('Кешировано ', end='')
+                time.sleep(1)
+                return mem[args]
+            result = function(*args)
+            mem[args] = result
+            time.sleep(2)
+            print('Не Кешировано ', end='')
+            return result
+
+        return wrapper
+
+    @memorize
+    def func(a, b) -> int:
+        """Результаты рработы функции будут кешированы"""
+        return a * b
+
+
+    def start():
+        """
+        Метод запускает в обработку 5 запросов к декорируемой
+        функции, первый запрос не кешируется и исполняется с задержкой,
+        второй запрос кешируется.
+        """
+        a = 2
+        b = 5
+
+        def work(counter, a, b):
+            time_1 = time.perf_counter()
+            print(f'№{counter} Значение: {func(a, b)} ', end='')
+            time_2 = time.perf_counter()
+            print(f'Время исполнения: {time_2 - time_1}')
+
+        for counter in range(1, 6):
+            work(counter, a, b)
+            work(counter, a, b)
+            a += 1
+            b += 1
+
+    start()
+
+
 # func1()
 # func2()
 # func3()
 # func4()
-func5()
+# func5()
+func6()
