@@ -60,11 +60,16 @@ Category.objects.create(name='Название')
 и не выводить ошибки.
 
 ```python
-Category.objects.bulk_create(
+result = Category.objects.bulk_create(
     category_objects, 
     ignore_conflicts=True
 )
 ```
+
+`result` - возвращаемое значение, будет содержать набор созданных 
+объектов, в том числе с ID созданных объектов, но при использовании
+аргумента `ignore_conflicts` полученный набор объектов не будет иметь 
+атрибутов ID.
 
 ---
 

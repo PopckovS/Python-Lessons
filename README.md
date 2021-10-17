@@ -168,8 +168,10 @@ Python-Lessons
     - [Урок №10 ](Theory/Part_12/django_10.md) ( пока разное всякое )
     - Django Model
       - [Взаимодействие с Моделями, БД ](Theory/Part_12/django_sql_1.md)
+      - [Модели](Theory/Part_12/django_models.md)
       - [Класс Meta для моделей](Theory/Part_12/django_sql_2.md)
       - [Модели и ORM](Theory/Part_12/django_sql_3.md)
+      - [Приставки для фильтрации](Theory/Part_12/django_sql_4.md)
     - Django Миграции
       - [ Миграции ](Theory/Part_12/migrate_1.md)
     - Django Транзакции
