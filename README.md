@@ -205,9 +205,8 @@ Python-Lessons
      - [Делегирование и Композиция](Theory/Part_13/pattern_1.md)
      
 14**Часть №14. Разное, полезное я работы:**
-      - [ timescaledb ](Theory/Part_14/1.md)
-
-
+      - [ Расширение timescaledb для PostgreSQL ](Theory/Part_14/timescaledb.md)
+      - [ PostgreSQL, утилита pg_dump ](Theory/Part_14/pg_dump.md)
 
 ---
 
