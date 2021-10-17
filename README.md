@@ -171,7 +171,7 @@ Python-Lessons
       - [Модели](Theory/Part_12/django_models.md)
       - [Класс Meta для моделей](Theory/Part_12/django_sql_2.md)
       - [Модели и ORM](Theory/Part_12/django_sql_3.md)
-      - [Приставки для фильтрации](Theory/Part_12/django_sql_4.md)
+      - [Поиск, приставки для фильтрации](Theory/Part_12/django_sql_4.md) ( objects.filter )
     - Django Миграции
       - [ Миграции ](Theory/Part_12/migrate_1.md)
     - Django Транзакции
@@ -199,9 +199,15 @@ Python-Lessons
     - Django + GeoDjango
       - [ Часть №1 ](Theory/Part_12/geo_django_1.md)
 
+
 13. **Часть №13. Паттерны :**
 
      - [Делегирование и Композиция](Theory/Part_13/pattern_1.md)
+     
+14**Часть №14. Разное, полезное я работы:**
+      - [ timescaledb ](Theory/Part_14/1.md)
+
+
 
 ---
 
