@@ -183,7 +183,8 @@ Python-Lessons
       - [ Часть №3 ](Theory/Part_12/drf_3.md) (Аутентификация OAuth)
       - [ Часть №4 ](Theory/Part_12/drf_4.md) (Swagger)
     - Django Фикстуры dumpdata loaddata
-      - [ dumpdata ](Theory/Part_12/dumpdata_1.md)
+      - [ Экспорт данных из БД `dumpdata` ](Theory/Part_12/dumpdata_1.md)
+      - [ Импорт данных из БД `loaddata` ](Theory/Part_12/loaddata_1.md)
     - Django + Celery
       - [ Часть №1 ](Theory/Part_12/celery_1.md) (Установка)
       - [ Часть №2 ](Theory/Part_12/celery_2.md) (Начало работы)
