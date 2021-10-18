@@ -174,6 +174,7 @@ Python-Lessons
       - [Поиск, приставки для фильтрации](Theory/Part_12/django_sql_4.md) ( objects.filter )
     - Django Миграции
       - [ Миграции ](Theory/Part_12/migrate_1.md)
+      - [ Чистый SQL в миграциях  migrations.RunSQL ](Theory/Part_12/migrate_2.md) 
     - Django Транзакции
       - [ Транзакции ](Theory/Part_12/transactions_1.md)
     - Django Rest Framework
@@ -203,8 +204,9 @@ Python-Lessons
 13. **Часть №13. Паттерны :**
 
      - [Делегирование и Композиция](Theory/Part_13/pattern_1.md)
-     
-14**Часть №14. Разное, полезное я работы:**
+    
+ 
+14. **Часть №14. Разное, полезное я работы:**
       - [ Расширение timescaledb для PostgreSQL ](Theory/Part_14/timescaledb.md)
       - [ PostgreSQL, утилита pg_dump ](Theory/Part_14/pg_dump.md)
 
