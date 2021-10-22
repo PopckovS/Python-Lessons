@@ -206,10 +206,58 @@ def func7():
     print("ml[3] = ", ml[3])
     print("ml[(1, 3)] = ", ml[(1, 3)])
 
+
+def func8():
+    """
+    Класс менеджера контекста для обработки списков
+    """
+    class VectorTesting:
+        """
+        Класс создает менеджер контекста.
+
+        Принимает вектор и защищает его от изменений
+        если что-то пошлео не так, для работы создается
+        временный вектор, если ошибок не было то сохраняем
+        измененный вектор.
+        """
+
+        def __init__(self, vector):
+            self.__vector = vector
+
+        def __enter__(self):
+            self.temp = self.__vector[:]
+            return self.temp
+
+        # return False - обработка исключений передается на более
+        # верхний уровень. True -  будет уходить на ур выше.
+        def __exit__(self, exc_type, exc_val, exc_tb):
+            if exc_type is None:
+                self.__vector[:] = self.temp
+            return False
+
+    # Пример работы с вектором
+    vector_1 = [1, 2, 3]
+    vector_2 = [5, 5, 5]
+    # vector_2 = [5, 5]
+    print('vector_1 = ', vector_1)
+    print('vector_2 = ', vector_2)
+
+    # Складываем 2 вектора одинаковой длинны
+    try:
+        with VectorTesting(vector_1) as vector_temp:
+            for i in range(len(vector_temp)):
+                vector_temp[i] += vector_2[i]
+    except Exception as e:
+        print('Произошло исключение = ', e)
+
+    print('Новый vector_1 = ', vector_1)
+
+
 # func1()
 # func2()
 # func3()
 # func4()
 # func5()
 # func6()
-func7()
+# func8()
+func8()
