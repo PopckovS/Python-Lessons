@@ -253,6 +253,35 @@ def func8():
     print('Новый vector_1 = ', vector_1)
 
 
+def func9():
+    """
+    Использование метода copy или метода copy.copy
+    из модуля copy дает одиноковые результаты работы.
+    Это дает поверхностное копирование shallow copy
+    """
+    import copy
+
+    print('Использование обычного copy:')
+    my_list_1 = [1, 2, 3, 4, 5, [1,2,3]]
+
+    # my_list_2 = my_list_1.copy()
+    my_list_2 = copy.copy(my_list_1)
+
+    print('До изменения')
+    print(f'my_list_1 : {my_list_1}')
+    print(f'my_list_2 : {my_list_2}')
+
+    print('\nИзменение')
+    print('my_list_2[0] = 555')
+    print('my_list_2[5][0] = 777\n')
+    my_list_2[0] = 555
+    my_list_2[5][0] = 777
+
+    print('\nПосле изменения')
+    print(f'my_list_1 : {my_list_1}')
+    print(f'my_list_2 : {my_list_2}')
+
+
 # func1()
 # func2()
 # func3()
@@ -260,4 +289,5 @@ def func8():
 # func5()
 # func6()
 # func8()
-func8()
+# func8()
+func9()
