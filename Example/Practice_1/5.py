@@ -282,6 +282,37 @@ def func9():
     print(f'my_list_2 : {my_list_2}')
 
 
+
+def func10():
+    """
+    Использование метода deepcopy из модуля copy
+    дает полное глубокое рекурсивное копирование.
+    """
+    import copy
+
+    print('Использование глубокого deepcopy метода:')
+    my_list_1 = [1, 2, 3, 4, 5, [1, 2, 3]]
+
+    my_list_2 = copy.deepcopy(my_list_1)
+
+    print('До изменения')
+    print(f'my_list_1 : {my_list_1}')
+    print(f'my_list_2 : {my_list_2}')
+
+    print('\nИзменение')
+    print('my_list_2[0] = 555')
+    print('my_list_2[5][0] = 777\n')
+    my_list_2[0] = 555
+    my_list_2[5][0] = 777
+
+    print('\nПосле изменения')
+    print(f'my_list_1 : {my_list_1}')
+    print(f'my_list_2 : {my_list_2}')
+
+
+
+
+
 # func1()
 # func2()
 # func3()
@@ -290,4 +321,6 @@ def func9():
 # func6()
 # func8()
 # func8()
-func9()
+# func9()
+func10()
+
