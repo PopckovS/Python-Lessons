@@ -1,5 +1,19 @@
-Действия администратора
+ModelAdmin
 ---
+
+За все работу с административнйо панелью в `Django` отвечает класс 
+следующая иерархия вложенности классо:
+
+1. `BaseModelAdmin` - базовый класс для всей административной части.
+
+2. `ModelAdmin(BaseModelAdmin)` - класс более высокого уровня, является
+основным классом с которым происходит вся работа, от него и администрируем
+все модели для взаимодействия с ней в админке.
+
+3. `InlineModelAdmin(BaseModelAdmin)`
+
+---
+Действия администратора
 ---
 
 Находясь на странице админки, и просматривая группу обьектов некотрой 
@@ -80,4 +94,64 @@ class DestenyModelAdmin(admin.ModelAdmin):
         print('queryset = ', queryset)
 
 admin.site.register(DestenyModel, DestenyModelAdmin)
+```
+
+---
+URL в админке `ModelAdmin.get_urls()`
+---
+
+`get_urls` - Метод возвращает `URL` адреса которые будут использовать
+для взаимодействия с этой зарегистрированной моделью.
+
+Используя этот метод мы можем расширять административную часть, добавляя
+представления и `URL` для них, тут можно как зарегистрировать новое 
+представлние для административной части, так и для создания представления
+которое не будет иметь отображения, а будет отрабатывать на кастомно 
+созданную кнопку.
+
+---
+
+Для регистрации нового пути, наследуем `super().get_urls()` родительский
+метод, и расширяем его дополнительным путем, регистрируем его так же как
+и обычные пути в `settings`
+
+Так же создаем представление `my_view` в административной части, которое
+и регистрируем за указанным `URL`, определяем для него контекст и шаблон 
+для внешнего вида.
+
+```python
+from .models import DestenyModel
+from django.template.response import TemplateResponse
+from django.urls import path
+
+class DestenyModelAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name',)
+    
+    def get_urls(self):
+        """Расширяем пути, добавляя виды для конкретно этой админки"""
+        # получаем родительские URL
+        urls = super().get_urls()
+
+        # создаем пути для конкретно этой админки
+        my_urls = [
+            path('my_view/', self.my_view),
+        ]
+
+        # соединяем пути и возвращаем их
+        return my_urls + urls
+
+    def my_view(self, request):
+        """Новое представление для админки"""
+        context = {'var_1': 1, 'var_2': 2,}
+        return TemplateResponse(request, "sometemplate.html", context)
+
+admin.site.register(DestenyModel, DestenyModelAdmin)
+```
+
+
+```python
+   def get_urls(self):
+        urls = super(DestinyModelAdmin, self).get_urls()
+        custom_urls = [url('^heatmap/$', self.process_heatmap, name='heatmap'), ]
+        return custom_urls + urls
 ```

@@ -203,7 +203,7 @@ Python-Lessons
     - Django + GeoDjango
       - [ Часть №1 ](Theory/Part_12/geo_django_1.md)
     - Django Admin
-      - [ Часть №1 ](Theory/Part_12/django_admin_1.md) (`actions` Действия администратора)
+      - [ Часть №1 ](Theory/Part_12/django_admin_1.md) (`actions` Действия, `get_urls`)
 
 13. **Часть №13. Паттерны :**
 
