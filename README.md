@@ -182,7 +182,7 @@ Python-Lessons
       - [ Часть №2 ](Theory/Part_12/drf_2.md) (API Фильтрация, Поиск, Сортировка)
       - [ Часть №3 ](Theory/Part_12/drf_3.md) (Аутентификация OAuth)
       - [ Часть №4 ](Theory/Part_12/drf_4.md) (Swagger)
-    - Django Фикстуры dumpdata loaddata
+    - Django Фикстуры
       - [ Экспорт данных из БД `dumpdata` ](Theory/Part_12/dumpdata_1.md)
       - [ Импорт данных из БД `loaddata` ](Theory/Part_12/loaddata_1.md)
     - Django + Celery
@@ -191,7 +191,7 @@ Python-Lessons
       - [ Часть №3 ](Theory/Part_12/celery_3.md) (Flower логер сообщений для Celery)
     - Django Сигналы
       - [ Часть №1 ](Theory/Part_12/signals_1.md)
-    - Безопасность строек, модуль django-environ
+    - Безопасность настроек, модуль django-environ
       - [ Переменные окружения и оболочки в Linux ](Theory/Part_12/environment_1.md)
       - [ Хранение данных в виртуальном окружении ](Theory/Part_12/venv_1.md)
     - Cookiecutter
@@ -202,7 +202,8 @@ Python-Lessons
       - [ Часть №1 ](Theory/Part_12/DRFUnitTest_1.md)
     - Django + GeoDjango
       - [ Часть №1 ](Theory/Part_12/geo_django_1.md)
-
+    - Django Admin
+      - [ Часть №1 ](Theory/Part_12/django_admin_1.md) (`actions` Действия администратора)
 
 13. **Часть №13. Паттерны :**
 
