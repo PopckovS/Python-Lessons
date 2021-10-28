@@ -13,7 +13,7 @@ Python-Lessons
 Теория Python :
 ---
  
-1.  **Часть №1. Основное :**
+1.  **Основное :**
 
     - [Основы Python](Theory/Part_1/Base.md )
     - [Разница версий и строки Unicod](Theory/Part_1/Version_difference.md )
@@ -25,7 +25,7 @@ Python-Lessons
     - [Аннотации методов аргументов](Theory/Part_1/Annotations.md )
 
 
-2. **Часть №2. Типы данных в Python :**
+2. **Типы данных в Python :**
 
     - [Типы данных](Theory/Part_2/Data_types.md)
     - [Boolean](Theory/Part_2/Boolean.md)
@@ -38,7 +38,7 @@ Python-Lessons
     - [Кортеж - tuple](Theory/Part_2/Tuple.md)
 
 
-3. **Часть №3. Операторы :**
+3. **Операторы :**
     - [Арифметические операторы](Theory/Part_3/Arithmetic.md) (`+`, `-`, `*`, `/`, `//`, `%`, `**`)
     - [Побитовые Операторы](Theory/Part_3/Bitwise.md) (`&`, `|`, `^`, `>>`, `<<`, `~`)
     - [Операторы присваивания](Theory/Part_3/Assigment.md) (`=`, `+=`, `-=`, `/=`, `//=`)
@@ -48,7 +48,7 @@ Python-Lessons
     - [Операторы принадлежности](Theory/Part_3/Membership.md) (`in`, `not in`)
 
 
-4. **Часть №4. Потоки управления :**
+4. **Потоки управления :**
    
     - [Условие](Theory/Part_4/If_else.md) (`if`, `elif`, `else`)
     - [Тернарный оператор](Theory/Part_4/Ternary_operator.md )
@@ -59,7 +59,7 @@ Python-Lessons
     - [Прерывание `continue`](Theory/Part_4/Continue.md)
 
    
-5. **Часть №5. Функции :**
+5. **Функции :**
 
     - [Функции](Theory/Part_5/Functions.md)
     - [Замыкания функций](Theory/Part_5/Function_closures.md)
@@ -68,7 +68,7 @@ Python-Lessons
     - [Аргументы функции по умолчанию](Theory/Part_5/Default_function_arguments.md)
 
 
-6. **Часть №6. Обьекты :**
+6. **Обьекты :**
 
     - [Обьекты 1](Theory/Part_6/Object_1.md )
     - [Обьекты 2](Theory/Part_6/Object_2.md )
@@ -82,7 +82,7 @@ Python-Lessons
     - [Паттерны программирования](Theory/Part_6/Pattern.md )
    
 
-7. **Часть №7. Разное - 1 :**
+7. **Разное - 1 :**
 
     - [Итераторы и Выражения-генераторы ](Theory/Part_7/Iterators_expression_generators.md)
     - [Функции-генераторы yield](Theory/Part_7/Yield.md)
@@ -93,7 +93,7 @@ Python-Lessons
     - [Функции all() any() ](Theory/Part_7/Function_all_any.md)
    
 
-8. **Часть №8 Разное - 2 :**
+8. **Разное - 2 :**
 
     - [Файлы Ввод/Вывод](Theory/Part_8/File.md)
     - [Получение информации о памяти обьекта __sizeof__() и sys.getsizeof()](Theory/Part_8/Get_information_about_memory.md )
@@ -108,7 +108,7 @@ Python-Lessons
     - [Виртуальное окружение venv и freeze. Установка зависимостей.](Theory/Part_8/Virtual.md)
 
 
-9. **Часть №9. Модули :**
+9. **Модули :**
    
     - Модуль os
       - [ Часть №1 ](Theory/Part_9/Module_os_1.md)
@@ -132,13 +132,13 @@ Python-Lessons
       
 [comment]: <> (добавить модуль cmd)
 
-10. **Часть №10. Интересные вопросы по Python :**
+10. **Интересные вопросы по Python :**
 
     - [Вопросы 1](Theory/Part_10/Questions_1.md)
     - [Вопросы 2](Theory/Part_10/Questions_2.md)
    
 
-11. **Часть №11. Модули :**
+11. **Большие модули :**
    
     - [Модуль numpy](Theory/Part_11/numpy)
       
@@ -153,67 +153,66 @@ Python-Lessons
          - [ Урок №1 ](Theory/Part_11/Flask/Lesson_1.md)
    
 
-12. **Часть №12. Django :**
+12. **Разное, полезное для работы:**
+      - [ Расширение timescaledb для PostgreSQL ](Theory/Part_12/timescaledb.md)
+      - [ PostgreSQL, утилита pg_dump ](Theory/Part_12/pg_dump.md)
+      
+---
+
+Django :
+---
+1. **Django :**
    
-    - [Удобный сборник команд Django](Theory/Part_12/django_commands.md)
-    - [Урок №1 ](Theory/Part_12/django_1.md) ( Установка, URL )
-    - [Урок №2 ](Theory/Part_12/django_2.md) ( GET, POST, обработка исключений, 404 )
-    - [Урок №3 ](Theory/Part_12/django_3.md) ( Модели, миграции, создание пользователей, модели и админка)
-    - [Урок №4 ](Theory/Part_12/django_4.md) ( Supeuser, Получение данных из моделей )
-    - [Урок №5 ](Theory/Part_12/django_5.md) ( Templates, Views, Jinja2, Фильтры шаблонов )
-    - [Урок №6 ](Theory/Part_12/django_6.md) ( Подключение статических файлов )
-    - [Урок №7 ](Theory/Part_12/django_7.md) ( Отправка Email, Установка ckeditor, настройка админки )
-    - [Урок №8 ](Theory/Part_12/django_8.md) ( Связи между моделями, Form, )
-    - [Урок №9 ](Theory/Part_12/django_9.md) ( Настройка админки )
-    - [Урок №10 ](Theory/Part_12/django_10.md) ( пока разное всякое )
-    - Django Model
-      - [Взаимодействие с Моделями, БД ](Theory/Part_12/django_sql_1.md)
-      - [Модели](Theory/Part_12/django_models.md)
-      - [Класс Meta для моделей](Theory/Part_12/django_sql_2.md)
-      - [Модели и ORM](Theory/Part_12/django_sql_3.md)
-      - [Поиск, приставки для фильтрации](Theory/Part_12/django_sql_4.md) ( objects.filter )
-    - Django Миграции
-      - [ Миграции ](Theory/Part_12/migrate_1.md)
-      - [ Чистый SQL в миграциях  migrations.RunSQL ](Theory/Part_12/migrate_2.md) 
-    - Django Транзакции
-      - [ Транзакции ](Theory/Part_12/transactions_1.md)
-    - Django Rest Framework
-      - [ Часть №1 ](Theory/Part_12/drf_1.md)
-      - [ Часть №2 ](Theory/Part_12/drf_2.md) (API Фильтрация, Поиск, Сортировка)
-      - [ Часть №3 ](Theory/Part_12/drf_3.md) (Аутентификация OAuth)
-      - [ Часть №4 ](Theory/Part_12/drf_4.md) (Swagger)
-    - Django Фикстуры
-      - [ Экспорт данных из БД `dumpdata` ](Theory/Part_12/dumpdata_1.md)
-      - [ Импорт данных из БД `loaddata` ](Theory/Part_12/loaddata_1.md)
+    - [Удобный сборник команд Django](Django/django_commands.md)
+    - [Урок №1 ](Django/django_1.md) ( Установка, URL )
+    - [Урок №2 ](Django/django_2.md) ( GET, POST, обработка исключений, 404 )
+    - [Урок №3 ](Django/django_3.md) ( Модели, миграции, создание пользователей, модели и админка)
+    - [Урок №4 ](Django/django_4.md) ( Supeuser, Получение данных из моделей )
+    - [Урок №5 ](Django/django_5.md) ( Templates, Views, Jinja2, Фильтры шаблонов )
+    - [Урок №6 ](Django/django_6.md) ( Подключение статических файлов )
+    - [Урок №7 ](Django/django_7.md) ( Отправка Email, Установка ckeditor, настройка админки )
+    - [Урок №8 ](Django/django_8.md) ( Связи между моделями, Form, )
+    - [Урок №9 ](Django/django_9.md) ( Настройка админки )
+    - [Урок №10 ](Django/django_10.md) ( пока разное всякое )
+    - Модели
+      - [Взаимодействие с Моделями, БД ](Django/django_sql_1.md)
+      - [Модели](Django/django_models.md)
+      - [Класс Meta для моделей](Django//django_sql_2.md)
+      - [Модели и ORM](Django/django_sql_3.md)
+      - [Поиск, приставки для фильтрации](Django/django_sql_4.md) ( objects.filter )
+    - Миграции
+      - [ Миграции ](Django/migrate_1.md)
+      - [ Чистый SQL в миграциях  migrations.RunSQL ](Django/migrate_2.md) 
+    - Транзакции
+      - [ Транзакции ](Django/transactions_1.md)
+    - Django Rest Framework (DRF)
+      - [ Часть №1 ](Django/drf_1.md)
+      - [ Часть №2 ](Django/drf_2.md) (API Фильтрация, Поиск, Сортировка)
+      - [ Часть №3 ](Django/drf_3.md) (Аутентификация OAuth)
+      - [ Часть №4 ](Django/drf_4.md) (Swagger)
+    - Фикстуры
+      - [ Экспорт данных из БД `dumpdata` ](Django/dumpdata_1.md)
+      - [ Импорт данных из БД `loaddata` ](Django/loaddata_1.md)
     - Django + Celery
-      - [ Часть №1 ](Theory/Part_12/celery_1.md) (Установка)
-      - [ Часть №2 ](Theory/Part_12/celery_2.md) (Начало работы)
-      - [ Часть №3 ](Theory/Part_12/celery_3.md) (Flower логер сообщений для Celery)
-    - Django Сигналы
-      - [ Часть №1 ](Theory/Part_12/signals_1.md)
+      - [ Часть №1 ](Django/celery_1.md) (Установка)
+      - [ Часть №2 ](Django/celery_2.md) (Начало работы)
+      - [ Часть №3 ](Django/celery_3.md) (Flower логер сообщений для Celery)
+    - Сигналы Моделей
+      - [ Часть №1 ](Django/signals_1.md)
     - Безопасность настроек, модуль django-environ
-      - [ Переменные окружения и оболочки в Linux ](Theory/Part_12/environment_1.md)
-      - [ Хранение данных в виртуальном окружении ](Theory/Part_12/venv_1.md)
+      - [ Переменные окружения и оболочки в Linux ](Django/environment_1.md)
+      - [ Хранение данных в виртуальном окружении ](Django/venv_1.md)
     - Cookiecutter
-      - [ Шаблоны Django проектов ](Theory/Part_12/cookiecutter_1.md)
+      - [ Шаблоны Django проектов ](Django/cookiecutter_1.md)
     - Unit Test
-      - [ Часть №1 ](Theory/Part_12/UnitTest_1.md)
+      - [ Часть №1 ](Django/UnitTest_1.md)
     - Unit Test Django Rest Framework
-      - [ Часть №1 ](Theory/Part_12/DRFUnitTest_1.md)
-    - Django + GeoDjango
-      - [ Часть №1 ](Theory/Part_12/geo_django_1.md)
+      - [ Часть №1 ](Django/DRFUnitTest_1.md)
+    - GeoDjango
+      - [ Часть №1 ](Django/geo_django_1.md)
     - Django Admin
-      - [ Часть №1 ](Theory/Part_12/django_admin_1.md) (`actions` Действия, `get_urls`)
-
-13. **Часть №13. Паттерны :**
-
-     - [Делегирование и Композиция](Theory/Part_13/pattern_1.md)
-    
- 
-14. **Часть №14. Разное, полезное я работы:**
-      - [ Расширение timescaledb для PostgreSQL ](Theory/Part_14/timescaledb.md)
-      - [ PostgreSQL, утилита pg_dump ](Theory/Part_14/pg_dump.md)
-
+      - [ Часть №1 ](Django/django_admin_1.md) (`actions` Действия, `get_urls`)
+      
 ---
 
 Практика Python :
@@ -246,10 +245,12 @@ Docker, Docker-compose
 ---
 Алгоритмы и структуры данных
 ---
-   1. [ Сложность алгоритмов, память, массивы, списки. ](Algorithm/Lesson_1.md)
+   1. [ Теория: Сложность алгоритмов, память, массивы, списки. ](Algorithm/Lesson_1.md)
+
    2. Бинарный поиск
       - [ Теория ](Algorithm/binary/binary.md) 
       - [ Практика ](Algorithm/binary/binary.py)
+
    3. Сортировка выбором
       - [ Теория ](Algorithm/selection/selection_sort.md)
       - [ Практика ](Algorithm/selection/selection_sort.py)
@@ -269,11 +270,15 @@ Docker, Docker-compose
 
 1. **Теория пограммирвоания :**
 
-    - [Принципы KISS, DRY, SOLID, YAGNI](Other-theory/KISS.md)
-    - [REST, SOAP](Other-theory/REST_SOAP.md)
+    - [Принципы KISS, DRY, SOLID, YAGNI](Other-theory/Part_1/KISS.md)
+    - [REST, SOAP](Other-theory/Part_1/REST_SOAP.md)
 
 
 2. **Теория :**
 
-   - [AMQR Протокол](Other-theory/AMQR.md)
+   - [AMQR Протокол](Other-theory/Part_2/AMQR.md)
 
+
+3. **Паттерны и шаблоны проектирвоания :**
+
+     - [Делегирование и Композиция](Other-theory/Part_3/pattern_1.md)
