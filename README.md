@@ -178,6 +178,7 @@ Django 3.2 :
       - [Класс Meta для моделей](Django//django_sql_2.md)
       - [Модели и ORM](Django/django_sql_3.md)
       - [Поиск, приставки для фильтрации](Django/django_sql_4.md) ( objects.filter )
+      - [QuerySets](Django/django_sql_5.md)
     - Миграции
       - [ Миграции ](Django/migrate_1.md)
       - [ Чистый SQL в миграциях  migrations.RunSQL ](Django/migrate_2.md) 
@@ -211,6 +212,9 @@ Django 3.2 :
     - Django Admin
       - [ Часть №1 ](Django/django_admin_1.md) (регистрация моделей, `actions` Действия, `get_urls`)
       - [ Часть №2 ](Django/django_admin_2.md)
+    - Django Utils
+      - [ Часть №1 ](Django/django_utils_1.md)
+      
 ---
 
 Практика Python :

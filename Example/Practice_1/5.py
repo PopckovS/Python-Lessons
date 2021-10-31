@@ -310,8 +310,31 @@ def func10():
     print(f'my_list_2 : {my_list_2}')
 
 
+def func11():
+    """
+    Пример использованния ключения против менеджера
+    контекста with.
+    """
 
+    # Пример открытия фалйа и его закрытие при помощи исключений
+    try:
+        file = open('file.txt', 'r')
+        print("Пример с исключениями")
+        for line in file:
+            print(line)
+    except Exception:
+        raise
+    finally:
+        file.close()
 
+    # Тот же пример но с менеджером контекста
+    try:
+        with open('file.txt', 'r') as file:
+            print("Пример с менеджером контекста")
+            for line in file:
+                print(line)
+    except Exception:
+        raise
 
 # func1()
 # func2()
@@ -322,5 +345,5 @@ def func10():
 # func8()
 # func8()
 # func9()
-func10()
-
+# func10()
+func11()
