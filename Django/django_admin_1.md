@@ -13,6 +13,28 @@ ModelAdmin
 3. `InlineModelAdmin(BaseModelAdmin)`
 
 ---
+Регистрация моделей в приложении
+---
+
+Для регистрации моделей приложения в админке, требуется зарегистрировать их
+в файле `admin.py` что находится внутри каждого приложения.
+
+```python
+# импорт модуля админки для взаимодействия с админкой 
+from django.contrib import admin
+
+# Импорт моделей для их подключения в админку
+from .models import Women, category
+
+# Регистрация моделей
+admin.site.register(Women)
+admin.site.register(category)
+```
+
+После этого модели станут доступны для `CRUD` операций внутри
+админ панели.
+
+---
 Действия администратора
 ---
 
@@ -154,4 +176,25 @@ admin.site.register(DestenyModel, DestenyModelAdmin)
         urls = super(DestinyModelAdmin, self).get_urls()
         custom_urls = [url('^heatmap/$', self.process_heatmap, name='heatmap'), ]
         return custom_urls + urls
+```
+
+---
+Абсолютный путь к модели `get_absolute_url`
+---
+
+Если для модели определен специальный метод `get_absolute_url`
+то он может быть использован для получения пути в шаблонах, но 
+также он используется и в админ панели, если метод определен то 
+в админке появится дополнительная возможность посмотреть
+страницу этой записи по ее `url` который будет взят из этого 
+самого метода.
+
+Определение метода в модели
+```python
+    def get_absolute_url(self):
+        """
+        Модули Django используют этот методе если он определен в модели
+        своего рода создание замены слага.
+        """
+        return reverse('post', kwargs={'post_id': self.pk})
 ```

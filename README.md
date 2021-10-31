@@ -159,7 +159,7 @@ Python-Lessons
       
 ---
 
-Django :
+Django 3.2 :
 ---
 1. **Django :**
    
@@ -171,9 +171,7 @@ Django :
     - [Урок №5 ](Django/django_5.md) ( Templates, Views, Jinja2, Фильтры шаблонов )
     - [Урок №6 ](Django/django_6.md) ( Подключение статических файлов )
     - [Урок №7 ](Django/django_7.md) ( Отправка Email, Установка ckeditor, настройка админки )
-    - [Урок №8 ](Django/django_8.md) ( Связи между моделями, Form, )
-    - [Урок №9 ](Django/django_9.md) ( Настройка админки )
-    - [Урок №10 ](Django/django_10.md) ( пока разное всякое )
+    - [Урок №8 ](Django/django_8.md) ( Связи между моделями, Form)
     - Модели
       - [Взаимодействие с Моделями, БД ](Django/django_sql_1.md)
       - [Модели](Django/django_models.md)
@@ -211,8 +209,8 @@ Django :
     - GeoDjango
       - [ Часть №1 ](Django/geo_django_1.md)
     - Django Admin
-      - [ Часть №1 ](Django/django_admin_1.md) (`actions` Действия, `get_urls`)
-      
+      - [ Часть №1 ](Django/django_admin_1.md) (регистрация моделей, `actions` Действия, `get_urls`)
+      - [ Часть №2 ](Django/django_admin_2.md)
 ---
 
 Практика Python :
@@ -227,8 +225,8 @@ Django :
     - [Сборник примеров №5](Example/Practice_1/5.py)
     - [Дата и время](Example/Practice_1/6.py)
     - [Работа с модулем CSV ](Example/Practice_1/CSV/CSV.py)
-    - [Программа для скачивания видео с YouTube ](Example/Practice_1/get_videos.py)
-    - [Игра Крестики-Нолики на 2 игрока](Example/Practice_1/tic_tac_toe.py)
+    - [Программа для скачивания видео с YouTube](Example/Practice_1/get_videos.py)
+    - [Игра Крестики-Нолики на 2 игрока, на чистом Python](Example/Practice_1/tic_tac_toe.py)
     - [Конвертация изображений и наложение изображений](Example/Practice_1/convertor_cover_img.py)
 
 ---
