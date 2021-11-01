@@ -336,6 +336,55 @@ def func11():
     except Exception:
         raise
 
+
+def func12():
+    """
+    примеры использования Ellipsis ...
+    """
+
+    # Первый способ использования ...
+    def func1():
+        print('Внутреняя функция func1')
+        pass
+
+    def func2():
+        print('Внутреняя функция func2')
+        ...
+
+    func1()
+    func2()
+
+    # Второй способ использования ...
+
+    # вычисление nth odd
+    def nth_odd(n):
+        if isinstance(n, int):
+            return 2 * n - 1
+        else:
+            return None
+
+    # вычисление исходных данных n в nth odd
+    def original_num(m=...):
+        if m is ...:
+            print('This function needs some input')
+        elif m is None:
+            print('Non integer input provided to nth_odd() function')
+        elif isinstance(m, int):
+            if m % 2:
+                print(f'{m} is {int((m + 1) / 2)}th odd number')
+            else:
+                print(f'{m} is not an odd number')
+
+    original_num()
+
+    a = nth_odd(n='some string')
+    original_num(a)
+
+    b = nth_odd(5)
+    original_num(b)
+
+    original_num(16)
+
 # func1()
 # func2()
 # func3()
@@ -346,4 +395,5 @@ def func11():
 # func8()
 # func9()
 # func10()
-func11()
+# func11()
+func12()
