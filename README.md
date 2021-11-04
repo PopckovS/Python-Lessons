@@ -214,7 +214,6 @@ Django 3.2 :
       - [ Часть №2 ](Django/django_admin_2.md)
     - Django Utils
       - [ Часть №1 ](Django/django_utils_1.md)
-      
 ---
 
 Практика Python :
@@ -232,6 +231,14 @@ Django 3.2 :
     - [Программа для скачивания видео с YouTube](Example/Practice_1/get_videos.py)
     - [Игра Крестики-Нолики на 2 игрока, на чистом Python](Example/Practice_1/tic_tac_toe.py)
     - [Конвертация изображений и наложение изображений](Example/Practice_1/convertor_cover_img.py)
+
+---
+GIT и Git-flow
+---
+
+- [Удобный сборник команд `git`](git/commands.md)
+- [Часть №1](git/git_1.md)
+    
 
 ---
 Docker, Docker-compose
