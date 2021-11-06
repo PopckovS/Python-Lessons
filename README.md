@@ -214,6 +214,10 @@ Django 3.2 :
       - [ Часть №2 ](Django/django_admin_2.md)
     - Django Utils
       - [ Часть №1 ](Django/django_utils_1.md)
+    - Django middleware    
+      - [ Часть №1 ](Django/mid_1.md)
+
+
 ---
 
 Практика Python :
@@ -237,7 +241,8 @@ GIT и Git-flow
 ---
 
 - [Удобный сборник команд `git`](git/commands.md)
-- [Часть №1](git/git_1.md)
+- [Общее описание](git/git_1.md) `git flow`
+- [Конфликты, слияние и перебазирование](git/git_2.md) `git merge`, `git rebase`
     
 
 ---
