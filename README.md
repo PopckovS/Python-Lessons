@@ -153,9 +153,10 @@ Python-Lessons
          - [ Урок №1 ](Theory/Part_11/Flask/Lesson_1.md)
    
 
-12. **Разное, полезное для работы:**
-      - [ Расширение timescaledb для PostgreSQL ](Theory/Part_12/timescaledb.md)
-      - [ PostgreSQL, утилита pg_dump ](Theory/Part_12/pg_dump.md)
+12. **Вопросы возникающие при работе с Postgres :**
+      - [ Смена пароля для пользователя ](Postgres/pg_1.md)
+      - [ Расширение timescaledb для PostgreSQL ](Postgres/timescaledb.md)
+      - [ PostgreSQL, утилита pg_dump ](Postgres/pg_dump.md)
       
 ---
 
