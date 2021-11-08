@@ -11,3 +11,10 @@ PostgreSQL, утилита pg_dump
   --blobs --verbose --encoding utf-8 --schema-only 
   --file "{КудаВыгрузитьБД}.sql" "{ДатьНазвание}"
 ```
+
+---
+Востановить БД из файла SQL
+---
+Востановление БД из файла, с помощью утилиты `psql` 
+
+    psql --port 5432 --username {USER_NAME} --dbname {DB_NAME} --file "dump-BD.sql"
