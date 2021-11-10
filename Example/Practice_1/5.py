@@ -385,6 +385,30 @@ def func12():
 
     original_num(16)
 
+
+def func13():
+    """
+    Вернуть суммму из чисел пришедшей строки.
+    """
+    def check_pluss_number(number: int) -> int:
+        try:
+            if isinstance(number, int) and number > 0:
+                result = 0
+                for elem in str(number):
+                    result += int(elem)
+                return result
+            else:
+                raise ValueError('Аргумент должен быть пожительным числом')
+        except ValueError:
+            raise
+
+    var = 123
+    # var = '123'
+    # var = -123
+
+    print(check_pluss_number(var))
+
+
 # func1()
 # func2()
 # func3()
@@ -396,4 +420,5 @@ def func12():
 # func9()
 # func10()
 # func11()
-func12()
+# func12()
+func13()
