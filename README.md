@@ -108,7 +108,7 @@ Python-Lessons
     - [Виртуальное окружение venv и freeze. Установка зависимостей.](Theory/Part_8/Virtual.md)
 
 
-9. **Модули :**
+9. **Модули и API сервисы :**
    
     - Модуль os
       - [ Часть №1 ](Theory/Part_9/Module_os_1.md)
@@ -129,6 +129,8 @@ Python-Lessons
     - [Модуль socket](Theory/Part_9/Module_socket.md) (Работа с сокетами)
     - [Модуль moviepy](Theory/Part_9/Module_moviepy.md) (Редактирование видео)
     - [Модуль CSV](Theory/Part_9/Module_CSV.md) (Работа с форматом CSV)
+    - Гео-данные
+      - [ Yandex geocoder API, OpenStreetMap API, DaData API ](Theory/Part_9/Geo_data.md)
       
 [comment]: <> (добавить модуль cmd)
 
@@ -138,7 +140,7 @@ Python-Lessons
     - [Вопросы 2](Theory/Part_10/Questions_2.md)
    
 
-11. **Большие модули :**
+11. **Библиотеки :**
    
     - [Модуль numpy](Theory/Part_11/numpy)
       
@@ -156,8 +158,8 @@ Python-Lessons
 12. **Вопросы возникающие при работе с Postgres :**
       - [ Смена пароля для пользователя ](Postgres/pg_1.md)
       - [ Расширение timescaledb для PostgreSQL ](Postgres/timescaledb.md)
-      - [ PostgreSQL, утилита pg_dump ](Postgres/pg_dump.md)
-      
+      - [ PostgreSQL, утилита `pg_dump` остановление БД ](Postgres/pg_dump.md)
+
 ---
 
 Django 3.2 :
@@ -236,6 +238,11 @@ Django 3.2 :
     - [Программа для скачивания видео с YouTube](Example/Practice_1/get_videos.py)
     - [Игра Крестики-Нолики на 2 игрока, на чистом Python](Example/Practice_1/tic_tac_toe.py)
     - [Конвертация изображений и наложение изображений](Example/Practice_1/convertor_cover_img.py)
+    - [Получение гео-данных по адресу](Example/Practice_1/dadata/get_geo_from_dadata.py) сервис `DaData`
+
+2) **Часть №2**
+   
+   - [Решение мелких задачек по Python](Example/Practice_2/1.py)
 
 ---
 GIT и Git-flow
@@ -255,7 +262,7 @@ Docker, Docker-compose
     - [Удобный сборник команд Docker](Docker/docker_commands.md)
     - [Docker](Docker/docker_1.md) (Images, Container)
     - [Dockerfile](Docker/docker_2.md)
-    - [Docke Compose](Docker/docker_compose_3.md)
+    - [Docker Compose](Docker/docker_compose_3.md)
 
 ---
 Алгоритмы и структуры данных
