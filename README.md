@@ -1,4 +1,4 @@
-Python-Lessons
+giPython-Lessons
 ---
 [comment]: <> (https://api.github.com/users/PopckovS)
 Сборник теории и решения практических упражнений по python-3.8 
