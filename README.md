@@ -242,4 +242,10 @@ Docker, Docker-compose
 
 3. **Паттерны и шаблоны проектирвоания :**
 
-     - [Делегирование и Композиция](Other-theory/Part_3/pattern_1.md)
+   - [Делегирование и Композиция](Other-theory/Part_3/pattern_1.md)
+
+
+4. **Решение разных проблем**
+
+   - [Установка модуля `M2Crypto`](Other-theory/Part_4/part_1.md)
+
