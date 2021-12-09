@@ -1,4 +1,4 @@
-giPython-Lessons
+Python-Lessons
 ---
 [comment]: <> (https://api.github.com/users/PopckovS)
 Сборник теории и решения практических упражнений по python-3.8 
@@ -190,6 +190,7 @@ GIT и Git-flow
 - [Удобный сборник команд `git`](git/commands.md)
 - [Общее описание](git/git_1.md) `git flow`
 - [Конфликты, слияние и перебазирование](git/git_2.md) `git merge`, `git rebase`
+- [Теги](git/git_3.md) `git tag`
     
 
 ---
@@ -198,8 +199,8 @@ Docker, Docker-compose
 
 1. **Часть №1 :**
     
-    - [Удобный сборник команд Docker](Docker/docker_commands.md)
-    - [Docker](Docker/docker_1.md) (Images, Container)
+    - [Удобный сборник команд `Docker`](Docker/docker_commands.md)
+    - [Docker](Docker/docker_1.md) `Images`, `Container`
     - [Dockerfile](Docker/docker_2.md)
     - [Docker Compose](Docker/docker_compose_3.md)
 
