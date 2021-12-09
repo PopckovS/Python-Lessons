@@ -160,8 +160,11 @@ Python-Lessons
       - [ Расширение timescaledb для PostgreSQL ](Postgres/timescaledb.md)
       - [ PostgreSQL, утилита `pg_dump` остановление БД ](Postgres/pg_dump.md)
 
----
 
+13. **Дата и Время**
+      - [ Модуль ](Theory/Part_13/dt_1.md) `arrow`
+
+---
 Практика Python :
 ---
 
@@ -243,7 +246,7 @@ Docker, Docker-compose
 Разное
 ---
 
-1. **Теория пограммирвоания :**
+1. **Теория пограммирования :**
 
     - [Принципы KISS, DRY, SOLID, YAGNI](Other-theory/Part_1/KISS.md)
     - [REST, SOAP](Other-theory/Part_1/REST_SOAP.md)
@@ -254,7 +257,7 @@ Docker, Docker-compose
    - [AMQR Протокол](Other-theory/Part_2/AMQR.md)
 
 
-3. **Паттерны и шаблоны проектирвоания :**
+3. **Паттерны и шаблоны проектирования :**
 
    - [Делегирование и Композиция](Other-theory/Part_3/pattern_1.md)
 
@@ -263,3 +266,4 @@ Docker, Docker-compose
 
    - [Установка модуля `M2Crypto`](Other-theory/Part_4/part_1.md)
 
+   
