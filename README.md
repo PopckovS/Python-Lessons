@@ -200,9 +200,22 @@ Docker, Docker-compose
 1. **Часть №1 :**
     
     - [Удобный сборник команд `Docker`](Docker/docker_commands.md)
-    - [Docker](Docker/docker_1.md) `Images`, `Container`
-    - [Dockerfile](Docker/docker_2.md)
-    - [Docker Compose](Docker/docker_compose_3.md)
+    - [Что такое Docker образы и контейнеры](Docker/docker_1.md) `Images`, `Container`
+    - [Файл](Docker/docker_2.md) `Dockerfile`
+      - Команды докер файла:
+      - `FROM`
+      - `COPY`
+      - `WORKDIR`
+      - `RUN`
+      - `CMD`
+      - `EXPOSE`
+      - `ENV`
+      - `ADD`
+      - `ENTRYPOINT`
+      - `MAINTAINER`
+      - `USER`
+      - `VOLUME`
+    - [Что такое Docker Compose](Docker/docker_compose_3.md)
 
 ---
 Алгоритмы и структуры данных
