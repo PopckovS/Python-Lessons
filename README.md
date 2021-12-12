@@ -162,7 +162,8 @@ Python-Lessons
 
 
 13. **Дата и Время**
-      - [ Модуль ](Theory/Part_13/dt_1.md) `arrow`
+      - [ Модуль ](Theory/Part_13/dt_1.md) `datetime`
+      - [ Модуль ](Theory/Part_13/dt_2.md) `arrow`
 
 ---
 Практика Python :
