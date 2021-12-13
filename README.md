@@ -201,9 +201,10 @@ GIT и Git-flow
 Docker, Docker-compose
 ---
 
-1. **Часть №1 :**
+- [Удобный сборник команд `Docker`](Docker/docker_commands.md)
+
+1. **Docker :**
     
-    - [Удобный сборник команд `Docker`](Docker/docker_commands.md)
     - [Что такое Docker образы и контейнеры](Docker/docker_1.md) `Images`, `Container`
     - [Файл](Docker/docker_2.md) `Dockerfile`
       - Команды докер файла:
@@ -219,7 +220,11 @@ Docker, Docker-compose
       - `MAINTAINER`
       - `USER`
       - `VOLUME`
-    - [Что такое Docker Compose](Docker/docker_compose_3.md)
+    - [Работа с `Docker`](Docker/docker_3.md) 
+    
+2. **Docker-Compose :** 
+
+    - [Что такое Docker Compose](Docker/docker_compose_1.md)
 
 ---
 Алгоритмы и структуры данных
@@ -251,6 +256,7 @@ Docker, Docker-compose
 
     - [Принципы KISS, DRY, SOLID, YAGNI](Other-theory/Part_1/KISS.md)
     - [REST, SOAP](Other-theory/Part_1/REST_SOAP.md)
+    - [12 факторов создания распределенного ПО](Other-theory/Part_1/12_factor.md)
 
 
 2. **Теория :**
@@ -266,5 +272,10 @@ Docker, Docker-compose
 4. **Решение разных проблем**
 
    - [Установка модуля `M2Crypto`](Other-theory/Part_4/part_1.md)
+
+
+5. [SSH](Other-theory/Part_5/part_1.md)
+   - Подключение по SSH
+   - Модуль `paramiko` для работы с SSH из `Python`
 
    
