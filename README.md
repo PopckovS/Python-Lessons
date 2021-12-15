@@ -165,6 +165,11 @@ Python-Lessons
       - [ Модуль ](Theory/Part_13/dt_1.md) `datetime`
       - [ Модуль ](Theory/Part_13/dt_2.md) `arrow`
 
+
+14. [Гео-кодирование](Theory/Part_14/geo_1.md)
+      - Поиск координат по адресу с помощью `OpenStreetMap (OSM)`
+
+
 ---
 Практика Python :
 ---
@@ -195,7 +200,6 @@ GIT и Git-flow
 - [Общее описание](git/git_1.md) `git flow`
 - [Конфликты, слияние и перебазирование](git/git_2.md) `git merge`, `git rebase`
 - [Теги](git/git_3.md) `git tag`
-    
 
 ---
 Docker, Docker-compose
