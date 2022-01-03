@@ -153,20 +153,13 @@ Python-Lessons
    
     - [Модуль Flask ](Theory/Part_11/Flask)   
          - [ Урок №1 ](Theory/Part_11/Flask/Lesson_1.md)
-   
 
-12. **Вопросы возникающие при работе с Postgres :**
-      - [ Смена пароля для пользователя ](Postgres/pg_1.md)
-      - [ Расширение timescaledb для PostgreSQL ](Postgres/timescaledb.md)
-      - [ PostgreSQL, утилита `pg_dump` остановление БД ](Postgres/pg_dump.md)
-
-
-13. **Дата и Время**
+12. **Дата и Время**
       - [ Модуль ](Theory/Part_13/dt_1.md) `datetime`
       - [ Модуль ](Theory/Part_13/dt_2.md) `arrow`
 
 
-14. [Гео-кодирование](Theory/Part_14/geo_1.md)
+13. [Гео-кодирование](Theory/Part_14/geo_1.md)
       - Поиск координат по адресу с помощью `OpenStreetMap (OSM)`
 
 
@@ -206,15 +199,6 @@ Python-Lessons
       - [ Практика ](Algorithm/selection/selection_sort.py)
 
 ---
-Тестирование и CI / CD
----
-
-1. **Часть №1 :**
-    
-    - [Механизм CI / CD](Test/Lesson_CI_CD.md)
-
----
-
 Разное
 ---
 
