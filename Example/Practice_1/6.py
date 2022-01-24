@@ -31,6 +31,22 @@ def func2():
     print('Есть ли дубликаты: ', check_dublicates(input))
 
 
+def func3():
+    """Пример кеширования результатов вычисления."""
+    import functools
+
+    @functools.lru_cache()
+    def fetch_data(items):
+        """Пработа до отработки внутренней функции"""
+        result = [fetch_item_data(i) for i in items]
+        return result
+
+    def fetch_item_data(i):
+        return i**2
+
+    fetch_data([1, 2, 3, 4, 5])
+
+
 
 
 func1()
