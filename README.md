@@ -174,6 +174,7 @@ Python-Lessons
     - [Сборник примеров №3](Example/Practice_1/3.py)
     - [Сборник примеров №4](Example/Practice_1/4.py)
     - [Сборник примеров №5](Example/Practice_1/5.py)
+    - [Сборник примеров №6](Example/Practice_1/6.py)
     - [Дата и время](Example/Practice_1/6.py)
     - [Работа с модулем CSV ](Example/Practice_1/CSV/CSV.py)
     - [Программа для скачивания видео с YouTube](Example/Practice_1/get_videos.py)

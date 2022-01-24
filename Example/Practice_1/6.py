@@ -19,4 +19,19 @@ def func1():
     print(f'{time_1} - {time_2} = {time_2-time_1}')
 
 
+def func2():
+    """
+    Написать функцию которая принимает список и возвращает
+    True/False есть ли в списке дубликаты.
+    """
+    def check_dublicates(original: list) -> bool:
+        return True if len(original) > len(set(original)) else False
+
+    input = [1, 2, 3, 4, 5]
+    print('Есть ли дубликаты: ', check_dublicates(input))
+
+
+
+
 func1()
+func2()
