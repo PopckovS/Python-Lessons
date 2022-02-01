@@ -99,10 +99,64 @@ def func5(list_one, list_two):
     print(list_result)
 
 
+def func6():
+    class Arithmetic():
+        """Класс для выполнения арифметических операций"""
+
+        def __init__(self, first_arg, second_arg, operation):
+            self.operations = ('+', '-', '*', '/')
+            self.tuple_arg = self.CheckArguments(first_arg, second_arg)
+            self.operation = self.CheckOperation(operation)
+            self.showResult(self.ExecuteOperation(self.tuple_arg, self.operation))
+
+        def showResult(self, result):
+            print("{one} {operation} {two} = {result}".format(
+                one=self.tuple_arg[0],
+                two=self.tuple_arg[1],
+                operation=self.operation,
+                result=result)
+            )
+
+        def ExecuteOperation(self, tuple_arg, operation):
+            if operation == '+':
+                return tuple_arg[0] + tuple_arg[1]
+            elif operation == '-':
+                return tuple_arg[0] - tuple_arg[1]
+            elif operation == '*':
+                return tuple_arg[0] * tuple_arg[1]
+            elif operation == '/':
+                return tuple_arg[0] / tuple_arg[1]
+
+        def CheckOperation(self, operation):
+            """Проверка является ли операция одной из разрешенных"""
+            try:
+                if operation in self.operations:
+                    return operation
+                else:
+                    raise ValueError('Неизвестная операция')
+            except:
+                raise
+
+        def CheckArguments(self, first_arg, second_arg):
+            """Проверка аргументов на числа или строки которые можно привести к числам."""
+            try:
+                first_arg = int(first_arg)
+                second_arg = int(second_arg)
+            except ValueError:
+                print('Аргументы должны быть числом или строкой которую можно привести к числу.')
+            else:
+                return (first_arg, second_arg)
+
+    at = Arithmetic('1', '5', '+')
+
+
 
 # func1()
 # func2()
 # func3()
 # func4()
-func5()
-
+# func5(
+#     list_one=[1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89],
+#     list_two=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+# )
+func6()
