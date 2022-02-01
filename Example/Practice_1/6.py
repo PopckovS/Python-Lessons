@@ -80,9 +80,29 @@ def func4(cross=5):
         print(i)
 
 
+def func5(list_one, list_two):
+    """Найти пересечение списков"""
+    if (type(list_one) is not list) or (type(list_two) is not list):
+        print('Оба аргумента должны быть списками')
+    elif (len(list_one) == 0) or (len(list_two) == 0):
+        print('Списки должны быть не пусты')
+
+    list_result = []
+
+    # Поиск пересечений списков
+    for elem_one in list_one:
+        for elem_two in list_two:
+            if elem_one == elem_two:
+                list_result.append(elem_one)
+
+    # Вывод получившегося списка
+    print(list_result)
+
+
 
 # func1()
 # func2()
 # func3()
-func4()
+# func4()
+func5()
 
