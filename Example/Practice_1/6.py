@@ -47,7 +47,42 @@ def func3():
     fetch_data([1, 2, 3, 4, 5])
 
 
+def func3(file_name):
+    """ Напишите программу, которая принимает имя файла и выводит его расширение.
+    Если расширение у файла определить невозможно, выбросите исключение.
+    """
+    try:
+        if type(file_name) is not str:
+            raise TypeError('Аргумент должен быть строкой.')
+        file_split = file_name.split('.')
+        if len(file_split) < 2:
+            raise ValueError('Расширения файла не найдено.')
+    except ValueError:
+        print('У файла должно быть расширение')
+    except TypeError:
+        print('Аргумент должен быть строкой')
+    else:
+        print('Расширение файла = "{type}"'.format(type=file_split[-1]))
 
 
-func1()
-func2()
+def func4(cross=5):
+    """Есть список, вывести все элементы списка что меньше чем 5 """
+    list_one = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+    list_result = []
+
+    # Формируем новый список
+    for i in list_one:
+        if i < cross:
+            list_result.append(i)
+
+    # Выводим отсортированный список
+    for i in list_result:
+        print(i)
+
+
+
+# func1()
+# func2()
+# func3()
+func4()
+
