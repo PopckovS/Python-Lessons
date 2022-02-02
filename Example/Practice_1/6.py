@@ -150,6 +150,32 @@ def func6():
     at = Arithmetic('1', '5', '+')
 
 
+def func7():
+    """
+    Если выписать все натуральные числа меньше 10,
+    кратные 3 или 5, то получим 3, 5, 6 и 9. Сумма этих чисел равна 23.
+
+    Найдите сумму всех чисел меньше 1000, кратных 3 или 5.
+    """
+
+    first = 10
+    second = 1000
+
+    def counter(max):
+        my_tuple = (3, 5)
+        result = 0
+        for i in range(max):
+            if i%my_tuple[0] == 0:
+                # print(i)
+                result +=i
+            elif i%my_tuple[1] == 0:
+                # print(i)
+                result += i
+        print("Результат = ", result)
+
+    counter(first)
+    counter(second)
+
 
 # func1()
 # func2()
@@ -159,4 +185,5 @@ def func6():
 #     list_one=[1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89],
 #     list_two=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 # )
-func6()
+# func6()
+func7()
