@@ -177,6 +177,51 @@ def func7():
     counter(second)
 
 
+def func8():
+    """
+    Задача:
+    На вход подаются массив A и целое число K. Сделайте циклический
+    сдвиг входного массива K раз и верните получившийся массив.
+        A = [2, 5, 1, 4, 6] -> [6, 2, 5, 1, 4,]
+        K = 1
+    """
+    def shake_list(my_list, iter):
+        original = my_list.copy()
+
+        for i in range(iter):
+            last = [my_list.pop()]
+            my_list = last + my_list
+
+        return {"Оригинал": original, "Результат": my_list}
+
+    my_list = [2, 5, 1, 4, 6]
+    iter = 3
+    print(shake_list(my_list, iter))
+
+
+def func9():
+    """
+    Задача:
+    На вход подается строка, состоящая из круглых скобок.
+    Выведите True, если скобки вложены правильно и False, если нет
+    """
+
+    # Первый способ через обычную функцию
+    def check_balance(stricng):
+        if string.count('(') == string.count(')'):
+            return True
+        return False
+
+    # Второй способ через lambda
+    lambda_check_balance = lambda var: var.count('(') == var.count(')')
+
+    # string = "(()"
+    string = "(())"
+
+    print("lambda = ", lambda_check_balance(string))
+    print("check_balance = ", check_balance(string))
+
+
 # func1()
 # func2()
 # func3()
@@ -186,4 +231,6 @@ def func7():
 #     list_two=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 # )
 # func6()
-func7()
+# func7()
+# func8()
+func9()
