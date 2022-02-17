@@ -51,4 +51,31 @@ def func1():
     bank.ShowResult()
 
 
-func1()
+def func2():
+    """
+    Дан список чисел. Превратите его в список квадратов этих чисел.
+    спользуем для этого 3 способа: циклом, лямбда, и генератор списков
+    """
+
+    my_list = [1, 2, 3, 4, 5]
+    print("Первый способ я списка = ", my_list)
+    for i in range(len(my_list)):
+        my_list[i] *= my_list[i]
+    print(my_list)
+
+    my_list =  [2, 3, 4, 5, 6]
+    print("Второй способ я списка = ", my_list)
+    sortinf_func = lambda x: x*x
+    my_list = list(map(sortinf_func, my_list))
+    print(my_list)
+
+    my_list = [3, 4, 5, 6, 7]
+    print("Третий способ я списка = ", my_list)
+    my_list = [ i*i for i in my_list ]
+    print(my_list)
+
+
+
+# func1()
+func2()
+# func3()
