@@ -97,6 +97,42 @@ def func3():
     print("Наибольшее число путем умножения двух трех знач чисел {i} * {j} = {num}".
           format(i=max_a, j=max_b, num=result))
 
+def check_simple_number(num):
+    """
+    Проверяет является ли целое число простым.
+    :param num: Целое число
+    :return: True/False
+    """
+    if type(num) is not int or num <=0:
+        raise ValueError("Параметр должен быть целым положительным числом.")
+    else:
+        if (num==2 or num==3 or num==5) or (num%2!=0) and (num%3!=0) and (num%5!=0) and (num%7!=0):
+            return True
+        else:
+            return False
+
+
+def test_check_simple_number():
+    """
+    Метод прогоняет числа от 0 до 100 через метод check_simple_number
+    """
+    for num in range(1, 150):
+        print("Число {num} = {result}"
+              .format(num=num, result=check_simple_number(num))
+              )
+
+def is_prime(num):
+    """
+    Еще одна функция для проверки является ли число простым.
+    :param num: Число
+    :return: Текст с описанием, является ли число простым
+    """
+    for n in range(2, num):
+        if num % n == 0:
+            print("Число {num} не простое".format(num=num))
+            break
+        else:
+            print("Число {num} простое".format(num=num))
 
 
 # func1()
