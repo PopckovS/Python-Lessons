@@ -141,11 +141,6 @@ Python-Lessons
    
 
 11. **Библиотеки :**
-       
-    - [Модуль matplotlib](Theory/Part_11/matplotlib)
-         
-         - [Установка, запуск, здание графиков и закраска. ](Theory/Part_11/matplotlib/Lesson_1.md)
-         - [Множество графиков, ](Theory/Part_11/matplotlib/Lesson_2.md)
    
     - [Модуль Flask ](Theory/Part_11/Flask)   
          - [ Урок №1 ](Theory/Part_11/Flask/Lesson_1.md)
