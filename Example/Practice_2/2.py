@@ -157,9 +157,49 @@ def func6():
     print(p2.static_number)
 
 
+def func7():
+    class Class5:
+        print('/*===== Специальные методы классов __getattribute__ =====*/')
+
+        # Метод инициализации __init_()   должен возвращать тип Nano тоесть ничего
+        def __init__(self, i):
+            self.i = i
+
+        # __getattribute__ Вызывается при обращении к любому атрибуту класса
+        # По сути своей когда мы обращаемся к любому атрибуту любого класса, срабатывает
+        # именно этот метод, если мы будем возвращать return self.item То он вызовет себя
+        # самого, и мы получим ошибку типа: RecursionError: maximum recursion depth exceeded
+        # Чтобы этого избежать надо исп-ть это: object.__getattribute__(self, item)
+        def __getattribute__(self, item):
+            print('Вызван метод __getattribute__()')
+            return object.__getattribute__(self, item)
+
+    c5 = Class5(30)
+    print(c5.i)
+
+
+
+    class Class6:
+        print('/*===== Специальные методы классов __setattr__ =====*/')
+
+        # Вызывается при внесения значения в атрибут экземпляра класса,
+        # Если мы присваеваем значение атрибуту этогоже экземпляра класса то
+        # надо использовать словарь __dict__ иниче метод __setattr__() будет вызван
+        # повторно и будет зацкливание.
+        def __setattr__(self, key, value):
+            print('Вызван метод __setattr__()')
+            self.__dict__[key] = value # Только так можно присвоить значение атрибуту класса
+            print(f'Атрибуту {key} присвоено значение {value}')
+
+    c6 = Class6
+    c6.i = 20
+    print(c6.i)
+
+
 # func1()
 # func2()
 # func3()
 # func4()
 # func5()
-func6()
+# func6()
+func7()
