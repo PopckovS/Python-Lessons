@@ -177,6 +177,7 @@ Python-Lessons
    
    - [Решение мелких задачек по Python №1](Example/Practice_2/1.py)
    - [Решение мелких задачек по Python №2](Example/Practice_2/2.py)
+   - [Решение мелких задачек по Python №3](Example/Practice_2/3.py)
 
 ---
 Алгоритмы и структуры данных
