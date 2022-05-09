@@ -39,4 +39,40 @@ def func1():
     print(noop.show())
 
 
-func1()
+def func2():
+    """
+    Даны два словаря:
+    dictionary_1 = {'a': 300, 'b': 400} и
+    dictionary_2 = {'c': 500, 'd': 600}. Объедините их в
+    один при помощи встроенных функций языка Python.
+
+    Копируем словарь и дополняем его новым словарем методом update()
+    """
+    d_1 = {'a': 300, 'b': 400}
+    d_2 = {'c': 500, 'd': 600}
+
+    print('\nd_1 = ', d_1)
+    print('d_1.items() = ', d_1.items())
+    print('\nd_2 = ', d_2)
+    print('d_2.items() = ', d_2.items())
+
+    d_3 = d_1.copy()
+    d_3.update(d_2)
+    print('\nd_3 = ', d_3)
+
+
+def func3():
+    """
+    Дан словарь с числовыми значениями. Необходимо их все
+    перемножить и вывести на экран.
+    """
+    my_dictionary = {'data1': 375, 'data2': 567, 'data3': -37, 'data4': 21}
+    result = 1
+    for i in my_dictionary.values():
+        result *= i
+    print(result)
+
+
+# func1()
+# func2()
+func3()
