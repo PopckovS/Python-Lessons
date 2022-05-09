@@ -105,8 +105,44 @@ def func5():
     result_dict = { char:original.count(char) for char in original}
     print(result_dict)
 
+def func6():
+    """
+    Свойства классов и примеры
+    """
+
+    class BigDataModel:
+
+        def __init__(self, params=None):
+            self.params = params if isinstance(params, list) else []
+            # self._params = []
+
+        @property
+        def params(self):
+            return self._params
+
+        @params.setter
+        def params(self, new_params):
+            assert all(map(lambda i: i>0, new_params))
+            self._params = new_params
+
+        @params.deleter
+        def params(self):
+            del self._params
+
+    model = BigDataModel()
+    # model.params = [1, 2, -4]
+    model.params = [1, 2]
+    print(model.params)
+
+    print('__mro__ указывает порядок вызова методов  множ наслед: ',
+          BigDataModel.__mro__)
+
+    print('BigDataModel.mro() = ', BigDataModel.mro())
+
+
 # func1()
 # func2()
 # func3()
 # func4()
-func5()
+# func5()
+func6()
