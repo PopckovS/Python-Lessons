@@ -222,6 +222,68 @@ def func9():
     print("check_balance = ", check_balance(string))
 
 
+def func10():
+    """
+    @classmethod - Метод имеет аргумент cls с сылкой на класс.
+    @staticmethod - Статичный метод, нету спец аргументов.
+    """
+    class Point:
+
+        STATIC_NAME = "Статическое название"
+
+        def __init__(self, x, y):
+            self.x = x
+            self.y = y
+
+        def get_coord(self):
+            return self.x, self.y
+
+        @staticmethod
+        def static_method():
+            return Point.STATIC_NAME
+
+        @classmethod
+        def class_meythod(cls):
+            return cls.STATIC_NAME
+
+
+def func11():
+    import timeit
+
+    """Оптимизация размера памяти на примере спец атрибута __slots__ """
+
+    class One:
+        """Заменяет __dict__ атрибутом __slots__"""
+        __slots__ = ['x', 'y']
+
+        def __init__(self, x, y):
+            self.x = x
+            self.y = y
+
+        def get_coord(self):
+            return self.x, self.y
+
+    class Two:
+        """Имеет атрибут __dict__"""
+
+        def __init__(self, x, y):
+            self.x = x
+            self.y = y
+
+        def get_coord(self):
+            return self.x, self.y
+
+    x1 = One(10, 20)
+    x2 = Two(100, 200)
+
+    print(timeit.timeit(x1.get_coord))
+    print(timeit.timeit(x2.get_coord))
+
+    print('Класс с __slots__ :', x1.__sizeof__())
+    print('Класс с __dict__ :', x2.__sizeof__(), x2.__dict__.__sizeof__())
+
+
+
 # func1()
 # func2()
 # func3()
@@ -233,4 +295,6 @@ def func9():
 # func6()
 # func7()
 # func8()
-func9()
+# func9()
+# func10()
+func11()
