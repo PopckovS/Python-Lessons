@@ -245,12 +245,122 @@ def func5():
     print(Point.getCounter())
 
 
+def func7():
+    """
+    Аннотации методов
+    """
+    class Point:
+        def __init__(self, x:int=0, y:int=0):
+            self.x = x
+            self.y = y
+
+        def setCoord(self, x:int=0, y:int=0):
+            self.x = x
+            self.y = y
+
+        def getCoord(self) -> tuple:
+            return self.x, self.y
+
+
+    print(issubclass(Point, object))
+
+    pt = Point(10, 20)
+    print(pt.setCoord.__annotations__)
+    print(pt.getCoord.__annotations__)
+
+
+def func8():
+    """
+    Наследование
+    """
+    class Point:
+        """Представление точки на плоскости координат по x и y"""
+        def __init__(self, x:int=0, y:int=0):
+            self.__x = x
+            self.__y = y
+
+        def __str__(self):
+            return f"точка ({self.__x}, {self.__y})"
+
+
+    class Prop:
+        """"""
+        def __init__(self, start:Point, end:Point, color:str, width:float):
+            print("Метод __init__ класса Prop")
+            self._start = start
+            self._end = end
+            self._color = color
+            self._width = width
+
+
+    class Line(Prop):
+        def __init__(self, *args):
+            print("Метод __init__ класса Line")
+            # Вызываем инициализатор род класса, не правильно
+            # Point.__init__(self, *args)
+
+            # Правильный способ вызова инициализатора род класса
+            super().__init__(*args)
+
+        def drawLine(self):
+            print(f"Рисуем линию: " \
+                   f"{self._start}, {self._end}, {self._color}, {self._width}")
+
+    class Rectangle(Prop):
+        def drawLine(self):
+            print(f"Рисуем Квадрат: " \
+                   f"{self._start}, {self._end}, {self._color}, {self._width}")
+
+
+    line = Line(Point(10, 10), Point(20, 20), 'red', 0.5)
+    line.drawLine()
+    print("Доступ к защищенному атрибуту _start = ", line._start)
+
+    # rect = Rectangle(Point(100, 100), Point(200, 200), 'blue', 1.0)
+    # rect.drawLine()
+
+
+def func9():
+    class Point:
+        def __init__(self, x, y):
+            self.x = x
+            self.y = y
+
+        def __delattr__(self, item):
+            print('Попытка удалить атрибут = ', item)
+            del self.__dict__[item]
+
+    pt = Point(10, 20)
+    print(pt.__dict__)
+    del pt.x
+    print(pt.__dict__)
+
+
+def func10():
+    """Синтаксис доступа к защищенному атрибуту обьекта."""
+
+    class Point:
+        def __init__(self, x, y, z):
+            self.x = x
+            self._y = y
+            self.__z = z
+
+    pt = Point(10, 20, 30)
+
+    print("Point.__dict__ = ", Point.__dict__)
+    print("pt.__dict__ = ", pt.__dict__)
+    print("pt._Point__z = ", pt._Point__z)
+
+
 # func1()
 # func2()
 # func3()
 # func4()
-func5()
-
+# func5()
+# func7()
+# func8()
+# func9()
+func10()
 
 
 
