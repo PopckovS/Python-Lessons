@@ -1,5 +1,7 @@
 #! /usr/bin/python3
 
+import os
+
 def func1():
     """
     Пример реализации атрибута __slots__ в класса
@@ -412,7 +414,40 @@ def func11():
     print(repr(account_two))
 
 
+def func12():
+    """Замените пробелы на указанные символы. Напишите метод
+     для замены всех пробелов в строке на '%20'. Игнорируйте
+     любые дополнительные пробелы в начале или конце строки.
+    """
+    string = " Первый Второй  Третий   Четвертый  "
+    print(string)
+    print(string.split())
+    print(string.split(" "))
 
+    string_len = len(string)-1
+    left = ""
+    right = ""
+
+    for i in range(len(string)):
+        if string[i] != ' ':
+            print(i)
+            break
+        else:
+            left += " "
+
+    while string_len >0:
+        if string[string_len] != ' ':
+            print(string_len)
+            break
+        else:
+            right += " "
+            string_len -= 1
+
+    result = left + '%20'.join(string.split()) + right
+    print("Колич пробелов с права : {right} с лева : {left}".
+          format(right=len(right), left=len(left))
+          )
+    print("'{result}'".format(result=result))
 
 
 # func1()
@@ -424,8 +459,8 @@ def func11():
 # func8()
 # func9()
 # func10()
-func11()
-
+# func11()
+func12
 
 
 
