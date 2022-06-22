@@ -450,6 +450,62 @@ def func12():
     print("'{result}'".format(result=result))
 
 
+def func13():
+    """
+    Пример реализации отслежки времени выполнения при помощи классов.
+    Своего класса ошибок и класса что работает с модулем time
+    """
+    class TimerError(Exception):
+        pass
+
+    class MyTimer:
+
+        def __init__(self):
+            self._start_time = None
+            self._all_time = []
+            self._all = 0
+
+        def start(self):
+            """Запускает таймер"""
+            if self._start_time is not None:
+                raise TimerError('Таймер уже работает.')
+            print('Таймер запущен')
+            self._start_time = time.perf_counter()
+
+        def sleep(self, seconds: int):
+            """Таймер засыпает"""
+            time.sleep(seconds)
+
+        def stop(self):
+            """Останавливает таймер"""
+            if self._start_time is None:
+                raise TimerError('Таймер еще не запущен.')
+            print('Таймер остановлен')
+            time_result = time.perf_counter() - self._start_time
+            self._all_time.append(time_result)
+            self._all += time_result
+            self._start_time = None
+            print(f'Время выполнения: {time_result:0.4f}')
+
+        def show_all_time(self):
+            print(f'Все время по частям: {self._all_time}')
+            print(f'Все время : {self._all}')
+
+    # 4 раза вызываем на исполнение код для накопления таймера
+    tr = MyTimer()
+
+    for number in range(1, 5):
+        print(f'Попытка  №{number}')
+        tr.start()
+        tr.sleep(1)
+        result = fibo(1000)
+        tr.stop()
+
+    print(f'Ряд Фибоначи: {result}')
+    tr.show_all_time()
+
+
+
 # func1()
 # func2()
 # func3()
@@ -460,8 +516,8 @@ def func12():
 # func9()
 # func10()
 # func11()
-func12
-
+# func12()
+func13()
 
 
 
