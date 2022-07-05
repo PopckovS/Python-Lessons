@@ -140,9 +140,42 @@ def func6():
     print('BigDataModel.mro() = ', BigDataModel.mro())
 
 
+def func7():
+    """Вывести числа от 0 до 100
+    кратные 3 заменить на Fizz
+    кратные 5 заменить на Buzz
+    кратные и 5 и 3 заменить на FizzBuzz
+    """
+    for num in range(0, 100):
+        if (num % 5 == 0) and (num % 3 == 0):
+            print("FizzBuzz")
+        elif num % 5 == 0:
+            print("Buzz")
+        elif num % 3 == 0:
+            print("Fizz")
+        else:
+            print(num)
+
+
+def func8():
+    """Есть предложение, если колич символ в слове чет вывести чет."""
+    sentence = "Print every word in this sentence that has an even" \
+               " number of letters"
+    words = sentence.split(" ")
+
+    for word in words:
+        counter = len(word)
+        if counter%2==0:
+            print("Четное : '{word}' Колич символов : '{counter}'".
+                  format(counter=counter, word=word)
+                  )
+
 # func1()
 # func2()
 # func3()
 # func4()
 # func5()
-func6()
+# func6()
+# func7()
+func8()
+
