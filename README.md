@@ -176,9 +176,10 @@ Python-Lessons
 
 2) **Часть №2**
    
-   - [Решение мелких задачек по Python №1](Example/Practice_2/1.py)
-   - [Решение мелких задачек по Python №2](Example/Practice_2/2.py)
-   - [Решение мелких задачек по Python №3](Example/Practice_2/3.py)
+   - [Практика Python №1](Example/Practice_2/1.py)
+   - [Практика Python №2](Example/Practice_2/2.py)
+   - [Практика Python №3](Example/Practice_2/3.py)
+   - [Практика Python №4](Example/Practice_2/4.py)
 
 ---
 Алгоритмы и структуры данных
