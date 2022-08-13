@@ -1,3 +1,4 @@
+import time
 
 def func1():
     """
@@ -170,6 +171,72 @@ def func8():
                   format(counter=counter, word=word)
                   )
 
+
+def func9():
+    """
+    Разница между вызывами perf_counter() даст время
+    прошедшее между их вызывами.
+    """
+    time_1 = time.perf_counter()
+    time.sleep(1)
+    time_2 = time.perf_counter()
+
+    print(f'{time_1} - {time_2} = {time_2 - time_1}')
+
+
+def func10():
+    def fibo(n):
+        """Вычисление ряда Фибоначи"""
+        fib1 = 1
+        fib2 = 1
+        i = 0
+        while i < n - 2:
+            fib_sum = fib1 + fib2
+            fib1 = fib2
+            fib2 = fib_sum
+            i = i + 1
+        return fib2
+
+    """Вычисление времени исполнения функции."""
+    time_1 = time.perf_counter()
+    result = fibo(1000)
+    time_2 = time.perf_counter()
+
+    print(f'{time_1} - {time_2} = {time_2 - time_1:0.4f}')
+    print(f'Результат счета фисла фибоначи {result}')
+
+
+def func3():
+    """
+    Пример простейшего функции-декоратора для подсчета
+    времени исполнения кода.
+    """
+
+    def decorator_timer(func):
+        def wrapper(*args):
+            time_1 = time.perf_counter()
+            result = func(*args)
+            time_2 = time.perf_counter()
+            print(f'Время исполнения программы: {time_1} - {time_2} = {time_2 - time_1:0.4f}')
+            return result
+        return wrapper
+
+    @decorator_timer
+    def fibo(n):
+        """Вычисление ряда Фибоначи"""
+        fib1 = 1
+        fib2 = 1
+        i = 0
+        while i < n - 2:
+            fib_sum = fib1 + fib2
+            fib1 = fib2
+            fib2 = fib_sum
+            i = i + 1
+        return fib2
+
+    print('Счет числа фибоначи с декоратором: ', fibo(1000))
+
+
 # func1()
 # func2()
 # func3()
@@ -177,5 +244,5 @@ def func8():
 # func5()
 # func6()
 # func7()
-func8()
+#func8()
 
