@@ -2,7 +2,11 @@
 ---
 ---
 
-Главное это `BaseException` него идут:
+Исключения это классы, что перехватывают и обрабатывают ошибки возникающие
+во время выполнения программы, они имеют свою собственную структуру 
+наследования.
+
+Иерархия пирамиды исключений начинается с класса `BaseException` него идут:
 
 1) `Exception` - класс для почти всех исключений, если хотим создать 
 свой класс исключений то наследуемся от него.
@@ -136,3 +140,42 @@
     finally:
         file.close()
 ```
+
+---
+Свои собственные исключения
+---
+
+В процессе работы мы можем не ограничиваться только теми исключениями
+которые нам поставляет `python` из коробки, по скольку все исключения это
+классы, то мы можем их расширять, и создавать свои собственные исключения.
+
+В данном примере, мы получим исключения либо когда число слишком маленькое
+либо когда оно слишком велико. 
+```python
+import random
+
+class MyBaseError(Exception):
+    pass
+
+class ValueErrorBig(Exception):
+    pass
+
+class ValueErrorSmall(Exception):
+    pass
+
+while True:
+    _num = random.randint(1, 10)
+    print('_num = ', _num)
+    try:
+        if _num > 7:
+            raise ValueErrorBig
+        elif _num < 3:
+            raise ValueErrorSmall
+    except ValueErrorSmall:
+        print('ValueErrorSmall')
+        break
+    except ValueErrorBig:
+        print('ValueErrorBig')
+        break
+```
+
