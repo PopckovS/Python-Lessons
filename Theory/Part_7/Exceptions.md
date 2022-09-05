@@ -179,3 +179,22 @@ while True:
         break
 ```
 
+---
+Пример кастомизации класса исключений, метод `__str__` используется для вывода
+исключения.
+
+```python
+class MyException(Exception):
+    def __init__(self, value, message="Сообщение об ошибке"):
+        """Переопределяем родительский метод, добавляем свои данные"""
+        self.value = value
+        self.message = message
+        super().__init__(self.message)
+
+    def __str__(self):
+        """Выводит само сообщение об ошибке"""
+        return "{} -> {}".format(self.value, self.message)
+
+raise MyException(value=500)
+```
+
