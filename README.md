@@ -154,6 +154,9 @@ Python-Lessons
       - Поиск координат по адресу с помощью `OpenStreetMap (OSM)`
 
 
+14. [SQLAclhemy](Theory/Part_15/alchemy_1.md)
+
+
 ---
 Практика Python :
 ---
