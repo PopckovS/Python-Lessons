@@ -283,6 +283,34 @@ def func11():
     print('Класс с __dict__ :', x2.__sizeof__(), x2.__dict__.__sizeof__())
 
 
+def func12():
+    import calendar
+    """
+    Требуется найти дату зная год, и количество дней, вот очень красивое и элегантное решение,
+    с учетом високосного года.
+    """
+
+    def get_date_from_year_and_days(year: int = None, days: int = None) -> tuple:
+        """
+        Получает корректную дату из года и количества дней
+
+        :param year: year
+        :param days: numbers of day
+        :return: tuple of date
+        """
+        month = 1
+        while month <= 12:
+            m_days = calendar.monthrange(year, month)[1]
+            if m_days > days:
+                return year, month, days
+            days = days - m_days
+            month += 1
+
+    year, month, day = get_date_from_year_and_days(2021, 94)
+    print('year = ', year)
+    print('month = ', month)
+    print('day = ', day)
+
 
 # func1()
 # func2()
@@ -297,4 +325,5 @@ def func11():
 # func8()
 # func9()
 # func10()
-func11()
+# func11()
+func12()
