@@ -133,6 +133,7 @@ Python-Lessons
       - [ Yandex geocoder API, OpenStreetMap API, DaData API ](Theory/Part_9/Geo_data.md)
       
     - [Модуль pathlib](Theory/Part_9/Module_pathlib.md) (Работа путями, директориями, файлами)
+    - [Модуль argparse](Theory/Part_9/argparse.md) (Работа с аргументами через терминал)
 
 
 [comment]: <> (добавить модуль cmd)
