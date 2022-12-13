@@ -105,7 +105,7 @@ Python-Lessons
     - [Хэширование hash()](Theory/Part_8/Hash.md)
     - [Создание модулей](Theory/Part_8/Module.md)
     - [Как публиковать пакеты на PyPi](Theory/Part_8/pypi.md)
-    - [Виртуальное окружение venv и freeze. Установка зависимостей.](Theory/Part_8/Virtual.md)
+    - [Виртуальное окружение venv и freeze. Зависимости. Переменные окружения.](Theory/Part_8/Virtual.md)
 
 
 9. **Модули и API сервисы :**
