@@ -134,9 +134,8 @@ Python-Lessons
       
     - [Модуль pathlib](Theory/Part_9/Module_pathlib.md) (Работа путями, директориями, файлами)
     - [Модуль argparse](Theory/Part_9/argparse.md) (Работа с аргументами через терминал)
+    - [Логирование](Theory/Part_9/logger.md)
 
-
-[comment]: <> (добавить модуль cmd)
 
 10. **Интересные вопросы по Python :**
 
