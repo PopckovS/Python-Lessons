@@ -137,6 +137,7 @@ Python-Lessons
     - [Логирование](Theory/Part_9/logger.md)
     - [Модуль jsonschema](Theory/Part_9/jsonschema.md)
 
+    - [Сервис Google Drive](Theory/Part_9/google_drive.md) (Работа с гугл диском)
 
 10. **Интересные вопросы по Python :**
 
