@@ -27,6 +27,14 @@ GOOGLE_SERVICE_ACC_JSON_KEY = 'google_service_account_secret.json'
 # специальный mail который выдается для сервисного аккаунта
 GOOGLE_SERVICE_ACC = 'service-account-dzz1@ee-dzz1.iam.gserviceaccount.com'
 
+# Указываем с каким сервисом соединяемся
+GOOGLE_DRIVE = 'drive'
+
+# Указываем версию API google drive
+GOOGLE_DRIVE_VERSION = 'v3'
+
+# Указываем права нашего клиента, даем все права на создание удаление чтение
+GOOGLE_SCOPES = ['https://www.googleapis.com/auth/drive']
 
 def google_drive_initial():
     """
@@ -39,6 +47,44 @@ def google_drive_initial():
     return service
 ```
 
+---
 
+Получение директории в drive по ее имени.
 
+Метод `.files().list().execute()` дает возможность получить список файлов/директорий
+из диска, параметр `q` указывает выражение поиска, специальный синтаксис
+для фильтрации ресурсов с диска.
+
+Найти ресурсы с что являются директориями 
+
+    mimeType='application/vnd.google-apps.folder'
+
+Отфильтровать ресурсы с названием `folder`
+
+    and name='folder'
+
+Объединяя фильтры можно
+
+Параметр `fields` указывает какую информацию о найденном ресурсе 
+вернуть, к примеру вернуть `id` ресурса, его название, и тип данных 
+
+    fields="files(id, name, mimeType)"
+
+Параметр `pageSize` указывает максимальное количество найденных 
+ресурсов вернуть обратно.
+
+Пример как получать ресурс по его имени на диске.
+
+```python
+def get_drive_folder(dir_name):
+    """
+    Get folder from Google Drive by name
+    """
+    folder = service.files().list(
+        q=f"mimeType='application/vnd.google-apps.folder' and name='{dir_name}'",
+        fields="files(id, name, mimeType)",
+        pageSize=1
+    ).execute()
+    return folder['files']
+```
 
