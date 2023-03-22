@@ -37,9 +37,8 @@ GOOGLE_DRIVE_VERSION = 'v3'
 GOOGLE_SCOPES = ['https://www.googleapis.com/auth/drive']
 
 def google_drive_initial():
-    """
-    Initialize in service Google Drive
-    """
+    """Initialize in service Google Drive"""
+    
     credentials = service_account.Credentials.from_service_account_file(
         GOOGLE_SERVICE_ACC_JSON_KEY, scopes=GOOGLE_SCOPES)
     service = build(
@@ -77,9 +76,8 @@ def google_drive_initial():
 
 ```python
 def get_drive_folder(dir_name):
-    """
-    Get folder from Google Drive by name
-    """
+    """Get folder from Google Drive by name"""
+    
     folder = service.files().list(
         q=f"mimeType='application/vnd.google-apps.folder' and name='{dir_name}'",
         fields="files(id, name, mimeType)",
@@ -88,3 +86,56 @@ def get_drive_folder(dir_name):
     return folder['files']
 ```
 
+---
+
+Создать директорию с указанным именем, создать ее как дочернею папку
+указанной директории.
+
+```python
+def create_drive_folder(folder_name, parent_id=None):
+    """Create folder in Google Drive"""
+    
+    folder = service.files().create(
+        body={
+            'mimeType': "application/vnd.google-apps.folder",
+            'parents': [parent_id],
+            'name': folder_name
+        },
+        fields="id"
+    ).execute()
+    folder['name'] = folder_name
+    return folder
+```
+
+---
+
+Скачать файл с Google Drive по указанному пути
+
+```python
+import io
+from googleapiclient.http import MediaIoBaseDownload
+from io import BytesIO
+
+def _load_file_from_google_drive(file_id, load_path):
+    """Load file from Google Drive to storage"""
+
+    try:
+        request = service.files().get_media(fileId=file_id)
+
+        fh = BytesIO()
+        downloader = MediaIoBaseDownload(fh, request)
+        done = False
+        while done is False:
+            status, done = downloader.next_chunk()
+            print("Скачано %d%%." % int(status.progress() * 100))
+
+        # save file on storage
+        with io.open(load_path, 'wb') as f:
+            fh.seek(0)
+            f.write(fh.read())
+
+    except Exception as e:
+        print('Ресурс скачан')
+        return False
+    return True
+```
