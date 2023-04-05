@@ -139,3 +139,43 @@ def _load_file_from_google_drive(file_id, load_path):
         return False
     return True
 ```
+
+---
+
+Получить все файлы определенного `mime` типа которые находятся внутри 
+конкретной директории.
+
+```python
+def get_source_from_drive_folder(folder_id, mime):
+    """Get list of source files from folder by id in Google Drive."""
+    sources = service.files().list(
+        q=f"mimeType='{mime}' and '{folder_id}' in parents",
+        fields="nextPageToken, files(id, name, mimeType)",
+        pageSize=1000 
+    ).execute()
+    return sources
+```
+
+---
+
+При удалении из Google Drive директории через API, и получая список всех файлов
+на Google Drive, можно увидеть что при удалении родитесльской директории, дочерние
+эллементы не удалены, и присутствуют в списке получаемых файлов, при том что
+если вы зайдете на сам Google Drive через браузер, то этих файлов не найдете.
+
+При работе с Drive, рекомендую удалять рабочую директорию и все ее дочерние эллементы
+при завершении работы.
+
+```python
+try:
+    ...
+except Exception as e:
+    ...
+else:
+    ...
+finally:
+    for_delete = get_source_from_drive_folder(drive_folder_id)
+    for file in for_delete["files"]:
+        service.files().delete(fileId=file["id"]).execute()
+    service.files().delete(fileId=drive_folder_id).execute()
+```
