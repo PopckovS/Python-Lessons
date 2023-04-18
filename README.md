@@ -138,6 +138,8 @@ Python-Lessons
     - [Модуль jsonschema](Theory/Part_9/jsonschema.md)
 
     - [Сервис Google Drive](Theory/Part_9/google_drive.md) (Работа с гугл диском)
+    
+    - [Модуль Pydentic](Theory/Part_9/Pydentic.md) (Валидация)
 
 10. **Интересные вопросы по Python :**
 
