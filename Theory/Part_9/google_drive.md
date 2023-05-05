@@ -179,3 +179,114 @@ finally:
         service.files().delete(fileId=file["id"]).execute()
     service.files().delete(fileId=drive_folder_id).execute()
 ```
+
+---
+Класс обертка для работы с Google Drive
+---
+
+Создадим удобный класс который бы предоставлял пользователю, удобный 
+функционал для работы с Google drive, данный метод принимает название
+рабочей директории на диске, в которой он будет удалять и создавать файлы,
+и `drive_service` которое является классом типа `singlton` реализующее
+подключение к диску.
+
+Метод `load_from_google_drive_by_path` осуществляет скачивание всех файлов
+определенного `MIME` типа из указанной директории с диска по локальному пути.
+
+Внутренний метод `_load_file_from_google_drive` скачивает файл по указанному 
+пути, и делает это чанками, небольшими кусочками которые по дефолту равняются
+`100 MB` таким образом можно скачивать даже большие файлы, ибо скачивания
+файлы по частям, оперативная память не будет забиваться.
+
+```python
+import logging
+from googleapiclient.http import MediaIoBaseDownload
+from pydantic import validate_arguments
+from pathlib import Path
+
+
+logger = logging.getLogger(__name__)
+
+
+PAGE_SIZE = 100
+
+
+class GoogleDriveFacade:
+    def __init__(self, drive_service, work_dir: str):
+        self.work_dir = work_dir
+        self.drive_service = drive_service
+
+    def _load_file_from_google_drive(self, request, load_file_path) -> bool:
+        try:
+            with open(load_file_path, "wb") as fd:
+                downloader = MediaIoBaseDownload(fd, request)
+                done = False
+                while not done:
+                    status, done = downloader.next_chunk()
+                    logger.info("Download %d%%."), int(status.progress() * 100)
+
+        except Exception as e:
+            logger.error("Error upload file %s", load_file_path)
+            logger.exception(e)
+            return False
+        return True
+    
+    @validate_arguments
+    def load_from_google_drive_by_path(self, dir_id: str, load_path: Path, mime_type: str) -> Path:
+        """Download all files from Google Drive to local folder in tmp."""
+        sources = self.get_all_from_drive_dir(dir_id, mime_type)
+
+        for image in sources["files"]:
+            file_path = load_path / image["name"]
+            request = self.drive_service.files().get_media(fileId=image["id"])
+
+            if self._load_file_from_google_drive(request, file_path):
+                logger.info("Image successful upload by path: `%s` ", file_path)
+
+        return load_path
+
+    @validate_arguments
+    def create_drive_dir(self, dir_name: str, parent_id: str) -> dict:
+        """Create folder in Google Drive."""
+        folder = self.drive_service.client.files().create(
+            body={
+                "mimeType": "application/vnd.google-apps.folder",
+                "parents": [parent_id],
+                "name": dir_name
+            },
+            fields="id"
+        ).execute()
+        folder["name"] = dir_name
+        return folder
+
+    @validate_arguments
+    def get_drive_dir(self, dir_name: str) -> dict:
+        """Get folder from Google Drive by name."""
+        folder = self.drive_service.client.files().list(
+            q="mimeType='application/vnd.google-apps.folder' and name='{name}'".format(name=dir_name),
+            fields="files(id, name, mimeType)",
+            pageSize=1
+        ).execute()
+        return folder["files"][0]
+
+    @validate_arguments
+    def get_all_from_drive_dir(self, dir_id: str, mime: str, page_size: int = PAGE_SIZE) -> dict:
+        """Get list of source files from folder by id in Google Drive."""
+        sources = self.drive_service.client.files().list(
+            q="mimeType='{mime}' and '{id}' in parents".format(mime=mime, id=dir_id),
+            fields="nextPageToken, files(id, name, mimeType)",
+            pageSize=page_size
+        ).execute()
+        return sources
+
+    @validate_arguments
+    def delete_drive_dir(self, dir_id: str) -> None:
+        """Clear Google Drive folder and delete."""
+        files = self.get_all_from_drive_dir(dir_id)
+        for file in files["files"]:
+            self.drive_service.client.files().delete(fileId=file["id"]).execute()
+        self.drive_service.client.files().delete(fileId=dir_id).execute()
+
+
+__all__ = ["GoogleDriveFacade"]
+```
