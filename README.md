@@ -192,6 +192,13 @@ Python-Lessons
    - [Практика Python №4](Example/Practice_2/4.py)
 
 ---
+Leetcode
+---
+
+   1. [Leetcode problem solution](Leetcode)
+      - [Ease](Leetcode/example_1.md)
+
+---
 Алгоритмы и структуры данных
 ---
    1. [ Теория: Сложность алгоритмов, память, массивы, списки. ](Algorithm/Lesson_1.md)
@@ -220,7 +227,7 @@ Python-Lessons
    - [AMQR Протокол](Other-theory/Part_2/AMQR.md)
 
 
-3. **Паттерны и шаблоны проектирования :**
+3. **Паттерны и шаблоны проектирования:**
 
    - [Делегирование и Композиция](Other-theory/Part_3/pattern_1.md)
 
@@ -234,4 +241,4 @@ Python-Lessons
    - Подключение по SSH
    - Модуль `paramiko` для работы с SSH из `Python`
 
-   
+6. [PyCharm](Theory/pycharm/1.md)

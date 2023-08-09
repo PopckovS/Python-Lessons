@@ -123,7 +123,7 @@ def validate_structure_by_schema(input_data, schema):
 }
 ```
 
-Опишим правила валидации для этой структуры:
+Опишем правила валидации для этой структуры:
 ```python
 SCHEMA_FOR_VALIDATION = {
         "type": "object", # указываем тип объекта
