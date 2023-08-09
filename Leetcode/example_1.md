@@ -44,3 +44,39 @@ class Solution(object):
         return pre
 ```
 
+---
+
+58) Length of Last Word
+
+Учитывая строку s, состоящую из слов и пробелов, вернуть длину последнего слова в строке.
+
+```python
+class Solution(object):
+    def lengthOfLastWord(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        return len(s.strip().split(' ')[-1])
+```
+
+---
+
+66) Plus One
+
+Вам дано большое целое число, представленное в виде массива целых чисел `digits`,
+где каждое число `digits[i]` является цифрой целого числа. Цифры упорядочены от наиболее
+значащего к наименее значащему в порядке слева направо. Большое целое число не содержит
+начальных символов равных 0
+
+```python
+class Solution(object):
+    def plusOne(self, digits):
+        """
+        :type digits: List[int]
+        :rtype: List[int]
+        """
+        return list(map(int, str(int(''.join(map(str, digits)))+1)))
+```
+
+
