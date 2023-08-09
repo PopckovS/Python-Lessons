@@ -19,4 +19,28 @@ class Solution(object):
                 return [k, nums[k+1:].index(res) + k + 1]
 ```
 
+---
+
+14) Longest Common Prefix
+
+Напишите функцию, которая находит самую длинную строку общего префикса среди массива строк.
+Если общего префикса нет, вернуть пустую строку "".
+
+
+```python
+class Solution(object):
+    def longestCommonPrefix(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: str
+        """
+        pre = ''
+        for k in range(0, len(min(strs))):
+            res = {word[k] for word in strs}
+            if len(res) == 1:
+                pre += next(iter(res))
+                continue
+            break
+        return pre
+```
 
